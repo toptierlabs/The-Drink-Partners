@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesStackState
+   version = "1.0">
+   <StackStates>
+      <StackState
+         stackFrameDescription = "-[EventsViewController viewDidLoad]:EventsViewController.m">
+         <expressions>
+            <expression
+               value = "(NSCFString *)key">
+            </expression>
+            <expression
+               value = "listOfEvents">
+            </expression>
+            <expression
+               value = "[listOfEvents objectAtIndex:0]">
+            </expression>
+         </expressions>
+      </StackState>
+      <StackState
+         stackFrameDescription = "-[EventDetailsViewController viewDidLoad]:EventDetailsViewController.m">
+         <expressions>
+            <expression
+               value = "self.text">
+            </expression>
+         </expressions>
+      </StackState>
+   </StackStates>
+</VariablesStackState>

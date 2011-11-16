@@ -8,9 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-
-@interface EventsViewController : UIViewController {
+@class EventDetailsViewController;
+@interface EventsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
+    NSDictionary *dicEvents;
+    NSArray *keys;
     
+    EventDetailsViewController *eventDetailsController;
 }
+
+@property(nonatomic, retain) NSDictionary *dicEvents;
+
+@property(nonatomic, retain) NSArray *keys;
+@property (nonatomic,retain) EventDetailsViewController * eventDetailsController;
 
 @end

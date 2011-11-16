@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Events URL</key>
+	<string>http://thedrinkingpartners.com/appjson.php?appkey=56c47513c5b71d72e33c25059a8782a2&amp;g=e</string>
+	<key>Base URL</key>
+	<string>http://thedrinkingpartners.com/</string>
+</dict>
+</plist>
