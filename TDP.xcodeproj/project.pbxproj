@@ -14,10 +14,17 @@
 		AB7C93B21473F6B9008F46E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7C93B11473F6B9008F46E5 /* main.m */; };
 		AB7C93B51473F6B9008F46E5 /* TDPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7C93B41473F6B9008F46E5 /* TDPAppDelegate.m */; };
 		AB7C93B81473F6B9008F46E5 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB7C93B61473F6B9008F46E5 /* MainWindow.xib */; };
-		AB7C93BB1473F6B9008F46E5 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7C93BA1473F6B9008F46E5 /* FirstViewController.m */; };
-		AB7C93BE1473F6B9008F46E5 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7C93BD1473F6B9008F46E5 /* SecondViewController.m */; };
-		AB7C93C11473F6B9008F46E5 /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB7C93BF1473F6B9008F46E5 /* FirstView.xib */; };
-		AB7C93C41473F6B9008F46E5 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB7C93C21473F6B9008F46E5 /* SecondView.xib */; };
+		AB7C93DC1473F954008F46E5 /* NavController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7C93DB1473F954008F46E5 /* NavController.m */; };
+		AB7C93E11473F9EC008F46E5 /* BeersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7C93DF1473F9EC008F46E5 /* BeersViewController.m */; };
+		AB7C93E21473F9EC008F46E5 /* BeersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB7C93E01473F9EC008F46E5 /* BeersView.xib */; };
+		AB7C93E61473FA03008F46E5 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7C93E41473FA03008F46E5 /* NewsViewController.m */; };
+		AB7C93E71473FA03008F46E5 /* NewsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB7C93E51473FA03008F46E5 /* NewsView.xib */; };
+		AB7C93EB1473FA20008F46E5 /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7C93E91473FA20008F46E5 /* EventsViewController.m */; };
+		AB7C93EC1473FA20008F46E5 /* EventsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB7C93EA1473FA20008F46E5 /* EventsView.xib */; };
+		AB7C93F01473FA40008F46E5 /* BuyNowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7C93EE1473FA40008F46E5 /* BuyNowViewController.m */; };
+		AB7C93F11473FA40008F46E5 /* BuyNowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB7C93EF1473FA40008F46E5 /* BuyNowView.xib */; };
+		AB7C93F51473FA65008F46E5 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7C93F31473FA65008F46E5 /* AboutViewController.m */; };
+		AB7C93F61473FA65008F46E5 /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB7C93F41473FA65008F46E5 /* AboutView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,19 +32,30 @@
 		AB7C93A41473F6B9008F46E5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AB7C93A61473F6B9008F46E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AB7C93A81473F6B9008F46E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		AB7C93AC1473F6B9008F46E5 /* TDP-Info.plist */ = {isa = PBXFileReference; path = "TDP-Info.plist"; sourceTree = "<group>"; };
+		AB7C93AC1473F6B9008F46E5 /* TDP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TDP-Info.plist"; sourceTree = "<group>"; };
 		AB7C93AE1473F6B9008F46E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		AB7C93B01473F6B9008F46E5 /* TDP-Prefix.pch */ = {isa = PBXFileReference; path = "TDP-Prefix.pch"; sourceTree = "<group>"; };
+		AB7C93B01473F6B9008F46E5 /* TDP-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TDP-Prefix.pch"; sourceTree = "<group>"; };
 		AB7C93B11473F6B9008F46E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AB7C93B31473F6B9008F46E5 /* TDPAppDelegate.h */ = {isa = PBXFileReference; path = TDPAppDelegate.h; sourceTree = "<group>"; };
+		AB7C93B31473F6B9008F46E5 /* TDPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDPAppDelegate.h; sourceTree = "<group>"; };
 		AB7C93B41473F6B9008F46E5 /* TDPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDPAppDelegate.m; sourceTree = "<group>"; };
 		AB7C93B71473F6B9008F46E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		AB7C93B91473F6B9008F46E5 /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
-		AB7C93BA1473F6B9008F46E5 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		AB7C93BC1473F6B9008F46E5 /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
-		AB7C93BD1473F6B9008F46E5 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		AB7C93C01473F6B9008F46E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstView.xib; sourceTree = "<group>"; };
-		AB7C93C31473F6B9008F46E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondView.xib; sourceTree = "<group>"; };
+		AB7C93DA1473F954008F46E5 /* NavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavController.h; sourceTree = "<group>"; };
+		AB7C93DB1473F954008F46E5 /* NavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavController.m; sourceTree = "<group>"; };
+		AB7C93DE1473F9EC008F46E5 /* BeersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeersViewController.h; sourceTree = "<group>"; };
+		AB7C93DF1473F9EC008F46E5 /* BeersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeersViewController.m; sourceTree = "<group>"; };
+		AB7C93E01473F9EC008F46E5 /* BeersView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BeersView.xib; path = TDP/BeersView.xib; sourceTree = "<group>"; };
+		AB7C93E31473FA03008F46E5 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		AB7C93E41473FA03008F46E5 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		AB7C93E51473FA03008F46E5 /* NewsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsView.xib; path = TDP/NewsView.xib; sourceTree = "<group>"; };
+		AB7C93E81473FA20008F46E5 /* EventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsViewController.h; sourceTree = "<group>"; };
+		AB7C93E91473FA20008F46E5 /* EventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsViewController.m; sourceTree = "<group>"; };
+		AB7C93EA1473FA20008F46E5 /* EventsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventsView.xib; path = TDP/EventsView.xib; sourceTree = "<group>"; };
+		AB7C93ED1473FA40008F46E5 /* BuyNowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyNowViewController.h; sourceTree = "<group>"; };
+		AB7C93EE1473FA40008F46E5 /* BuyNowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyNowViewController.m; sourceTree = "<group>"; };
+		AB7C93EF1473FA40008F46E5 /* BuyNowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BuyNowView.xib; path = TDP/BuyNowView.xib; sourceTree = "<group>"; };
+		AB7C93F21473FA65008F46E5 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		AB7C93F31473FA65008F46E5 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		AB7C93F41473FA65008F46E5 /* AboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutView.xib; path = TDP/AboutView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +75,7 @@
 		AB7C93951473F6B9008F46E5 = {
 			isa = PBXGroup;
 			children = (
+				AB7C93DD1473F96C008F46E5 /* Resources */,
 				AB7C93AA1473F6B9008F46E5 /* TDP */,
 				AB7C93A31473F6B9008F46E5 /* Frameworks */,
 				AB7C93A11473F6B9008F46E5 /* Products */,
@@ -86,14 +105,19 @@
 			children = (
 				AB7C93B31473F6B9008F46E5 /* TDPAppDelegate.h */,
 				AB7C93B41473F6B9008F46E5 /* TDPAppDelegate.m */,
-				AB7C93B61473F6B9008F46E5 /* MainWindow.xib */,
-				AB7C93B91473F6B9008F46E5 /* FirstViewController.h */,
-				AB7C93BA1473F6B9008F46E5 /* FirstViewController.m */,
-				AB7C93BC1473F6B9008F46E5 /* SecondViewController.h */,
-				AB7C93BD1473F6B9008F46E5 /* SecondViewController.m */,
-				AB7C93BF1473F6B9008F46E5 /* FirstView.xib */,
-				AB7C93C21473F6B9008F46E5 /* SecondView.xib */,
 				AB7C93AB1473F6B9008F46E5 /* Supporting Files */,
+				AB7C93DA1473F954008F46E5 /* NavController.h */,
+				AB7C93DB1473F954008F46E5 /* NavController.m */,
+				AB7C93DE1473F9EC008F46E5 /* BeersViewController.h */,
+				AB7C93DF1473F9EC008F46E5 /* BeersViewController.m */,
+				AB7C93E81473FA20008F46E5 /* EventsViewController.h */,
+				AB7C93E91473FA20008F46E5 /* EventsViewController.m */,
+				AB7C93E31473FA03008F46E5 /* NewsViewController.h */,
+				AB7C93E41473FA03008F46E5 /* NewsViewController.m */,
+				AB7C93ED1473FA40008F46E5 /* BuyNowViewController.h */,
+				AB7C93EE1473FA40008F46E5 /* BuyNowViewController.m */,
+				AB7C93F21473FA65008F46E5 /* AboutViewController.h */,
+				AB7C93F31473FA65008F46E5 /* AboutViewController.m */,
 			);
 			path = TDP;
 			sourceTree = "<group>";
@@ -107,6 +131,19 @@
 				AB7C93B11473F6B9008F46E5 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AB7C93DD1473F96C008F46E5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AB7C93F41473FA65008F46E5 /* AboutView.xib */,
+				AB7C93EF1473FA40008F46E5 /* BuyNowView.xib */,
+				AB7C93EA1473FA20008F46E5 /* EventsView.xib */,
+				AB7C93E51473FA03008F46E5 /* NewsView.xib */,
+				AB7C93E01473F9EC008F46E5 /* BeersView.xib */,
+				AB7C93B61473F6B9008F46E5 /* MainWindow.xib */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,8 +195,11 @@
 			files = (
 				AB7C93AF1473F6B9008F46E5 /* InfoPlist.strings in Resources */,
 				AB7C93B81473F6B9008F46E5 /* MainWindow.xib in Resources */,
-				AB7C93C11473F6B9008F46E5 /* FirstView.xib in Resources */,
-				AB7C93C41473F6B9008F46E5 /* SecondView.xib in Resources */,
+				AB7C93E21473F9EC008F46E5 /* BeersView.xib in Resources */,
+				AB7C93E71473FA03008F46E5 /* NewsView.xib in Resources */,
+				AB7C93EC1473FA20008F46E5 /* EventsView.xib in Resources */,
+				AB7C93F11473FA40008F46E5 /* BuyNowView.xib in Resources */,
+				AB7C93F61473FA65008F46E5 /* AboutView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,8 +212,12 @@
 			files = (
 				AB7C93B21473F6B9008F46E5 /* main.m in Sources */,
 				AB7C93B51473F6B9008F46E5 /* TDPAppDelegate.m in Sources */,
-				AB7C93BB1473F6B9008F46E5 /* FirstViewController.m in Sources */,
-				AB7C93BE1473F6B9008F46E5 /* SecondViewController.m in Sources */,
+				AB7C93DC1473F954008F46E5 /* NavController.m in Sources */,
+				AB7C93E11473F9EC008F46E5 /* BeersViewController.m in Sources */,
+				AB7C93E61473FA03008F46E5 /* NewsViewController.m in Sources */,
+				AB7C93EB1473FA20008F46E5 /* EventsViewController.m in Sources */,
+				AB7C93F01473FA40008F46E5 /* BuyNowViewController.m in Sources */,
+				AB7C93F51473FA65008F46E5 /* AboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,22 +238,7 @@
 				AB7C93B71473F6B9008F46E5 /* en */,
 			);
 			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
-		AB7C93BF1473F6B9008F46E5 /* FirstView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AB7C93C01473F6B9008F46E5 /* en */,
-			);
-			name = FirstView.xib;
-			sourceTree = "<group>";
-		};
-		AB7C93C21473F6B9008F46E5 /* SecondView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AB7C93C31473F6B9008F46E5 /* en */,
-			);
-			name = SecondView.xib;
+			path = TDP;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

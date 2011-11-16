@@ -7,22 +7,59 @@
 //
 
 #import "TDPAppDelegate.h"
+#import "NavController.h"
+#import "BeersViewController.h"
+#import "EventsViewController.h"
+#import "NewsViewController.h"
+#import "BuyNowViewController.h"
+#import "AboutViewController.h"
+
 
 @implementation TDPAppDelegate
 
 
 @synthesize window=_window;
-
 @synthesize tabBarController=_tabBarController;
+
+@synthesize navBeersController;
+@synthesize navEventsController;
+@synthesize navNewsController;
+@synthesize navBuyNowController;
+
+
+@synthesize beersViewController;
+@synthesize eventsViewController;
+@synthesize newsViewController;
+@synthesize buyNowViewController;
+@synthesize aboutViewController;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     // Add the tab bar controller's current view as a subview of the window
+    tabBarController = [[UITabBarController alloc] init];   
+    
+    beersViewController = [[BeersViewController alloc] init];
+    eventsViewController = [[EventsViewController alloc] init];
+    newsViewController = [[NewsViewController alloc] init];
+    buyNowViewController = [[BuyNowViewController alloc] init];
+    aboutViewController = [[AboutViewController alloc] init];
+    
+    navBeersController = [[[NavController alloc] initWithRootViewController:beersViewController] autorelease];
+    navEventsController = [[[NavController alloc] initWithRootViewController:eventsViewController] autorelease];
+    navNewsController = [[[NavController alloc] initWithRootViewController:newsViewController] autorelease];
+    navBuyNowController = [[[NavController alloc] initWithRootViewController:buyNowViewController] autorelease];
+    
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:navBeersController, navEventsController, navNewsController, navBuyNowController, aboutViewController, nil];
+    
+    
+    
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
