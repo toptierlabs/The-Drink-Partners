@@ -348,6 +348,8 @@
 				9BB94CE41474237A00D22845 /* topAndBottomRowSelected.png in Resources */,
 				9BB94CE51474237A00D22845 /* topRow.png in Resources */,
 				9BB94CE61474237A00D22845 /* topRowSelected.png in Resources */,
+                AB7C93F914741432008F46E5 /* URLs.plist in Resources */,
+                AB7C945D147433F4008F46E5 /* EventDetailsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
