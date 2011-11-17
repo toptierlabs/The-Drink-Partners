@@ -12995,7 +12995,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>343253496.99262202</real>
+		<real>343253558.85403299</real>
 		<string>{44, 450}</string>
 		<string>{795, 8}</string>
 		<dict>
@@ -13914,8 +13914,8 @@
 				</dict>
 			</array>
 		</dict>
-		<string>{0, 29}</string>
-		<real>343253252.54378402</real>
+		<string>{0, 40}</string>
+		<real>343253558.85390699</real>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -18494,7 +18494,7 @@
 				<integer>1252</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP.xcodeproj/project.pbxproj</string>
+		<string>file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/.gitignore</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -18512,7 +18512,7 @@
 				<integer>1254</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/ImageSliderViewController.m</string>
+		<string>file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP.xcodeproj/project.pbxproj</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -18530,7 +18530,7 @@
 				<integer>1256</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m</string>
+		<string>file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/ImageSliderViewController.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -18548,7 +18548,7 @@
 				<integer>1258</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/ImageSliderViewController.h</string>
+		<string>file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -18566,7 +18566,7 @@
 				<integer>1260</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/EventDetailsViewController.h</string>
+		<string>file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/ImageSliderViewController.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -18584,7 +18584,7 @@
 				<integer>1262</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/EventDetailsViewController.m</string>
+		<string>file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/EventDetailsViewController.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -18602,7 +18602,7 @@
 				<integer>1264</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP.xcodeproj/xcuserdata/toptier.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist</string>
+		<string>file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/EventDetailsViewController.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -18620,7 +18620,7 @@
 				<integer>1266</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP.xcodeproj/project.xcworkspace/xcuserdata/toptier.xcuserdatad/UserInterfaceState.xcuserstate</string>
+		<string>file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP.xcodeproj/xcuserdata/toptier.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -18638,7 +18638,7 @@
 				<integer>1268</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/.gitignore</string>
+		<string>file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP.xcodeproj/project.xcworkspace/xcuserdata/toptier.xcuserdatad/UserInterfaceState.xcuserstate</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -19649,7 +19649,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>343253496.99350399</real>
+		<real>343253558.85468298</real>
 		<string>{44, 450}</string>
 		<string>{795, 8}</string>
 		<string>-imgClicked:</string>
