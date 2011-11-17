@@ -10,7 +10,11 @@
 
 
 @interface BeersViewController : UIViewController {
-    
+    UITableView *tableView;
+    UIImageView *imageView;
 }
+
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) IBOutlet UIImageView *imageView;
 
 @end
