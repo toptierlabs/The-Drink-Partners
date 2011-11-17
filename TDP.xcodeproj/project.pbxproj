@@ -20,6 +20,8 @@
 		9BB94CE41474237A00D22845 /* topAndBottomRowSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB94CD71474237A00D22845 /* topAndBottomRowSelected.png */; };
 		9BB94CE51474237A00D22845 /* topRow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB94CD81474237A00D22845 /* topRow.png */; };
 		9BB94CE61474237A00D22845 /* topRowSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB94CD91474237A00D22845 /* topRowSelected.png */; };
+		AB49368F1475705900EFEA96 /* ImageSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49368D1475705900EFEA96 /* ImageSliderViewController.m */; };
+		AB4936901475705900EFEA96 /* ImageSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB49368E1475705900EFEA96 /* ImageSliderView.xib */; };
 		AB7C93A51473F6B9008F46E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7C93A41473F6B9008F46E5 /* UIKit.framework */; };
 		AB7C93A71473F6B9008F46E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7C93A61473F6B9008F46E5 /* Foundation.framework */; };
 		AB7C93A91473F6B9008F46E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7C93A81473F6B9008F46E5 /* CoreGraphics.framework */; };
@@ -70,6 +72,9 @@
 		9BB94CD71474237A00D22845 /* topAndBottomRowSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topAndBottomRowSelected.png; sourceTree = "<group>"; };
 		9BB94CD81474237A00D22845 /* topRow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topRow.png; sourceTree = "<group>"; };
 		9BB94CD91474237A00D22845 /* topRowSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topRowSelected.png; sourceTree = "<group>"; };
+		AB49368C1475705900EFEA96 /* ImageSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageSliderViewController.h; sourceTree = "<group>"; };
+		AB49368D1475705900EFEA96 /* ImageSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageSliderViewController.m; sourceTree = "<group>"; };
+		AB49368E1475705900EFEA96 /* ImageSliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageSliderView.xib; path = TDP/ImageSliderView.xib; sourceTree = "<group>"; };
 		AB7C93A01473F6B9008F46E5 /* TDP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB7C93A41473F6B9008F46E5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AB7C93A61473F6B9008F46E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -214,9 +219,11 @@
 				AB7C93EE1473FA40008F46E5 /* BuyNowViewController.m */,
 				AB7C93F21473FA65008F46E5 /* AboutViewController.h */,
 				AB7C93F31473FA65008F46E5 /* AboutViewController.m */,
-				AB7C93AB1473F6B9008F46E5 /* Supporting Files */,
 				AB7C944E1474196C008F46E5 /* PlistHelper.h */,
 				AB7C944F1474196C008F46E5 /* PlistHelper.m */,
+				AB49368C1475705900EFEA96 /* ImageSliderViewController.h */,
+				AB49368D1475705900EFEA96 /* ImageSliderViewController.m */,
+				AB7C93AB1473F6B9008F46E5 /* Supporting Files */,
 			);
 			path = TDP;
 			sourceTree = "<group>";
@@ -240,6 +247,7 @@
 				AB7C93EF1473FA40008F46E5 /* BuyNowView.xib */,
 				AB7C93EA1473FA20008F46E5 /* EventsView.xib */,
 				AB7C945B147433F4008F46E5 /* EventDetailsView.xib */,
+				AB49368E1475705900EFEA96 /* ImageSliderView.xib */,
 				AB7C93E51473FA03008F46E5 /* NewsView.xib */,
 				AB7C93E01473F9EC008F46E5 /* BeersView.xib */,
 				AB7C93B61473F6B9008F46E5 /* MainWindow.xib */,
@@ -348,8 +356,9 @@
 				9BB94CE41474237A00D22845 /* topAndBottomRowSelected.png in Resources */,
 				9BB94CE51474237A00D22845 /* topRow.png in Resources */,
 				9BB94CE61474237A00D22845 /* topRowSelected.png in Resources */,
-                AB7C93F914741432008F46E5 /* URLs.plist in Resources */,
-                AB7C945D147433F4008F46E5 /* EventDetailsView.xib in Resources */,
+				AB7C93F914741432008F46E5 /* URLs.plist in Resources */,
+				AB7C945D147433F4008F46E5 /* EventDetailsView.xib in Resources */,
+				AB4936901475705900EFEA96 /* ImageSliderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +391,7 @@
 				AB7C944514741822008F46E5 /* SBJsonWriter.m in Sources */,
 				AB7C94501474196C008F46E5 /* PlistHelper.m in Sources */,
 				AB7C945C147433F4008F46E5 /* EventDetailsViewController.m in Sources */,
+				AB49368F1475705900EFEA96 /* ImageSliderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
