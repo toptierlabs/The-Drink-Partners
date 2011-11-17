@@ -3,24 +3,68 @@
    version = "1.0">
    <StackStates>
       <StackState
+         stackFrameDescription = "-[EventDetailsViewController imgClicked:]:EventDetailsViewController.m">
+         <expressions>
+            <expression
+               value = "delegate.eventsViewController">
+            </expression>
+         </expressions>
+      </StackState>
+      <StackState
+         stackFrameDescription = "-[EventDetailsViewController resetInfo]:EventDetailsViewController.m">
+         <expressions>
+            <expression
+               value = "image3">
+            </expression>
+            <expression
+               value = "image2">
+            </expression>
+         </expressions>
+      </StackState>
+      <StackState
          stackFrameDescription = "-[EventsViewController viewDidLoad]:EventsViewController.m">
          <expressions>
+            <expression
+               value = "[listOfEvents objectAtIndex:0]">
+            </expression>
             <expression
                value = "(NSCFString *)key">
             </expression>
             <expression
                value = "listOfEvents">
             </expression>
-            <expression
-               value = "[listOfEvents objectAtIndex:0]">
-            </expression>
+         </expressions>
+      </StackState>
+      <StackState
+         stackFrameDescription = "-[ImageSliderViewController animateToView:]:ImageSliderViewController.m">
+         <expressions>
          </expressions>
       </StackState>
       <StackState
          stackFrameDescription = "-[EventDetailsViewController viewDidLoad]:EventDetailsViewController.m">
          <expressions>
             <expression
+               value = "urlString">
+            </expression>
+            <expression
                value = "self.text">
+            </expression>
+            <expression
+               value = "imageData">
+            </expression>
+         </expressions>
+      </StackState>
+      <StackState
+         stackFrameDescription = "-[ImageSliderViewController animateToViewByPosition:]:ImageSliderViewController.m">
+         <expressions>
+            <expression
+               value = "pageControl">
+            </expression>
+            <expression
+               value = "pageControl.numberOfPages">
+            </expression>
+            <expression
+               value = "[self.views count]">
             </expression>
          </expressions>
       </StackState>

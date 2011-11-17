@@ -80,22 +80,30 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *event = [dicEvents objectForKey: [keys objectAtIndex:indexPath.row]];
     self.eventDetailsController.text = [event objectForKey:@"content"];
     NSMutableArray *imagesThumbnails =  [[NSMutableArray alloc] init];
+    NSMutableArray *imagesBig =  [[NSMutableArray alloc] init];
     NSArray *images = [event objectForKey:@"images"];
 
     for (NSDictionary *image in images) {
         [imagesThumbnails addObject:[image objectForKey:@"thumb"]];
+        [imagesBig addObject:[image objectForKey:@"big"]];
+        
     }
     
     self.eventDetailsController.images = [[NSArray alloc] initWithArray:imagesThumbnails];
+    self.eventDetailsController.imagesBig = [[NSArray alloc] initWithArray:imagesBig];
     [imagesThumbnails release];
+    [imagesBig release];
     
     TDPAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     [delegate.navEventsController pushViewController:self.eventDetailsController animated:YES];
+    [self.eventDetailsController resetInfo];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
 }
 
 
 // End Table View Events
+
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -132,7 +140,7 @@ NSInteger sort(id a, id b, void* p) {
     self.title = @"Events";
     EventDetailsViewController *auxeventDetails = [[EventDetailsViewController alloc] initWithNibName:@"EventDetailsView" bundle:nil];
     self.eventDetailsController = auxeventDetails;
-    
+    [auxeventDetails release];
     
     listOfEvents = [[NSMutableArray alloc] init];
     NSString *eventsJson =  [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:[PlistHelper readValue:@"Events URL"]]];

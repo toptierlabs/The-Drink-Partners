@@ -105,11 +105,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "TDP/EventsViewController.m"
-         timestampString = "343166579.96428"
+         timestampString = "343252751.664915"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "140"
-         endingLineNumber = "140"
+         startingLineNumber = "148"
+         endingLineNumber = "148"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -119,11 +119,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "TDP/EventsViewController.m"
-         timestampString = "343166579.96428"
+         timestampString = "343252751.664915"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "147"
-         endingLineNumber = "147"
+         startingLineNumber = "155"
+         endingLineNumber = "155"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -133,11 +133,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "TDP/EventsViewController.m"
-         timestampString = "343166579.96428"
+         timestampString = "343252751.664915"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "154"
-         endingLineNumber = "154"
+         startingLineNumber = "162"
+         endingLineNumber = "162"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -175,11 +175,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "EventDetailsViewController.m"
-         timestampString = "343164272.07574"
+         timestampString = "343252606.969429"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "56"
-         endingLineNumber = "56"
+         startingLineNumber = "199"
+         endingLineNumber = "199"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -189,11 +189,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "EventDetailsViewController.m"
-         timestampString = "343164293.330124"
+         timestampString = "343252606.969429"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "55"
-         endingLineNumber = "55"
+         startingLineNumber = "197"
+         endingLineNumber = "197"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -217,25 +217,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "TDP/EventsViewController.m"
-         timestampString = "343166579.96428"
+         timestampString = "343251986.766474"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "89"
-         endingLineNumber = "89"
-         landmarkName = "-tableView:didSelectRowAtIndexPath:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "TDP/EventsViewController.m"
-         timestampString = "343166579.96428"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "89"
-         endingLineNumber = "89"
+         startingLineNumber = "93"
+         endingLineNumber = "93"
          landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -245,11 +231,25 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "TDP/EventsViewController.m"
-         timestampString = "343166628.851276"
+         timestampString = "343251986.766474"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "90"
-         endingLineNumber = "90"
+         startingLineNumber = "93"
+         endingLineNumber = "93"
+         landmarkName = "-tableView:didSelectRowAtIndexPath:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "TDP/EventsViewController.m"
+         timestampString = "343251986.766474"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "95"
+         endingLineNumber = "95"
          landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -279,6 +279,62 @@
          startingLineNumber = "32"
          endingLineNumber = "32"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "EventDetailsViewController.m"
+         timestampString = "343252606.969429"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "127"
+         endingLineNumber = "127"
+         landmarkName = "-resetInfo"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "EventDetailsViewController.m"
+         timestampString = "343251986.766474"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "28"
+         endingLineNumber = "28"
+         landmarkName = "-imgClicked:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "TDP/ImageSliderViewController.m"
+         timestampString = "343252606.969429"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "70"
+         endingLineNumber = "70"
+         landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "EventDetailsViewController.m"
+         timestampString = "343251986.766474"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "31"
+         endingLineNumber = "31"
+         landmarkName = "-imgClicked:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
