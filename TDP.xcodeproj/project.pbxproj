@@ -56,6 +56,8 @@
 		AB7C94501474196C008F46E5 /* PlistHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7C944F1474196C008F46E5 /* PlistHelper.m */; };
 		AB7C945C147433F4008F46E5 /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7C945A147433F4008F46E5 /* EventDetailsViewController.m */; };
 		AB7C945D147433F4008F46E5 /* EventDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB7C945B147433F4008F46E5 /* EventDetailsView.xib */; };
+		AB94BCBE14769AEA00CFF3EF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB94BCBD14769AEA00CFF3EF /* CoreData.framework */; };
+		AB94BCC214769B1D00CFF3EF /* TDP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB94BCC014769B1C00CFF3EF /* TDP.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +137,8 @@
 		AB7C9459147433F4008F46E5 /* EventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventDetailsViewController.h; path = ../EventDetailsViewController.h; sourceTree = "<group>"; };
 		AB7C945A147433F4008F46E5 /* EventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventDetailsViewController.m; path = ../EventDetailsViewController.m; sourceTree = "<group>"; };
 		AB7C945B147433F4008F46E5 /* EventDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDetailsView.xib; sourceTree = "<group>"; };
+		AB94BCBD14769AEA00CFF3EF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AB94BCC114769B1D00CFF3EF /* TDP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TDP.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB94BCBE14769AEA00CFF3EF /* CoreData.framework in Frameworks */,
 				AB7C93A51473F6B9008F46E5 /* UIKit.framework in Frameworks */,
 				AB7C93A71473F6B9008F46E5 /* Foundation.framework in Frameworks */,
 				AB7C93A91473F6B9008F46E5 /* CoreGraphics.framework in Frameworks */,
@@ -192,6 +197,7 @@
 		AB7C93A31473F6B9008F46E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AB94BCBD14769AEA00CFF3EF /* CoreData.framework */,
 				AB7C93A41473F6B9008F46E5 /* UIKit.framework */,
 				AB7C93A61473F6B9008F46E5 /* Foundation.framework */,
 				AB7C93A81473F6B9008F46E5 /* CoreGraphics.framework */,
@@ -252,6 +258,7 @@
 				AB7C93E01473F9EC008F46E5 /* BeersView.xib */,
 				AB7C93B61473F6B9008F46E5 /* MainWindow.xib */,
 				AB7C93F814741432008F46E5 /* URLs.plist */,
+				AB94BCC014769B1C00CFF3EF /* TDP.xcdatamodeld */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -392,6 +399,7 @@
 				AB7C94501474196C008F46E5 /* PlistHelper.m in Sources */,
 				AB7C945C147433F4008F46E5 /* EventDetailsViewController.m in Sources */,
 				AB49368F1475705900EFEA96 /* ImageSliderViewController.m in Sources */,
+				AB94BCC214769B1D00CFF3EF /* TDP.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +439,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -446,6 +455,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -500,6 +510,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AB94BCC014769B1C00CFF3EF /* TDP.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AB94BCC114769B1D00CFF3EF /* TDP.xcdatamodel */,
+			);
+			currentVersion = AB94BCC114769B1D00CFF3EF /* TDP.xcdatamodel */;
+			path = TDP.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AB7C93971473F6B9008F46E5 /* Project object */;
 }
