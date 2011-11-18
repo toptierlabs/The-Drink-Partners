@@ -15,7 +15,6 @@
 @synthesize views, currentPage;
 
 
-
 //Events
 -(void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     int page = scrollView.contentOffset.x / scrollView.frame.size.width;
@@ -50,6 +49,10 @@
 - (void)dealloc
 {
     [super dealloc];
+    [views release];
+    [pageControl release];
+    [scroller release];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,6 +79,8 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    self.pageControl = nil;
+    self.scroller = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

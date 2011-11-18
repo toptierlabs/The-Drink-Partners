@@ -17,7 +17,6 @@
 @synthesize images, imagesBig;
 @synthesize text, textView;
 @synthesize image1, image2, image3, image4, image5;
-@synthesize lastImagesSize;
 @synthesize imageSliderController;
 //@synthesize scrollView;
 
@@ -53,6 +52,13 @@
     [image3 release];
     [image4 release];
     [image5 release];
+    
+    [images release];
+    [imagesBig release];
+    [text release];
+    
+    [imageSliderController release];;
+    
     
     [super dealloc];
 }
@@ -151,18 +157,16 @@
                     break;
                     
             }
-            self.lastImagesSize = i;
+            
             [newImage release];
         }
-        else
-            break;
+        
         
         NSString *imageBigUrl = [imagesBig objectAtIndex:(i-1)];
         NSString *urlBigString = [[NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], imageBigUrl] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]; 
         NSData* imageBigData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:urlBigString]];  
         UIImage *newBigImage = [[UIImage alloc] initWithData:imageBigData];
         [imageList addObject:newBigImage];
-        
         i++;
     }
     self.imageSliderController.views = imageList;
@@ -205,6 +209,7 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    self.textView = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

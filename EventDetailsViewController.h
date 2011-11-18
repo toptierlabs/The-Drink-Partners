@@ -21,7 +21,6 @@
     UIButton *image3;
     UIButton *image4;
     UIButton *image5;
-    NSInteger lastImagesSize;
     
     ImageSliderViewController *imageSliderController;
     
@@ -37,7 +36,6 @@
 @property (nonatomic, retain) UIButton *image3;
 @property (nonatomic, retain) UIButton *image4;
 @property (nonatomic, retain) UIButton *image5;
-@property (nonatomic) NSInteger lastImagesSize;
 @property (nonatomic, retain)  ImageSliderViewController *imageSliderController;
 
 //@property (nonatomic, retain) UIScrollView *scrollView;
