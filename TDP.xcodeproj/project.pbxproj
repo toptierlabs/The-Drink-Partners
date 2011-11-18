@@ -20,6 +20,8 @@
 		9BB94CE41474237A00D22845 /* topAndBottomRowSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB94CD71474237A00D22845 /* topAndBottomRowSelected.png */; };
 		9BB94CE51474237A00D22845 /* topRow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB94CD81474237A00D22845 /* topRow.png */; };
 		9BB94CE61474237A00D22845 /* topRowSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB94CD91474237A00D22845 /* topRowSelected.png */; };
+		9BBA4B0A14769642006575D3 /* BeersDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBA4B0914769642006575D3 /* BeersDetailsViewController.m */; };
+		9BBA4B0C14769649006575D3 /* BeersDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BBA4B0B14769649006575D3 /* BeersDetailsView.xib */; };
 		AB49368F1475705900EFEA96 /* ImageSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49368D1475705900EFEA96 /* ImageSliderViewController.m */; };
 		AB4936901475705900EFEA96 /* ImageSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB49368E1475705900EFEA96 /* ImageSliderView.xib */; };
 		AB7C93A51473F6B9008F46E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7C93A41473F6B9008F46E5 /* UIKit.framework */; };
@@ -74,6 +76,9 @@
 		9BB94CD71474237A00D22845 /* topAndBottomRowSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topAndBottomRowSelected.png; sourceTree = "<group>"; };
 		9BB94CD81474237A00D22845 /* topRow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topRow.png; sourceTree = "<group>"; };
 		9BB94CD91474237A00D22845 /* topRowSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topRowSelected.png; sourceTree = "<group>"; };
+		9BBA4B071476963A006575D3 /* BeersDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeersDetailsViewController.h; sourceTree = "<group>"; };
+		9BBA4B0914769642006575D3 /* BeersDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeersDetailsViewController.m; sourceTree = "<group>"; };
+		9BBA4B0B14769649006575D3 /* BeersDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BeersDetailsView.xib; path = TDP/BeersDetailsView.xib; sourceTree = "<group>"; };
 		AB49368C1475705900EFEA96 /* ImageSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageSliderViewController.h; sourceTree = "<group>"; };
 		AB49368D1475705900EFEA96 /* ImageSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageSliderViewController.m; sourceTree = "<group>"; };
 		AB49368E1475705900EFEA96 /* ImageSliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageSliderView.xib; path = TDP/ImageSliderView.xib; sourceTree = "<group>"; };
@@ -208,6 +213,8 @@
 		AB7C93AA1473F6B9008F46E5 /* TDP */ = {
 			isa = PBXGroup;
 			children = (
+				9BBA4B071476963A006575D3 /* BeersDetailsViewController.h */,
+				9BBA4B0914769642006575D3 /* BeersDetailsViewController.m */,
 				AB7C93FA14741525008F46E5 /* JsonParser */,
 				AB7C93B31473F6B9008F46E5 /* TDPAppDelegate.h */,
 				AB7C93B41473F6B9008F46E5 /* TDPAppDelegate.m */,
@@ -253,6 +260,7 @@
 				AB7C93EF1473FA40008F46E5 /* BuyNowView.xib */,
 				AB7C93EA1473FA20008F46E5 /* EventsView.xib */,
 				AB7C945B147433F4008F46E5 /* EventDetailsView.xib */,
+				9BBA4B0B14769649006575D3 /* BeersDetailsView.xib */,
 				AB49368E1475705900EFEA96 /* ImageSliderView.xib */,
 				AB7C93E51473FA03008F46E5 /* NewsView.xib */,
 				AB7C93E01473F9EC008F46E5 /* BeersView.xib */,
@@ -366,6 +374,7 @@
 				AB7C93F914741432008F46E5 /* URLs.plist in Resources */,
 				AB7C945D147433F4008F46E5 /* EventDetailsView.xib in Resources */,
 				AB4936901475705900EFEA96 /* ImageSliderView.xib in Resources */,
+				9BBA4B0C14769649006575D3 /* BeersDetailsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +409,7 @@
 				AB7C945C147433F4008F46E5 /* EventDetailsViewController.m in Sources */,
 				AB49368F1475705900EFEA96 /* ImageSliderViewController.m in Sources */,
 				AB94BCC214769B1D00CFF3EF /* TDP.xcdatamodeld in Sources */,
+				9BBA4B0A14769642006575D3 /* BeersDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

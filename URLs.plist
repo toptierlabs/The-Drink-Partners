@@ -6,5 +6,7 @@
 	<string>http://thedrinkingpartners.com/appjson.php?appkey=56c47513c5b71d72e33c25059a8782a2&amp;g=e</string>
 	<key>Base URL</key>
 	<string>http://thedrinkingpartners.com/</string>
+	<key>Beers URL</key>
+	<string>http://thedrinkingpartners.com/appjson.php?appkey=56c47513c5b71d72e33c25059a8782a2&amp;g=b</string>
 </dict>
 </plist>
