@@ -7,13 +7,21 @@
 //
 
 #import "BeersViewController.h"
+#import "SBJson.h"
+#import "TDPAppDelegate.h"
+#import "PlistHelper.h"
+#import "BeersDetailsViewController.h"
 
 
 @implementation BeersViewController
 
 @synthesize tableView;
 @synthesize imageView;
+@synthesize dicBeers;
+@synthesize keys;
+@synthesize beersDetailsController;
 
+NSMutableArray *listOfBeers;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,6 +34,7 @@
 
 - (void)dealloc
 {
+    [listOfBeers release];
     [super dealloc];
 }
 
@@ -44,8 +53,57 @@
 
 #pragma mark - View lifecycle
 
+NSInteger sort2(id a, id b, void* p) {
+    return  [b compare:a options:NSNumericSearch];
+}
+
 - (void)viewDidLoad
 {
+    BeersDetailsViewController *auxBeerDetails = [[BeersDetailsViewController alloc] initWithNibName:@"BeersDetailsView" bundle:nil];
+    self.beersDetailsController = auxBeerDetails;
+    
+    listOfBeers = [[NSMutableArray alloc] init];
+    NSString *beersJson =  [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:[PlistHelper readValue:@"Beers URL"]]];
+    if ([beersJson length] == 0) {
+        [beersJson release];
+        return;
+    }
+    
+    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    NSDictionary *dicBeersTypesAux = [[parser objectWithString:beersJson error:nil] copy]; 
+    
+    
+    NSArray *immutableKeys = [dicBeersTypesAux allKeys];
+  //  NSMutableArray *mutableKeys = [[NSMutableArray alloc] initWithArray:immutableKeys];
+        
+  //  NSArray *beerTypekeysBuffer = [mutableKeys sortedArrayUsingFunction:&sort context:nil];
+    
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    
+    for (NSString *key in immutableKeys) {
+        
+        NSDictionary *beersAux = [[dicBeersTypesAux objectForKey:key] objectForKey:@"beers"];
+        
+        [dict addEntriesFromDictionary:beersAux];
+    }
+    
+    NSArray *beersImmutableKeys = [dict allKeys];
+    NSMutableArray *beersMutableKeys = [[NSMutableArray alloc] initWithArray:beersImmutableKeys];
+    NSArray *beersKeysBuffer = [beersMutableKeys sortedArrayUsingFunction:&sort2 context:nil];
+
+    self.keys = beersKeysBuffer;
+    
+    NSDictionary *dicBeersAux = [[NSDictionary alloc] initWithDictionary:dict];
+    self.dicBeers = dicBeersAux ;
+    
+    [dicBeersAux release];
+    [dicBeersTypesAux release];
+
+    [beersMutableKeys release];
+    [parser release];
+  //  [mutableKeys release];
+    
+
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     //
@@ -96,7 +154,7 @@
 //
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return 30;
+	return [dicBeers count];
 }
 
 //
@@ -202,9 +260,12 @@
 		topLabel = (UILabel *)[cell viewWithTag:TOP_LABEL_TAG];
 		bottomLabel = (UILabel *)[cell viewWithTag:BOTTOM_LABEL_TAG];
 	}
+    
+    NSDictionary *beer = [dicBeers objectForKey: [keys objectAtIndex:indexPath.row]];
 	
-	topLabel.text = [NSString stringWithFormat:@"Title at row %ld.", [indexPath row]];
-	bottomLabel.text = [NSString stringWithFormat:@"Size: 330ml\nAbv: 2323\nS$140 (24 * S$3.45)", [indexPath row]];
+	topLabel.text = [beer objectForKey:@"name"];
+    
+	bottomLabel.text = [NSString stringWithFormat:@"Size: %@ml\nAbv: %@\nS$ %@",[beer objectForKey:@"ml"],[beer objectForKey:@"abv"],[beer objectForKey:@"retailprice"] ];
 	
 	//
 	// Set the background and selected background images for the text.
@@ -243,22 +304,33 @@
 	// Here I set an image based on the row. This is just to have something
 	// colorful to show on each row.
 	//
-	if ((row % 3) == 0)
-	{
-		cell.image = [UIImage imageNamed:@"imageA.png"];
-	}
-	else if ((row % 3) == 1)
-	{
-		cell.image = [UIImage imageNamed:@"imageB.png"];
-	}
-	else
-	{
-		cell.image = [UIImage imageNamed:@"imageC.png"];
-	}
+    
+    NSArray *images = [beer objectForKey:@"images"];
+	
+    NSString *urlString = [NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], [images objectAtIndex:0]]; 
 
+    
+    //NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:urlString]];  
+    
+    cell.image =[UIImage imageNamed:@"imageA.png"];   //[[UIImage alloc] initWithData:imageData]; 
+	
 	//cell.text = [NSString stringWithFormat:@"Cell at row %ld.", [indexPath row]];
 	
 	return cell;
+}
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSDictionary *beer = [dicBeers objectForKey: [keys objectAtIndex:indexPath.row]];
+    self.beersDetailsController.text = [beer objectForKey:@"writeup"]; 
+    
+    NSLog(@"%@",self.beersDetailsController.text);
+    
+    TDPAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    [delegate.navBeersController pushViewController:self.beersDetailsController animated:YES];
+    [self.beersDetailsController resetInfo];
+    
 }
 
 
