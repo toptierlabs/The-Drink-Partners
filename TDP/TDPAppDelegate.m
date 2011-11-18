@@ -46,6 +46,9 @@
     buyNowViewController = [[BuyNowViewController alloc] init];
     aboutViewController = [[AboutViewController alloc] init];
     
+    //Esto Hay que sacar , es para pruebas
+    aboutViewController.managedObjectContext = self.managedObjectContext;
+    
     navBeersController = [[[NavController alloc] initWithRootViewController:beersViewController] autorelease];
     navEventsController = [[[NavController alloc] initWithRootViewController:eventsViewController] autorelease];
     navNewsController = [[[NavController alloc] initWithRootViewController:newsViewController] autorelease];
@@ -60,6 +63,52 @@
     return YES;
 }
 
+//Core data
+//Explicitly write Core Data accessors
+- (NSManagedObjectContext *) managedObjectContext {
+    if (managedObjectContext != nil) {
+        return managedObjectContext;
+    }
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    if (coordinator != nil) {
+        managedObjectContext = [[NSManagedObjectContext alloc] init];
+        [managedObjectContext setPersistentStoreCoordinator: coordinator];
+    }
+    
+    return managedObjectContext;
+}
+
+- (NSManagedObjectModel *)managedObjectModel {
+    if (managedObjectModel != nil) {
+        return managedObjectModel;
+    }
+    managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];
+    
+    return managedObjectModel;
+}
+
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
+    if (persistentStoreCoordinator != nil) {
+        return persistentStoreCoordinator;
+    }
+    NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory]
+                                               stringByAppendingPathComponent: @"<Project Name>.sqlite"]];
+    NSError *error = nil;
+    persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc]
+                                  initWithManagedObjectModel:[self managedObjectModel]];
+    if(![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                                 configuration:nil URL:storeUrl options:nil error:&error]) {
+        /*Error for store creation should be handled in here*/
+    }
+    
+    return persistentStoreCoordinator;
+}
+
+- (NSString *)applicationDocumentsDirectory {
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+}
+
+//End core data
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -104,6 +153,10 @@
 {
     [_window release];
     [_tabBarController release];
+    [managedObjectContext release];
+    [managedObjectModel release];
+    [persistentStoreCoordinator release];
+    
     [super dealloc];
 }
 

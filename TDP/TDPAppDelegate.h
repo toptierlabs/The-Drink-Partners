@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @class NavController;
 
@@ -17,6 +18,10 @@
 @class AboutViewController;
 
 @interface TDPAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
+    NSManagedObjectModel *managedObjectModel;
+    NSManagedObjectContext *managedObjectContext;
+    NSPersistentStoreCoordinator *persistentStoreCoordinator;
+    
     UITabBarController *tabBarController;
     NavController *navBeersController;
     NavController *navEventsController;
@@ -46,5 +51,13 @@
 @property (nonatomic, retain) IBOutlet NewsViewController *newsViewController;
 @property (nonatomic, retain) IBOutlet BuyNowViewController *buyNowViewController;
 @property (nonatomic, retain) IBOutlet AboutViewController *aboutViewController;
+
+
+@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+- (NSString *)applicationDocumentsDirectory;
+
 
 @end
