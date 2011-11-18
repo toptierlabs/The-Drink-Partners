@@ -1,2 +1,3 @@
 TDP.xcodeproj
-TDP.xcodeproj/project.xcworkspace/xcuserdata/toptier.xcuserdatad/UserInterfaceState.xcuserstate
+TDP.xcodeproj/*
+xcuserdata
