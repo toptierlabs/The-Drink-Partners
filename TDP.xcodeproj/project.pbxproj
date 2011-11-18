@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B9E96141475A8060044E11C /* BeersDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9E96121475A8060044E11C /* BeersDetailsViewController.m */; };
+		9B9E96151475A8060044E11C /* BeersDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9E96131475A8060044E11C /* BeersDetailsView.xib */; };
 		9BB94CDA1474237A00D22845 /* bottomRow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB94CCD1474237A00D22845 /* bottomRow.png */; };
 		9BB94CDB1474237A00D22845 /* bottomRowSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB94CCE1474237A00D22845 /* bottomRowSelected.png */; };
 		9BB94CDC1474237A00D22845 /* gradientBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB94CCF1474237A00D22845 /* gradientBackground.png */; };
@@ -57,6 +59,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B9E96111475A8060044E11C /* BeersDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeersDetailsViewController.h; sourceTree = "<group>"; };
+		9B9E96121475A8060044E11C /* BeersDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeersDetailsViewController.m; sourceTree = "<group>"; };
+		9B9E96131475A8060044E11C /* BeersDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BeersDetailsView.xib; path = TDP/BeersDetailsView.xib; sourceTree = "<group>"; };
 		9BB94CCD1474237A00D22845 /* bottomRow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottomRow.png; sourceTree = "<group>"; };
 		9BB94CCE1474237A00D22845 /* bottomRowSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottomRowSelected.png; sourceTree = "<group>"; };
 		9BB94CCF1474237A00D22845 /* gradientBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradientBackground.png; sourceTree = "<group>"; };
@@ -217,6 +222,8 @@
 				AB7C93AB1473F6B9008F46E5 /* Supporting Files */,
 				AB7C944E1474196C008F46E5 /* PlistHelper.h */,
 				AB7C944F1474196C008F46E5 /* PlistHelper.m */,
+				9B9E96111475A8060044E11C /* BeersDetailsViewController.h */,
+				9B9E96121475A8060044E11C /* BeersDetailsViewController.m */,
 			);
 			path = TDP;
 			sourceTree = "<group>";
@@ -240,6 +247,7 @@
 				AB7C93EF1473FA40008F46E5 /* BuyNowView.xib */,
 				AB7C93EA1473FA20008F46E5 /* EventsView.xib */,
 				AB7C945B147433F4008F46E5 /* EventDetailsView.xib */,
+				9B9E96131475A8060044E11C /* BeersDetailsView.xib */,
 				AB7C93E51473FA03008F46E5 /* NewsView.xib */,
 				AB7C93E01473F9EC008F46E5 /* BeersView.xib */,
 				AB7C93B61473F6B9008F46E5 /* MainWindow.xib */,
@@ -348,8 +356,9 @@
 				9BB94CE41474237A00D22845 /* topAndBottomRowSelected.png in Resources */,
 				9BB94CE51474237A00D22845 /* topRow.png in Resources */,
 				9BB94CE61474237A00D22845 /* topRowSelected.png in Resources */,
-                AB7C93F914741432008F46E5 /* URLs.plist in Resources */,
-                AB7C945D147433F4008F46E5 /* EventDetailsView.xib in Resources */,
+				AB7C93F914741432008F46E5 /* URLs.plist in Resources */,
+				AB7C945D147433F4008F46E5 /* EventDetailsView.xib in Resources */,
+				9B9E96151475A8060044E11C /* BeersDetailsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +391,7 @@
 				AB7C944514741822008F46E5 /* SBJsonWriter.m in Sources */,
 				AB7C94501474196C008F46E5 /* PlistHelper.m in Sources */,
 				AB7C945C147433F4008F46E5 /* EventDetailsViewController.m in Sources */,
+				9B9E96141475A8060044E11C /* BeersDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

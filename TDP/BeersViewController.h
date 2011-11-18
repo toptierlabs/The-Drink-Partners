@@ -8,13 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
+@class BeersDetailsViewController;
 
 @interface BeersViewController : UIViewController {
     UITableView *tableView;
     UIImageView *imageView;
+    
+    NSDictionary *dicBeers;
+    NSArray *keys;
+    
+    BeersDetailsViewController *beersDetailsController;
+
 }
+
+@property(nonatomic, retain) NSDictionary *dicBeers;
+@property(nonatomic, retain) NSArray *keys;
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
+
+@property (nonatomic, retain) IBOutlet BeersDetailsViewController *beersDetailsController;
 
 @end
