@@ -10,6 +10,7 @@
 
 @interface BeersDetailsViewController : UIViewController{
     NSString *text;
+    NSString *imageURL;
     
     IBOutlet UITextView *textView;
     IBOutlet UIImageView *image;
@@ -19,6 +20,8 @@
     
 }
 @property (nonatomic, retain) NSString *text;
+@property (nonatomic, retain) NSString *imageURL;
+
 @property (nonatomic, retain) UITextView *textView;
 @property (nonatomic, retain) UIImageView *image;
 @property (nonatomic, retain) UILabel *label1;

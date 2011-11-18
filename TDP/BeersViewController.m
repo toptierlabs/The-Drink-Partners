@@ -325,7 +325,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *beer = [dicBeers objectForKey: [keys objectAtIndex:indexPath.row]];
     self.beersDetailsController.text = [beer objectForKey:@"writeup"]; 
     
-    NSLog(@"%@",self.beersDetailsController.text);
+    NSArray *images = [beer objectForKey:@"images"];
+    self.beersDetailsController.imageURL = [NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], [images objectAtIndex:0]];
     
     TDPAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     [delegate.navBeersController pushViewController:self.beersDetailsController animated:YES];

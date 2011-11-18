@@ -207,8 +207,6 @@
 		AB7C93AA1473F6B9008F46E5 /* TDP */ = {
 			isa = PBXGroup;
 			children = (
-				9BBA4B071476963A006575D3 /* BeersDetailsViewController.h */,
-				9BBA4B0914769642006575D3 /* BeersDetailsViewController.m */,
 				AB7C93FA14741525008F46E5 /* JsonParser */,
 				AB7C93B31473F6B9008F46E5 /* TDPAppDelegate.h */,
 				AB7C93B41473F6B9008F46E5 /* TDPAppDelegate.m */,
@@ -216,6 +214,8 @@
 				AB7C93DB1473F954008F46E5 /* NavController.m */,
 				AB7C93DE1473F9EC008F46E5 /* BeersViewController.h */,
 				AB7C93DF1473F9EC008F46E5 /* BeersViewController.m */,
+				9BBA4B071476963A006575D3 /* BeersDetailsViewController.h */,
+				9BBA4B0914769642006575D3 /* BeersDetailsViewController.m */,
 				AB7C93E81473FA20008F46E5 /* EventsViewController.h */,
 				AB7C93E91473FA20008F46E5 /* EventsViewController.m */,
 				AB7C9459147433F4008F46E5 /* EventDetailsViewController.h */,

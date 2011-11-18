@@ -10,7 +10,7 @@
 
 @implementation BeersDetailsViewController
 
-@synthesize textView,image,label1,label2,label3,text;
+@synthesize textView,image,label1,label2,label3,text,imageURL;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -24,6 +24,9 @@
 
 -(void) resetInfo{
     [textView setText:text];
+
+    NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:self.imageURL]];  
+    self.image.image = [[UIImage alloc] initWithData:imageData]; 
 }
 
 - (void)didReceiveMemoryWarning
