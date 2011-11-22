@@ -8,5 +8,7 @@
 	<string>http://thedrinkingpartners.com/</string>
 	<key>Beers URL</key>
 	<string>http://thedrinkingpartners.com/appjson.php?appkey=56c47513c5b71d72e33c25059a8782a2&amp;g=b</string>
+	<key>News URL</key>
+	<string>http://thedrinkingpartners.com/appjson.php?appkey=56c47513c5b71d72e33c25059a8782a2&amp;g=n</string>
 </dict>
 </plist>

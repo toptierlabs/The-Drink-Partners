@@ -105,7 +105,7 @@ NSInteger sort3(id a, id b, void* p) {
 	// in interface builder instead).
 	//
 	tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-	tableView.rowHeight = 100;
+	tableView.rowHeight = 70;
 	tableView.backgroundColor = [UIColor clearColor];
 	imageView.image = [UIImage imageNamed:@"gradientBackground.png"];
 	
@@ -191,7 +191,7 @@ NSInteger sort3(id a, id b, void* p) {
               initWithFrame:
               CGRectMake(
                          cell.indentationWidth,
-                         0.3 * (aTableView.rowHeight - 2 * LABEL_HEIGHT),
+                         25,
                          aTableView.bounds.size.width,LABEL_HEIGHT)]
              autorelease];
             [cell.contentView addSubview:topLabel];
@@ -203,7 +203,7 @@ NSInteger sort3(id a, id b, void* p) {
             topLabel.backgroundColor = [UIColor clearColor];
             topLabel.textColor = [UIColor colorWithRed:0.25 green:0.0 blue:0.0 alpha:1.0];
             topLabel.highlightedTextColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.9 alpha:1.0];
-            topLabel.font = [UIFont systemFontOfSize:[UIFont labelFontSize]];
+            topLabel.font = [UIFont systemFontOfSize:[UIFont labelFontSize] + 3];
             
                     
             //
