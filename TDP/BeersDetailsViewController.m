@@ -66,6 +66,9 @@
         
         [beer setValue:quantity forKey:@"quantity"];
         
+        [beer setValue:abv forKey:@"abv"];
+        [beer setValue:size forKey:@"size"];
+        
         error = nil;
         if (![context save:&error]) {
             NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
@@ -93,6 +96,8 @@
             NSLog(@"Name: %@", [info valueForKey:@"name"]);
             NSLog(@"Price: %@", [info valueForKey:@"priceString"]);
             NSLog(@"Price: %@", [info valueForKey:@"priceValue"]);
+             NSLog(@"abv: %@", [info valueForKey:@"abv"]);
+             NSLog(@"size: %@", [info valueForKey:@"size"]);
             NSLog(@"Quantity: %@", [info valueForKey:@"quantity"]);
         }
     }    
@@ -134,29 +139,8 @@
             NSLog(@"Hay un erro al hacer fetch de beer para update");
         }
         
-        if (!beer) {
-            NSLog(@"haciendo insert");
-            //Nothing there to update
-            [beer setValue:beerName forKey:@"name"];
-            [beer setValue:price forKey:@"priceString"];
-            
-            
-            
-            NSNumber * priceValue = [f numberFromString: price];
-            
-            [beer setValue:priceValue forKey:@"priceValue"];
-            
-            NSLog(@"quantityText.text = %@",quantityText.text);
-            
-            [beer setValue:quantity forKey:@"quantity"];
-            
-            [f release];
-            NSError *error;
-            if (![context save:&error]) {
-                NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-            }
-        }
-        else{
+        if (beer) {
+
             NSLog(@"haciendo update");
             //Update the object
             [beer setValue:quantity forKey:@"quantity"];

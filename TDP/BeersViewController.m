@@ -21,7 +21,6 @@
 @synthesize keys;
 @synthesize beersDetailsController;
 
-NSMutableArray *listOfBeers;
 NSManagedObjectContext * managedObjectContext;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -37,10 +36,12 @@ NSManagedObjectContext * managedObjectContext;
     managedObjectContext = context;
 }
 
+-(void) resetInfo{
+    [tableView reloadData];
+}
 
 - (void)dealloc
 {
-    [listOfBeers release];
     [super dealloc];
 }
 
@@ -65,56 +66,54 @@ NSInteger sort2(id a, id b, void* p) {
 
 - (void)viewDidLoad
 {
-    
+    [super viewDidLoad];
     self.title = @"Beers";
     
     BeersDetailsViewController *auxBeerDetails = [[BeersDetailsViewController alloc] initWithNibName:@"BeersDetailsView" bundle:nil];
-    self.beersDetailsController = auxBeerDetails;
+    self.beersDetailsController = auxBeerDetails;    
     self.beersDetailsController.managedObjectContext = managedObjectContext;
+//    
+//    listOfBeers = [[NSMutableArray alloc] init];
+//    NSString *beersJson =  [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:[PlistHelper readValue:@"Beers URL"]]];
+//    if ([beersJson length] == 0) {
+//        [beersJson release];
+//        return;
+//    }
+//    
+//    SBJsonParser *parser = [[SBJsonParser alloc] init];
+//    NSDictionary *dicBeersTypesAux = [[parser objectWithString:beersJson error:nil] copy]; 
     
-    listOfBeers = [[NSMutableArray alloc] init];
-    NSString *beersJson =  [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:[PlistHelper readValue:@"Beers URL"]]];
-    if ([beersJson length] == 0) {
-        [beersJson release];
-        return;
-    }
-    
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
-    NSDictionary *dicBeersTypesAux = [[parser objectWithString:beersJson error:nil] copy]; 
-    
-    
-    NSArray *immutableKeys = [dicBeersTypesAux allKeys];
-  //  NSMutableArray *mutableKeys = [[NSMutableArray alloc] initWithArray:immutableKeys];
-        
-  //  NSArray *beerTypekeysBuffer = [mutableKeys sortedArrayUsingFunction:&sort context:nil];
-    
-    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-    
-    for (NSString *key in immutableKeys) {
-        
-        NSDictionary *beersAux = [[dicBeersTypesAux objectForKey:key] objectForKey:@"beers"];
-        
-        [dict addEntriesFromDictionary:beersAux];
-    }
-    
-    NSArray *beersImmutableKeys = [dict allKeys];
-    NSMutableArray *beersMutableKeys = [[NSMutableArray alloc] initWithArray:beersImmutableKeys];
-    NSArray *beersKeysBuffer = [beersMutableKeys sortedArrayUsingFunction:&sort2 context:nil];
-
-    self.keys = beersKeysBuffer;
-    
-    NSDictionary *dicBeersAux = [[NSDictionary alloc] initWithDictionary:dict];
-    self.dicBeers = dicBeersAux ;
-    
-    [dicBeersAux release];
-    [dicBeersTypesAux release];
-
-    [beersMutableKeys release];
-    [parser release];
+//    
+//    NSArray *immutableKeys = [dicBeersTypesAux allKeys];
+//    
+//    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+//    
+//    for (NSString *key in immutableKeys) {
+//        
+//        NSDictionary *beersAux = [[dicBeersTypesAux objectForKey:key] objectForKey:@"beers"];
+//        
+//        [dict addEntriesFromDictionary:beersAux];
+//    }
+//    
+//    NSArray *beersImmutableKeys = [dict allKeys];
+//    NSMutableArray *beersMutableKeys = [[NSMutableArray alloc] initWithArray:beersImmutableKeys];
+//    NSArray *beersKeysBuffer = [beersMutableKeys sortedArrayUsingFunction:&sort2 context:nil];
+//
+//    self.keys = beersKeysBuffer;
+//    
+//    NSDictionary *dicBeersAux = [[NSDictionary alloc] initWithDictionary:dict];
+//    self.dicBeers = dicBeersAux ;
+//    
+//    [dicBeersAux release];
+//    [dicBeersTypesAux release];
+//
+//    [beersMutableKeys release];
+//    [parser release];
   //  [mutableKeys release];
     
-
-    [super viewDidLoad];
+    
+   
+    
     // Do any additional setup after loading the view from its nib.
     //
 	// Change the properties of the imageView and tableView (these could be set

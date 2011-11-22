@@ -11,7 +11,7 @@
 
 @class NavController;
 
-@class BeersViewController;
+@class BeersTypesViewController;
 @class EventsViewController;
 @class NewsViewController;
 @class BuyNowViewController;
@@ -31,13 +31,12 @@
     NavController *navBuyNowController;
 
         
-    BeersViewController *beersViewController;
+    BeersTypesViewController *beersTypesViewController;
     EventsViewController *eventsViewController;
     NewsViewController *newsViewController;
     BuyNowViewController *buyNowViewController;
     AboutViewController *aboutViewController;
     
-    BeersDetailsViewController *beersDetailsViewController;
     
 }
 
@@ -50,13 +49,11 @@
 @property (nonatomic, retain) NavController *navBuyNowController;
 
 
-@property (nonatomic, retain) IBOutlet BeersViewController *beersViewController;
+@property (nonatomic, retain) IBOutlet BeersTypesViewController *beersTypesViewController;
 @property (nonatomic, retain) IBOutlet EventsViewController *eventsViewController;
 @property (nonatomic, retain) IBOutlet NewsViewController *newsViewController;
 @property (nonatomic, retain) IBOutlet BuyNowViewController *buyNowViewController;
 @property (nonatomic, retain) IBOutlet AboutViewController *aboutViewController;
-
-@property (nonatomic, retain) IBOutlet BeersDetailsViewController *beersDetailsViewController;
 
 
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
