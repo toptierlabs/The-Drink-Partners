@@ -404,6 +404,12 @@
 				9BB9EA15147ADC3A004EAE1B /* greenplus.png in Resources */,
 				9BB9EA19147ADFDC004EAE1B /* redminus.png in Resources */,
 				9BBDCA28147BD13800829FA0 /* BeersTypesView.xib in Resources */,
+ABB6EDDD147C0EAF0014915C /* beer-mug.png in Resources */,
+ABB6EDDF147C0F590014915C /* calendar.png in Resources */,
+ABB6EDE1147C0FB50014915C /* envelope.png in Resources */,
+ABB6EDE3147C105F0014915C /* shopping-cart.png in Resources */,
+ABB6EDE7147C12F90014915C /* news.png in Resources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +446,7 @@
 				AB94BCC214769B1D00CFF3EF /* TDP.xcdatamodeld in Sources */,
 				9BBA4B0A14769642006575D3 /* BeersDetailsViewController.m in Sources */,
 				9BBDCA27147BD13800829FA0 /* BeersTypesViewController.m in Sources */,
+                ABB6EDDA147BEA700014915C /* Beer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
