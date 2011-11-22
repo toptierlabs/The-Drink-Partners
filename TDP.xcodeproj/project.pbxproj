@@ -24,6 +24,8 @@
 		9BB9EA19147ADFDC004EAE1B /* redminus.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9EA18147ADFDC004EAE1B /* redminus.png */; };
 		9BBA4B0A14769642006575D3 /* BeersDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBA4B0914769642006575D3 /* BeersDetailsViewController.m */; };
 		9BBA4B0C14769649006575D3 /* BeersDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BBA4B0B14769649006575D3 /* BeersDetailsView.xib */; };
+		9BBDCA27147BD13800829FA0 /* BeersTypesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBDCA25147BD13800829FA0 /* BeersTypesViewController.m */; };
+		9BBDCA28147BD13800829FA0 /* BeersTypesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BBDCA26147BD13800829FA0 /* BeersTypesView.xib */; };
 		AB49368F1475705900EFEA96 /* ImageSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49368D1475705900EFEA96 /* ImageSliderViewController.m */; };
 		AB4936901475705900EFEA96 /* ImageSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB49368E1475705900EFEA96 /* ImageSliderView.xib */; };
 		AB7C93A51473F6B9008F46E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7C93A41473F6B9008F46E5 /* UIKit.framework */; };
@@ -83,6 +85,9 @@
 		9BBA4B071476963A006575D3 /* BeersDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeersDetailsViewController.h; sourceTree = "<group>"; };
 		9BBA4B0914769642006575D3 /* BeersDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeersDetailsViewController.m; sourceTree = "<group>"; };
 		9BBA4B0B14769649006575D3 /* BeersDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BeersDetailsView.xib; path = TDP/BeersDetailsView.xib; sourceTree = "<group>"; };
+		9BBDCA24147BD13800829FA0 /* BeersTypesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeersTypesViewController.h; sourceTree = "<group>"; };
+		9BBDCA25147BD13800829FA0 /* BeersTypesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeersTypesViewController.m; sourceTree = "<group>"; };
+		9BBDCA26147BD13800829FA0 /* BeersTypesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BeersTypesView.xib; path = TDP/BeersTypesView.xib; sourceTree = "<group>"; };
 		AB49368C1475705900EFEA96 /* ImageSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageSliderViewController.h; sourceTree = "<group>"; };
 		AB49368D1475705900EFEA96 /* ImageSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageSliderViewController.m; sourceTree = "<group>"; };
 		AB49368E1475705900EFEA96 /* ImageSliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageSliderView.xib; path = TDP/ImageSliderView.xib; sourceTree = "<group>"; };
@@ -224,6 +229,8 @@
 				AB7C93B41473F6B9008F46E5 /* TDPAppDelegate.m */,
 				AB7C93DA1473F954008F46E5 /* NavController.h */,
 				AB7C93DB1473F954008F46E5 /* NavController.m */,
+				9BBDCA24147BD13800829FA0 /* BeersTypesViewController.h */,
+				9BBDCA25147BD13800829FA0 /* BeersTypesViewController.m */,
 				AB7C93DE1473F9EC008F46E5 /* BeersViewController.h */,
 				AB7C93DF1473F9EC008F46E5 /* BeersViewController.m */,
 				9BBA4B071476963A006575D3 /* BeersDetailsViewController.h */,
@@ -267,6 +274,7 @@
 				AB7C93EA1473FA20008F46E5 /* EventsView.xib */,
 				AB7C945B147433F4008F46E5 /* EventDetailsView.xib */,
 				9BBA4B0B14769649006575D3 /* BeersDetailsView.xib */,
+				9BBDCA26147BD13800829FA0 /* BeersTypesView.xib */,
 				AB49368E1475705900EFEA96 /* ImageSliderView.xib */,
 				AB7C93E51473FA03008F46E5 /* NewsView.xib */,
 				AB7C93E01473F9EC008F46E5 /* BeersView.xib */,
@@ -383,6 +391,7 @@
 				9BBA4B0C14769649006575D3 /* BeersDetailsView.xib in Resources */,
 				9BB9EA15147ADC3A004EAE1B /* greenplus.png in Resources */,
 				9BB9EA19147ADFDC004EAE1B /* redminus.png in Resources */,
+				9BBDCA28147BD13800829FA0 /* BeersTypesView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +427,7 @@
 				AB49368F1475705900EFEA96 /* ImageSliderViewController.m in Sources */,
 				AB94BCC214769B1D00CFF3EF /* TDP.xcdatamodeld in Sources */,
 				9BBA4B0A14769642006575D3 /* BeersDetailsViewController.m in Sources */,
+				9BBDCA27147BD13800829FA0 /* BeersTypesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

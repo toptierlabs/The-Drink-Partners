@@ -31,5 +31,6 @@
 @property (nonatomic, retain) IBOutlet BeersDetailsViewController *beersDetailsController;
 
 -(void) setCoreDataContext: (NSManagedObjectContext *) context;
+-(void) resetInfo;
 
 @end
