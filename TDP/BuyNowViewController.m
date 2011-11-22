@@ -8,13 +8,40 @@
 
 #import "BuyNowViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "Beer.h"
 
 @implementation BuyNowViewController
 
 @synthesize tableView, tableViewCell;
+@synthesize managedObjectContext,fetchedResultsController;
 @synthesize imageView;
+@synthesize beers;
+@synthesize emptyLabel;
+@synthesize totalLabel, totalPrice;
 
 // Table events
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+//    NSDictionary *beer = [dicBeers objectForKey: [keys objectAtIndex:indexPath.row]];
+//    self.beersDetailsController.text = [beer objectForKey:@"writeup"]; 
+//    
+//    NSArray *images = [beer objectForKey:@"images"];
+//    self.beersDetailsController.imageURL = [NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], [images objectAtIndex:0]];
+//    
+//    self.beersDetailsController.size = [NSString stringWithFormat:@"%@",[beer objectForKey:@"ml"]];
+//    self.beersDetailsController.abv = [NSString stringWithFormat:@"%@",[beer objectForKey:@"abv"]];
+//    self.beersDetailsController.price = [NSString stringWithFormat:@"%@",[beer objectForKey:@"retailprice"]];
+//    self.beersDetailsController.beerName = [NSString stringWithFormat:@"%@",[beer objectForKey:@"name"]];
+//    
+//    TDPAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+//    [delegate.navBeersController pushViewController:self.BuyNowViewController animated:YES];
+//    [self.beersDetailsController resetInfo];
+    
+}
+
+
 //
 // numberOfSectionsInTableView:
 //
@@ -32,7 +59,7 @@
 //
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return 2;
+	return [beers count];
 }
 
 
@@ -140,9 +167,11 @@
 		beerDetailsLabel = (UILabel *)[cell viewWithTag:BOTTOM_LABEL_TAG];
 	}
 	
-	beerTitleLabel.text = [NSString stringWithFormat:@"Title at row %ld.", [indexPath row]];
-	beerDetailsLabel.text = [NSString stringWithFormat:@"Size: 330ml\nAbv: 2323\nS$140 (24 * S$3.45)\nQuantity: 12", [indexPath row]];
-	
+    
+    Beer *beer = [beers objectAtIndex:[indexPath row]];
+	beerTitleLabel.text = [NSString stringWithFormat:@"%@", beer.name];
+	beerDetailsLabel.text = [NSString stringWithFormat:@"Size: %@ml\nAbv: %@\nS$%@\nQuantity: %@", beer.size, beer.abv, beer.priceString, beer.quantity];
+
 	//
 	// Set the background and selected background images for the text.
 	// Since we will round the corners at the top and bottom of sections, we
@@ -264,14 +293,14 @@
 	self.tableView.tableHeaderView = containerView;
     
 
-
+//    beers = [[NSMutableArray alloc] init];
     //
     // Create a background image view.
     //
     tableViewCell.backgroundView = [[[UIImageView alloc] init] autorelease];
     ((UIImageView *)tableViewCell.backgroundView).image = [UIImage imageNamed:@"topAndBottomRow.png"];
     
-    totalLabel.text = @"Total S$240";
+
     
 }
 
@@ -288,16 +317,74 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+
+-(void) reloadBeerList {
+    NSError *error = nil;
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+    
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription 
+                                   entityForName:@"Beer" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    self.beers = [context executeFetchRequest:fetchRequest error:&error];
+    
+    self.totalPrice = 0;
+    for (Beer *beer in self.beers)
+    {
+        self.totalPrice += [beer.priceValue floatValue] * [beer.quantity floatValue];
+    }
+    
+    self.totalLabel.text = [NSString stringWithFormat:@"Total S$%d", self.totalPrice];
+    [self.tableView reloadData];
+    
+    if ([self.beers count] == 0){
+        [emptyLabel setHidden:NO];
+    }
+    else
+        [emptyLabel setHidden:YES];
+    [fetchRequest release];
+    
+}
+
 - (void) viewWillAppear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
+    
+
+
+    [self reloadBeerList];
+
+    
 }
 
 - (void) viewWillDisappear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillDisappear:animated];
+}
+
+-(IBAction) emptyCart:(id) sender {
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSFetchRequest * allBeers = [[NSFetchRequest alloc] init];
+    [allBeers setEntity:[NSEntityDescription entityForName:@"Beer" inManagedObjectContext:context]];
+    [allBeers setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+     
+    NSError * error = nil;
+    NSArray * beerList = [context executeFetchRequest:allBeers error:&error];
+    [allBeers release];
+    //error handling goes here
+    for (NSManagedObject * beer in beerList) {
+       [context deleteObject:beer];
+    }
+    NSError *saveError = nil;
+    [context save:&saveError];
+    
+    [self reloadBeerList];
+    
+    [self.tableView reloadData];
 }
 
 @end

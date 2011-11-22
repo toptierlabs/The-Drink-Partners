@@ -59,6 +59,27 @@
     navNewsController = [[[NavController alloc] initWithRootViewController:newsViewController] autorelease];
     navBuyNowController = [[[NavController alloc] initWithRootViewController:buyNowViewController] autorelease];
     
+    navBeersController.title = @"Beers";
+    navEventsController.title = @"Events";
+    navNewsController.title = @"News";
+    navBuyNowController.title = @"Buy Now";
+    aboutViewController.title = @"About";
+    
+    
+//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 30)];
+//	[label setFont:[UIFont boldSystemFontOfSize:16.0]];
+//	[label setBackgroundColor:[UIColor clearColor]];
+//	[label setTextColor:[UIColor whiteColor]];
+//	[label setText:@"Beers"];
+//	[navBeersController.navigationBar.topItem setTitleView:label];
+//	[label release];
+    
+    navBeersController.tabBarItem.image = [[UIImage imageNamed:@"beer-mug.png"] autorelease];
+    navEventsController.tabBarItem.image = [[UIImage imageNamed:@"calendar.png"] autorelease];
+    navNewsController.tabBarItem.image = [[UIImage imageNamed:@"news.png"] autorelease];
+    navBuyNowController.tabBarItem.image = [[UIImage imageNamed:@"shopping-cart.png"] autorelease];
+    aboutViewController.tabBarItem.image = [[UIImage imageNamed:@"envelope.png"] autorelease];
+    
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:navBeersController, navEventsController, navNewsController, navBuyNowController, aboutViewController, nil];
     
     
