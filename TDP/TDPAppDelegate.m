@@ -74,6 +74,14 @@
 //	[navBeersController.navigationBar.topItem setTitleView:label];
 //	[label release];
     
+    
+    navBeersController.navigationBar.tintColor = [UIColor blackColor];
+    navEventsController.navigationBar.tintColor = [UIColor blackColor];
+    navNewsController.navigationBar.tintColor = [UIColor blackColor];
+    navBeersController.navigationBar.tintColor = [UIColor blackColor];
+    navBuyNowController.navigationBar.tintColor = [UIColor blackColor];
+    
+    
     navBeersController.tabBarItem.image = [[UIImage imageNamed:@"beer-mug.png"] autorelease];
     navEventsController.tabBarItem.image = [[UIImage imageNamed:@"calendar.png"] autorelease];
     navNewsController.tabBarItem.image = [[UIImage imageNamed:@"news.png"] autorelease];
