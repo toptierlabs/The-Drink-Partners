@@ -29,13 +29,13 @@
 @synthesize navBuyNowController;
 
 
-@synthesize beersViewController;
+@synthesize beersTypesViewController;
 @synthesize eventsViewController;
 @synthesize newsViewController;
 @synthesize buyNowViewController;
 @synthesize aboutViewController;
 
-@synthesize beersDetailsViewController;
+
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -44,16 +44,17 @@
     // Add the tab bar controller's current view as a subview of the window
     tabBarController = [[UITabBarController alloc] init];   
     
-    beersViewController = [[BeersViewController alloc] init];
+    
+    beersTypesViewController = [[BeersTypesViewController alloc] init];
     eventsViewController = [[EventsViewController alloc] init];
     newsViewController = [[NewsViewController alloc] init];
     buyNowViewController = [[BuyNowViewController alloc] init];
     aboutViewController = [[AboutViewController alloc] init];
     
-    //Esto Hay que sacar , es para pruebas
-    [beersViewController setCoreDataContext: self.managedObjectContext];
     
-    navBeersController = [[[NavController alloc] initWithRootViewController:beersViewController] autorelease];
+    [beersTypesViewController setCoreDataContext: self.managedObjectContext];
+    
+    navBeersController = [[[NavController alloc] initWithRootViewController:beersTypesViewController] autorelease];
     navEventsController = [[[NavController alloc] initWithRootViewController:eventsViewController] autorelease];
     navNewsController = [[[NavController alloc] initWithRootViewController:newsViewController] autorelease];
     navBuyNowController = [[[NavController alloc] initWithRootViewController:buyNowViewController] autorelease];

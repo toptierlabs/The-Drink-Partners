@@ -1,25 +1,24 @@
 //
-//  BeersViewController.h
+//  BeersTypesViewController.h
 //  TDP
 //
-//  Created by TopTier on 11/16/11.
+//  Created by fernando colman on 11/22/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-@class BeersDetailsViewController;
+@class BeersViewController;
 
-@interface BeersViewController : UIViewController {
+@interface BeersTypesViewController : UIViewController{
     UITableView *tableView;
     UIImageView *imageView;
     
     NSDictionary *dicBeers;
     NSArray *keys;
     
-    BeersDetailsViewController *beersDetailsController;
-
+    BeersViewController *beersViewController;
 }
 
 @property(nonatomic, retain) NSDictionary *dicBeers;
@@ -28,9 +27,7 @@
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
 
-@property (nonatomic, retain) IBOutlet BeersDetailsViewController *beersDetailsController;
+@property (nonatomic, retain) IBOutlet BeersViewController *beersViewController;
 
 -(void) setCoreDataContext: (NSManagedObjectContext *) context;
--(void) resetInfo;
-
 @end
