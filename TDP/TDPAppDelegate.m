@@ -53,6 +53,7 @@
     
     
     [beersTypesViewController setCoreDataContext: self.managedObjectContext];
+     buyNowViewController.managedObjectContext = self.managedObjectContext;
     
     navBeersController = [[[NavController alloc] initWithRootViewController:beersTypesViewController] autorelease];
     navEventsController = [[[NavController alloc] initWithRootViewController:eventsViewController] autorelease];
