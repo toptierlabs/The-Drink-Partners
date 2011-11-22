@@ -7,27 +7,50 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
-@interface BeersDetailsViewController : UIViewController{
+@interface BeersDetailsViewController : UIViewController <NSFetchedResultsControllerDelegate>{
     NSString *text;
     NSString *imageURL;
+    NSString *size;
+    NSString *abv;
+    NSString *price;
+    NSString *beerName;
+    
+    NSFetchedResultsController *fetchedResultsController;
+    NSManagedObjectContext *managedObjectContext;
     
     IBOutlet UITextView *textView;
     IBOutlet UIImageView *image;
     IBOutlet UILabel *label1;
     IBOutlet UILabel *label2;
     IBOutlet UILabel *label3;
+    IBOutlet UILabel *quantityText;
+    IBOutlet UIButton *buttonReduce;
+    IBOutlet UIButton *buttonAdd;
     
 }
 @property (nonatomic, retain) NSString *text;
 @property (nonatomic, retain) NSString *imageURL;
+@property (nonatomic, retain) NSString *size;
+@property (nonatomic, retain) NSString *abv;
+@property (nonatomic, retain) NSString *price;
+@property (nonatomic, retain) NSString *beerName;
+
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @property (nonatomic, retain) UITextView *textView;
 @property (nonatomic, retain) UIImageView *image;
 @property (nonatomic, retain) UILabel *label1;
 @property (nonatomic, retain) UILabel *label2;
 @property (nonatomic, retain) UILabel *label3;
+@property (nonatomic, retain) UILabel *quantityText;
+@property (nonatomic, retain) UIButton *buttonReduce;
+@property (nonatomic, retain) UIButton *buttonAdd;
 
 -(void) resetInfo;
+-(IBAction) addClicked:(id) sender;
+-(IBAction) reduceClicked:(id) sender;
 
 @end

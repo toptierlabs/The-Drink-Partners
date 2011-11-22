@@ -22,6 +22,7 @@
 @synthesize beersDetailsController;
 
 NSMutableArray *listOfBeers;
+NSManagedObjectContext * managedObjectContext;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +32,11 @@ NSMutableArray *listOfBeers;
     }
     return self;
 }
+
+-(void) setCoreDataContext: (NSManagedObjectContext *) context{
+    managedObjectContext = context;
+}
+
 
 - (void)dealloc
 {
@@ -59,8 +65,12 @@ NSInteger sort2(id a, id b, void* p) {
 
 - (void)viewDidLoad
 {
+    
+    self.title = @"Beers";
+    
     BeersDetailsViewController *auxBeerDetails = [[BeersDetailsViewController alloc] initWithNibName:@"BeersDetailsView" bundle:nil];
     self.beersDetailsController = auxBeerDetails;
+    self.beersDetailsController.managedObjectContext = managedObjectContext;
     
     listOfBeers = [[NSMutableArray alloc] init];
     NSString *beersJson =  [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:[PlistHelper readValue:@"Beers URL"]]];
@@ -265,7 +275,7 @@ NSInteger sort2(id a, id b, void* p) {
 	
 	topLabel.text = [beer objectForKey:@"name"];
     
-	bottomLabel.text = [NSString stringWithFormat:@"Size: %@ml\nAbv: %@\nS$ %@",[beer objectForKey:@"ml"],[beer objectForKey:@"abv"],[beer objectForKey:@"retailprice"] ];
+	bottomLabel.text = [NSString stringWithFormat:@"Size: %@ml\nAbv: %@%%\nS$ %@",[beer objectForKey:@"ml"],[beer objectForKey:@"abv"],[beer objectForKey:@"retailprice"] ];
 	
 	//
 	// Set the background and selected background images for the text.
@@ -327,6 +337,11 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSArray *images = [beer objectForKey:@"images"];
     self.beersDetailsController.imageURL = [NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], [images objectAtIndex:0]];
+    
+    self.beersDetailsController.size = [NSString stringWithFormat:@"%@",[beer objectForKey:@"ml"]];
+    self.beersDetailsController.abv = [NSString stringWithFormat:@"%@",[beer objectForKey:@"abv"]];
+    self.beersDetailsController.price = [NSString stringWithFormat:@"%@",[beer objectForKey:@"retailprice"]];
+    self.beersDetailsController.beerName = [NSString stringWithFormat:@"%@",[beer objectForKey:@"name"]];
     
     TDPAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     [delegate.navBeersController pushViewController:self.beersDetailsController animated:YES];

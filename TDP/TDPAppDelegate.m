@@ -14,6 +14,8 @@
 #import "BuyNowViewController.h"
 #import "AboutViewController.h"
 
+#import "BeersDetailsViewController.h"
+
 
 @implementation TDPAppDelegate
 
@@ -33,6 +35,8 @@
 @synthesize buyNowViewController;
 @synthesize aboutViewController;
 
+@synthesize beersDetailsViewController;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -47,7 +51,7 @@
     aboutViewController = [[AboutViewController alloc] init];
     
     //Esto Hay que sacar , es para pruebas
-    aboutViewController.managedObjectContext = self.managedObjectContext;
+    [beersViewController setCoreDataContext: self.managedObjectContext];
     
     navBeersController = [[[NavController alloc] initWithRootViewController:beersViewController] autorelease];
     navEventsController = [[[NavController alloc] initWithRootViewController:eventsViewController] autorelease];

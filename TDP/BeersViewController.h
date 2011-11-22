@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @class BeersDetailsViewController;
 
@@ -28,5 +29,7 @@
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
 
 @property (nonatomic, retain) IBOutlet BeersDetailsViewController *beersDetailsController;
+
+-(void) setCoreDataContext: (NSManagedObjectContext *) context;
 
 @end

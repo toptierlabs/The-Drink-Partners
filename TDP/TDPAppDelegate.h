@@ -17,6 +17,8 @@
 @class BuyNowViewController;
 @class AboutViewController;
 
+@class BeersDetailsViewController; 
+
 @interface TDPAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
     NSManagedObjectModel *managedObjectModel;
     NSManagedObjectContext *managedObjectContext;
@@ -35,6 +37,8 @@
     BuyNowViewController *buyNowViewController;
     AboutViewController *aboutViewController;
     
+    BeersDetailsViewController *beersDetailsViewController;
+    
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -51,6 +55,8 @@
 @property (nonatomic, retain) IBOutlet NewsViewController *newsViewController;
 @property (nonatomic, retain) IBOutlet BuyNowViewController *buyNowViewController;
 @property (nonatomic, retain) IBOutlet AboutViewController *aboutViewController;
+
+@property (nonatomic, retain) IBOutlet BeersDetailsViewController *beersDetailsViewController;
 
 
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;

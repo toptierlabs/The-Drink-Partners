@@ -20,6 +20,8 @@
 		9BB94CE41474237A00D22845 /* topAndBottomRowSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB94CD71474237A00D22845 /* topAndBottomRowSelected.png */; };
 		9BB94CE51474237A00D22845 /* topRow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB94CD81474237A00D22845 /* topRow.png */; };
 		9BB94CE61474237A00D22845 /* topRowSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB94CD91474237A00D22845 /* topRowSelected.png */; };
+		9BB9EA15147ADC3A004EAE1B /* greenplus.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9EA13147ADC3A004EAE1B /* greenplus.png */; };
+		9BB9EA19147ADFDC004EAE1B /* redminus.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB9EA18147ADFDC004EAE1B /* redminus.png */; };
 		9BBA4B0A14769642006575D3 /* BeersDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBA4B0914769642006575D3 /* BeersDetailsViewController.m */; };
 		9BBA4B0C14769649006575D3 /* BeersDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BBA4B0B14769649006575D3 /* BeersDetailsView.xib */; };
 		AB49368F1475705900EFEA96 /* ImageSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49368D1475705900EFEA96 /* ImageSliderViewController.m */; };
@@ -76,6 +78,8 @@
 		9BB94CD71474237A00D22845 /* topAndBottomRowSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topAndBottomRowSelected.png; sourceTree = "<group>"; };
 		9BB94CD81474237A00D22845 /* topRow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topRow.png; sourceTree = "<group>"; };
 		9BB94CD91474237A00D22845 /* topRowSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topRowSelected.png; sourceTree = "<group>"; };
+		9BB9EA13147ADC3A004EAE1B /* greenplus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenplus.png; sourceTree = "<group>"; };
+		9BB9EA18147ADFDC004EAE1B /* redminus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redminus.png; sourceTree = "<group>"; };
 		9BBA4B071476963A006575D3 /* BeersDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeersDetailsViewController.h; sourceTree = "<group>"; };
 		9BBA4B0914769642006575D3 /* BeersDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeersDetailsViewController.m; sourceTree = "<group>"; };
 		9BBA4B0B14769649006575D3 /* BeersDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BeersDetailsView.xib; path = TDP/BeersDetailsView.xib; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 		9BB94CCB1474210D00D22845 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9BB9EA18147ADFDC004EAE1B /* redminus.png */,
+				9BB9EA13147ADC3A004EAE1B /* greenplus.png */,
 				9BB94CCD1474237A00D22845 /* bottomRow.png */,
 				9BB94CCE1474237A00D22845 /* bottomRowSelected.png */,
 				9BB94CCF1474237A00D22845 /* gradientBackground.png */,
@@ -375,6 +381,8 @@
 				AB7C945D147433F4008F46E5 /* EventDetailsView.xib in Resources */,
 				AB4936901475705900EFEA96 /* ImageSliderView.xib in Resources */,
 				9BBA4B0C14769649006575D3 /* BeersDetailsView.xib in Resources */,
+				9BB9EA15147ADC3A004EAE1B /* greenplus.png in Resources */,
+				9BB9EA19147ADFDC004EAE1B /* redminus.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
