@@ -68,6 +68,8 @@
         
         [beer setValue:abv forKey:@"abv"];
         [beer setValue:size forKey:@"size"];
+        [beer setValue:text forKey:@"text"];
+        [beer setValue:imageURL forKey:@"imageURL"];
         
         error = nil;
         if (![context save:&error]) {
@@ -96,9 +98,11 @@
             NSLog(@"Name: %@", [info valueForKey:@"name"]);
             NSLog(@"Price: %@", [info valueForKey:@"priceString"]);
             NSLog(@"Price: %@", [info valueForKey:@"priceValue"]);
-             NSLog(@"abv: %@", [info valueForKey:@"abv"]);
-             NSLog(@"size: %@", [info valueForKey:@"size"]);
+            NSLog(@"abv: %@", [info valueForKey:@"abv"]);
+            NSLog(@"size: %@", [info valueForKey:@"size"]);
             NSLog(@"Quantity: %@", [info valueForKey:@"quantity"]);
+            NSLog(@"text: %@", [info valueForKey:@"text"]);
+            NSLog(@"ImageURL: %@", [info valueForKey:@"imageURL"]);
         }
     }    
     
