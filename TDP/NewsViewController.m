@@ -50,7 +50,7 @@ NSInteger sort4(id a, id b, void* p) {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.title = @"Beers";
+    self.title = @"News";
     
 //    BeersViewController *auxBeerDetails = [[BeersViewController alloc] initWithNibName:@"BeersView" bundle:nil];
 //    self.beersViewController = auxBeerDetails;
