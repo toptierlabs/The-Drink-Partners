@@ -10,11 +10,13 @@
 #import "PlistHelper.h"
 #import "SBJson.h"
 #import "TDPAppDelegate.h"
+#import "NewsDetailsViewController.h"
 
 
 @implementation NewsViewController
 
 @synthesize imageView,tableView,dicNews,keys;
+@synthesize newsDetailsViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -52,8 +54,8 @@ NSInteger sort4(id a, id b, void* p) {
     
     self.title = @"News";
     
-//    BeersViewController *auxBeerDetails = [[BeersViewController alloc] initWithNibName:@"BeersView" bundle:nil];
-//    self.beersViewController = auxBeerDetails;
+    NewsDetailsViewController *auxNewsDetails = [[NewsDetailsViewController alloc] initWithNibName:@"NewsDetailsView" bundle:nil];
+    self.newsDetailsViewController = auxNewsDetails;
     
     NSString *newsJson =  [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:[PlistHelper readValue:@"News URL"]]];
     if ([newsJson length] == 0) {
@@ -145,7 +147,9 @@ NSInteger sort4(id a, id b, void* p) {
 {
 	const NSInteger TOP_LABEL_TAG = 1001;
 	const NSInteger BOTTOM_LABEL_TAG = 1002;
+    const NSInteger MIDDLE_LABEL_TAG = 1003;
 	UILabel *topLabel;
+    UILabel *middleLabel;
 	UITextView *bottomText;
     
     
@@ -197,6 +201,29 @@ NSInteger sort4(id a, id b, void* p) {
 		topLabel.highlightedTextColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.9 alpha:1.0];
 		topLabel.font = [UIFont systemFontOfSize:[UIFont labelFontSize]];
         
+        middleLabel =
+        [[[UILabel alloc]
+          initWithFrame:
+          CGRectMake(
+                     image.size.width + 2.0 * cell.indentationWidth,
+                     0.2 * (aTableView.rowHeight - 2 * LABEL_HEIGHT) + 15,
+                     aTableView.bounds.size.width -
+                     image.size.width - 4.0 * cell.indentationWidth
+                     - indicatorImage.size.width,
+                     LABEL_HEIGHT)]
+         autorelease];
+		[cell.contentView addSubview:middleLabel];
+        
+		//
+		// Configure the properties for the text that are the same on every row
+		//
+		middleLabel.tag = MIDDLE_LABEL_TAG;
+		middleLabel.backgroundColor = [UIColor clearColor];
+		middleLabel.textColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
+		middleLabel.highlightedTextColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.9 alpha:1.0];
+		middleLabel.font = [UIFont systemFontOfSize:[UIFont labelFontSize] -5];
+
+        
 		//
 		// Create the label for the botton row of text
 		//
@@ -205,7 +232,7 @@ NSInteger sort4(id a, id b, void* p) {
           initWithFrame:
           CGRectMake(
                      image.size.width + 1.5 * cell.indentationWidth,
-                     0.2 * (aTableView.rowHeight - 2 * LABEL_HEIGHT) + LABEL_HEIGHT + 20,
+                     0.2 * (aTableView.rowHeight - 2 * LABEL_HEIGHT) + LABEL_HEIGHT + 15,
                      aTableView.bounds.size.width -
                      image.size.width - 4.0 * cell.indentationWidth
                      - indicatorImage.size.width,
@@ -221,6 +248,7 @@ NSInteger sort4(id a, id b, void* p) {
 		bottomText.textColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
         bottomText.scrollEnabled = NO;
         bottomText.editable = NO;
+        bottomText.userInteractionEnabled = NO;
 //		bottomText.highlightedTextColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.9 alpha:1.0];
 		bottomText.font = [UIFont systemFontOfSize:[UIFont labelFontSize] - 4];
         
@@ -238,6 +266,7 @@ NSInteger sort4(id a, id b, void* p) {
 	{
 		topLabel = (UILabel *)[cell viewWithTag:TOP_LABEL_TAG];
 		bottomText = (UITextView *)[cell viewWithTag:BOTTOM_LABEL_TAG];
+        middleLabel = (UITextView *)[cell viewWithTag:MIDDLE_LABEL_TAG];
 	}
     
     NSDictionary *news = [dicNews objectForKey: [keys objectAtIndex:indexPath.row]];
@@ -245,6 +274,8 @@ NSInteger sort4(id a, id b, void* p) {
 	topLabel.text = [news objectForKey:@"title"];
     
 	bottomText.text = [news objectForKey:@"content"];
+    
+    middleLabel.text = [news objectForKey:@"postedon"];
 	
 	//
 	// Set the background and selected background images for the text.
@@ -286,12 +317,17 @@ NSInteger sort4(id a, id b, void* p) {
     
     NSArray *images = [news objectForKey:@"images"];
 	
-    NSString *urlString = [NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], [images objectAtIndex:0]]; 
+    NSDictionary *imageDic = [images objectAtIndex:0];
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], [imageDic objectForKey:@"thumb"]]; 
     
     
-    //NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:urlString]];  
+    NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:urlString]];  
+    UIImage * imageCell = [[UIImage alloc] initWithData:imageData]; 
+        
+    NSLog(@"urlstringNews : %@",urlString);
     
-    cell.image =[UIImage imageNamed:@"imageA.png"];   //[[UIImage alloc] initWithData:imageData]; 
+    cell.image = scaleAndRotateImage(imageCell,70);
 	
 	//cell.text = [NSString stringWithFormat:@"Cell at row %ld.", [indexPath row]];
 	
@@ -300,17 +336,18 @@ NSInteger sort4(id a, id b, void* p) {
 
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+        
+    NSDictionary *news = [dicNews objectForKey: [keys objectAtIndex:indexPath.row]];
+    self.newsDetailsViewController.text = [news objectForKey:@"content"]; 
     
-//    NSDictionary *beer = [dicBeers objectForKey: [keys objectAtIndex:indexPath.row]];
-//    self.beersDetailsController.text = [beer objectForKey:@"writeup"]; 
-//    
-//    NSArray *images = [beer objectForKey:@"images"];
-//    self.beersDetailsController.imageURL = [NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], [images objectAtIndex:0]];
-//    self.beersDetailsController.beerName = [NSString stringWithFormat:@"%@",[beer objectForKey:@"name"]];
-//    
-//    TDPAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-//    [delegate.navBeersController pushViewController:self.beersDetailsController animated:YES];
-//    [self.beersDetailsController resetInfo];
+    NSArray *images = [news objectForKey:@"images"];
+    NSDictionary *imageDic = [images objectAtIndex:0];
+    self.newsDetailsViewController.imageURL = [NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], [imageDic objectForKey:@"big"]];
+    self.newsDetailsViewController.newsTitle = [NSString stringWithFormat:@"%@",[news objectForKey:@"title"]];
+    
+    TDPAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    [delegate.navNewsController pushViewController:self.newsDetailsViewController animated:YES];
+    [self.newsDetailsViewController resetInfo];
     
 }
 

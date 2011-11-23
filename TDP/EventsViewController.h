@@ -13,12 +13,14 @@
     NSDictionary *dicEvents;
     NSArray *keys;
     UITableView *tableView;
+    UIImageView *imageView;
 }
 
 @property(nonatomic, retain) NSDictionary *dicEvents;
 @property(nonatomic, retain) NSArray *keys;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic,retain) EventDetailsViewController * eventDetailsController;
+@property (nonatomic, retain) IBOutlet UIImageView *imageView;
 
 
 -(id)initWithFrame:(CGRect) theFrame;

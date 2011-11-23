@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class NewsDetailsViewController;
 
 @interface NewsViewController : UIViewController {
     UITableView *tableView;
@@ -15,11 +16,15 @@
     
     NSDictionary *dicNews;
     NSArray *keys;
+    
+    NewsDetailsViewController * newsDetailsViewController;
 }
 @property(nonatomic, retain) NSDictionary *dicNews;
 @property(nonatomic, retain) NSArray *keys;
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
+
+@property (nonatomic, retain) IBOutlet NewsDetailsViewController *newsDetailsViewController;
 
 @end

@@ -503,7 +503,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 -(IBAction) emptyCart:(id) sender {
     [self removeAllObjects];
-
+    //Clean budge
+    [(UIViewController *)[self.tabBarController.viewControllers objectAtIndex:3] tabBarItem].badgeValue = nil;
 }
 
 @end
