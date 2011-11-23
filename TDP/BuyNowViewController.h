@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface BuyNowViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
+@interface BuyNowViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate>{
     UITableView *tableView;
     UIImageView *imageView;
     UITableViewCell *tableViewCell;
@@ -20,9 +21,10 @@
     NSFetchedResultsController *fetchedResultsController;
     NSManagedObjectContext *managedObjectContext;
     NSArray *beers;
-    
+    IBOutlet UILabel *message;
 }
 
+@property (nonatomic, retain) IBOutlet UILabel *message;
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
@@ -35,6 +37,11 @@
 @property (nonatomic, retain) NSArray *beers;
 @property (nonatomic) float totalPrice;
 
+-(IBAction)showPicker:(id)sender;
+-(void)displayComposerSheet;
+-(void)launchMailAppOnDevice;
+-(void) removeAllObjects;
 
 -(IBAction) emptyCart:(id) sender;
+-(void) checkOut;
 @end

@@ -12,13 +12,14 @@
 #import "PlistHelper.h"
 #import "EventDetailsViewController.h"
 @implementation EventsViewController
-
-
 @synthesize dicEvents;
 @synthesize keys;
 @synthesize eventDetailsController;
 
 NSMutableArray *listOfEvents;
+
+
+
 
 // Table View Events
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -94,10 +95,18 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [imagesThumbnails release];
     [imagesBig release];
     
+    
+
+    
+    [self.eventDetailsController resetInfo];
+    
+    
     TDPAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     [delegate.navEventsController pushViewController:self.eventDetailsController animated:YES];
-    [self.eventDetailsController resetInfo];
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+  
 
 }
 
@@ -137,6 +146,9 @@ NSInteger sort(id a, id b, void* p) {
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
+    
+    
     self.title = @"Events";
     EventDetailsViewController *auxeventDetails = [[EventDetailsViewController alloc] initWithNibName:@"EventDetailsView" bundle:nil];
     self.eventDetailsController = auxeventDetails;
@@ -165,9 +177,7 @@ NSInteger sort(id a, id b, void* p) {
 
     [parser release];
     [mutableKeys release];
-    
-    [super viewDidLoad];
-    
+
     // Do any additional setup after loading the view from its nib.
 }
 
