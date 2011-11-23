@@ -9,6 +9,7 @@
 #import "BuyNowViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "Beer.h"
+#import "PlistHelper.h"
 
 @implementation BuyNowViewController
 
@@ -18,7 +19,7 @@
 @synthesize beers;
 @synthesize emptyLabel;
 @synthesize totalLabel, totalPrice;
-
+@synthesize message;
 // Table events
 
 - (void)tableView:(UITableView *)tableView
@@ -259,6 +260,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    message.hidden = YES;
+    self.title = @"Buy Now";
+
     // Do any additional setup after loading the view from its nib.
     
     // Do any additional setup after loading the view from its nib.
@@ -271,26 +275,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	tableView.backgroundColor = [UIColor clearColor];
 	imageView.image = [UIImage imageNamed:@"gradientBackground.png"];
 	
-	//
-	// Create a header view. Wrap it in a container to allow us to position
-	// it better.
-	//
-	UIView *containerView =
-    [[[UIView alloc]
-      initWithFrame:CGRectMake(0, 0, 300, 50)]
-     autorelease];
-	UILabel *headerLabel =
-    [[[UILabel alloc]
-      initWithFrame:CGRectMake(10, 10, 300, 40)]
-     autorelease];
-	headerLabel.text = NSLocalizedString(@"Cart", @"");
-	headerLabel.textColor = [UIColor whiteColor];
-	headerLabel.shadowColor = [UIColor blackColor];
-	headerLabel.shadowOffset = CGSizeMake(0, 1);
-	headerLabel.font = [UIFont boldSystemFontOfSize:22];
-	headerLabel.backgroundColor = [UIColor clearColor];
-    [containerView addSubview:headerLabel];
-	self.tableView.tableHeaderView = containerView;
+
     
 
 //    beers = [[NSMutableArray alloc] init];
@@ -300,9 +285,137 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     tableViewCell.backgroundView = [[[UIImageView alloc] init] autorelease];
     ((UIImageView *)tableViewCell.backgroundView).image = [UIImage imageNamed:@"topAndBottomRow.png"];
     
-
+    UIBarButtonItem *checkoutBtn = [[UIBarButtonItem alloc] initWithTitle:@"Check Out"
+                                                                  style:UIBarButtonItemStyleBordered
+                                                                 target:self
+                                                                 action:@selector(checkOut)];
+        
+    self.navigationItem.rightBarButtonItem = checkoutBtn;
     
 }
+
+-(void)checkOut {
+    Class mailClass = (NSClassFromString(@"MFMailComposeViewController"));
+    if (mailClass != nil)
+    {
+        // We must always check whether the current device is configured for sending emails
+        if ([mailClass canSendMail])
+        {
+            [self displayComposerSheet];
+        }
+        else
+        {
+            [self launchMailAppOnDevice];
+        }
+    }
+    else
+    {
+        [self launchMailAppOnDevice];
+    }
+}
+
+#pragma mark -
+#pragma mark Compose Mail
+
+// Displays an email composition interface inside the application. Populates all the Mail fields. 
+-(void)displayComposerSheet 
+{
+    MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+    picker.mailComposeDelegate = self;
+    
+    NSString *subject = [PlistHelper readValue:@"Email Subject"]; 
+    [picker setSubject:subject];
+    
+    NSString *mailTo = [PlistHelper readValue:@"Email Checkout"]; 
+
+    
+    // Set up recipients
+    NSArray *toRecipients = [NSArray arrayWithObject:mailTo]; 
+    //NSArray *ccRecipients = [NSArray arrayWithObjects:@"second@example.com", @"third@example.com", nil]; 
+    //NSArray *bccRecipients = [NSArray arrayWithObject:@"fourth@example.com"]; 
+    
+    [picker setToRecipients:toRecipients];
+    //[picker setCcRecipients:ccRecipients];  
+    //[picker setBccRecipients:bccRecipients];
+    
+    // Attach an image to the email
+    //NSString *path = [[NSBundle mainBundle] pathForResource:@"rainy" ofType:@"png"];
+    //NSData *myData = [NSData dataWithContentsOfFile:path];
+    //[picker addAttachmentData:myData mimeType:@"image/png" fileName:@"rainy"];
+    
+    // Fill out the email body text
+    
+    NSString *body = @"";
+    for (Beer *beer in beers) {
+        NSString *beerInfo = [NSString stringWithFormat:@"Name: %@\nUnit price: %@\nQuantity: %d\n\n\n", beer.name, beer.priceString,  [beer.quantity integerValue]];
+        body = [NSString stringWithFormat:@"%@%@", body, beerInfo];
+    }
+
+    body = [NSString stringWithFormat:@"\n\n\n%@%@", body, [totalLabel text]];
+
+    [picker setMessageBody:body isHTML:NO];
+    
+    [self presentModalViewController:picker animated:YES];
+    [picker release];
+}
+
+
+// Dismisses the email composition interface when users tap Cancel or Send. Proceeds to update the message field with the result of the operation.
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error 
+{   
+    message.hidden = NO;
+    // Notifies users about errors associated with the interface
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            message.text = @"Canceled";
+            break;
+        case MFMailComposeResultSaved:
+            message.text = @"Saved";
+            break;
+        case MFMailComposeResultSent:
+            [self removeAllObjects];
+            message.text = @"Sent";
+            break;
+        case MFMailComposeResultFailed:
+            message.text = @"Failed";
+            break;
+        default:
+            message.text = @"Not sent";
+            break;
+    }
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+
+#pragma mark -
+#pragma mark Workaround
+
+// Launches the Mail application on the device.
+-(void)launchMailAppOnDevice
+{
+    NSString *mailTo = [PlistHelper readValue:@"Email Checkout"]; 
+    NSString *subject = [PlistHelper readValue:@"Email Subject"]; 
+    //NSString *recipients = @"mailto:first@example.com?cc=second@example.com,third@example.com&subject=Hello from California!";
+    NSString *recipients = [NSString stringWithFormat: @"mailto:%@&subject=%@", mailTo, subject];
+    
+    
+    NSString *body = @"&body=";
+    for (Beer *beer in beers) {
+        NSString *beerInfo = [NSString stringWithFormat:@"Name: %@\nUnit price: %@\nQuantity: %.2f\n\n\n", beer.name, beer.priceString, beer.quantity];
+        body = [NSString stringWithFormat:@"%@%@", body, beerInfo];
+    }
+    
+    body = [NSString stringWithFormat:@"\n\n\n%@%@", body, [totalLabel text]];
+
+    
+    NSString *email = [NSString stringWithFormat:@"%@%@", recipients, body];
+    email = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:email]];
+}
+
+
 
 - (void)viewDidUnload
 {
@@ -352,34 +465,28 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void) viewWillAppear:(BOOL)animated
 {
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
-    [super viewWillAppear:animated];
-    
-
 
     [self reloadBeerList];
-
     
 }
-
 - (void) viewWillDisappear:(BOOL)animated
 {
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
-    [super viewWillDisappear:animated];
+    message.hidden = YES;
 }
 
--(IBAction) emptyCart:(id) sender {
+
+-(void) removeAllObjects {
     NSManagedObjectContext *context = [self managedObjectContext];
     NSFetchRequest * allBeers = [[NSFetchRequest alloc] init];
     [allBeers setEntity:[NSEntityDescription entityForName:@"Beer" inManagedObjectContext:context]];
     [allBeers setIncludesPropertyValues:NO]; //only fetch the managedObjectID
-     
+    
     NSError * error = nil;
     NSArray * beerList = [context executeFetchRequest:allBeers error:&error];
     [allBeers release];
     //error handling goes here
     for (NSManagedObject * beer in beerList) {
-       [context deleteObject:beer];
+        [context deleteObject:beer];
     }
     NSError *saveError = nil;
     [context save:&saveError];
@@ -387,6 +494,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self reloadBeerList];
     
     [self.tableView reloadData];
+}
+
+
+-(IBAction) emptyCart:(id) sender {
+    [self removeAllObjects];
+
 }
 
 @end

@@ -67,6 +67,7 @@
 		AB7C945D147433F4008F46E5 /* EventDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB7C945B147433F4008F46E5 /* EventDetailsView.xib */; };
 		AB94BCBE14769AEA00CFF3EF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB94BCBD14769AEA00CFF3EF /* CoreData.framework */; };
 		AB94BCC214769B1D00CFF3EF /* TDP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB94BCC014769B1C00CFF3EF /* TDP.xcdatamodeld */; };
+		ABB49071147D1E3600DDD265 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB49070147D1E3600DDD265 /* MessageUI.framework */; };
 		ABB6EDDA147BEA700014915C /* Beer.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB6EDD9147BEA700014915C /* Beer.m */; };
 /* End PBXBuildFile section */
 
@@ -160,6 +161,7 @@
 		AB7C945B147433F4008F46E5 /* EventDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDetailsView.xib; sourceTree = "<group>"; };
 		AB94BCBD14769AEA00CFF3EF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AB94BCC114769B1D00CFF3EF /* TDP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TDP.xcdatamodel; sourceTree = "<group>"; };
+		ABB49070147D1E3600DDD265 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		ABB6EDD8147BEA700014915C /* Beer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Beer.h; sourceTree = "<group>"; };
 		ABB6EDD9147BEA700014915C /* Beer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Beer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABB49071147D1E3600DDD265 /* MessageUI.framework in Frameworks */,
 				AB94BCBE14769AEA00CFF3EF /* CoreData.framework in Frameworks */,
 				AB7C93A51473F6B9008F46E5 /* UIKit.framework in Frameworks */,
 				AB7C93A71473F6B9008F46E5 /* Foundation.framework in Frameworks */,
@@ -207,6 +210,7 @@
 		AB7C93951473F6B9008F46E5 = {
 			isa = PBXGroup;
 			children = (
+				ABB49070147D1E3600DDD265 /* MessageUI.framework */,
 				AB7C93DD1473F96C008F46E5 /* Resources */,
 				AB7C93AA1473F6B9008F46E5 /* TDP */,
 				AB7C93A31473F6B9008F46E5 /* Frameworks */,
