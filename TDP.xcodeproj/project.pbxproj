@@ -210,7 +210,6 @@
 		AB7C93951473F6B9008F46E5 = {
 			isa = PBXGroup;
 			children = (
-				ABB49070147D1E3600DDD265 /* MessageUI.framework */,
 				AB7C93DD1473F96C008F46E5 /* Resources */,
 				AB7C93AA1473F6B9008F46E5 /* TDP */,
 				AB7C93A31473F6B9008F46E5 /* Frameworks */,
@@ -229,6 +228,7 @@
 		AB7C93A31473F6B9008F46E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ABB49070147D1E3600DDD265 /* MessageUI.framework */,
 				AB94BCBD14769AEA00CFF3EF /* CoreData.framework */,
 				AB7C93A41473F6B9008F46E5 /* UIKit.framework */,
 				AB7C93A61473F6B9008F46E5 /* Foundation.framework */,
