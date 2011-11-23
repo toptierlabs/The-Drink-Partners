@@ -10,7 +10,16 @@
 
 
 @interface NewsViewController : UIViewController {
+    UITableView *tableView;
+    UIImageView *imageView;
     
+    NSDictionary *dicNews;
+    NSArray *keys;
 }
+@property(nonatomic, retain) NSDictionary *dicNews;
+@property(nonatomic, retain) NSArray *keys;
+
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) IBOutlet UIImageView *imageView;
 
 @end
