@@ -16,6 +16,7 @@
 @synthesize keys;
 @synthesize eventDetailsController;
 @synthesize tableView;
+@synthesize imageView;
 
 NSMutableArray *listOfEvents;
 
@@ -256,10 +257,13 @@ NSInteger sort(id a, id b, void* p) {
     
     NSArray *keysBuffer = [mutableKeys sortedArrayUsingFunction:&sort context:nil];
     self.keys = keysBuffer;
-    
 
     [parser release];
     [mutableKeys release];
+    
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+	tableView.backgroundColor = [UIColor clearColor];
+	imageView.image = [UIImage imageNamed:@"gradientBackground.png"];
 
     // Do any additional setup after loading the view from its nib.
 }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9B1ABD39147D2B530028DAE0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1ABD38147D2B530028DAE0 /* MessageUI.framework */; };
+		9B1ABD5F147D74EA0028DAE0 /* NewsDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1ABD5D147D74EA0028DAE0 /* NewsDetailsViewController.m */; };
+		9B1ABD60147D74EA0028DAE0 /* NewsDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B1ABD5E147D74EA0028DAE0 /* NewsDetailsView.xib */; };
+		9B1ABD63147D8F030028DAE0 /* redButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B1ABD62147D8F030028DAE0 /* redButton.png */; };
 		9BB94CDA1474237A00D22845 /* bottomRow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB94CCD1474237A00D22845 /* bottomRow.png */; };
 		9BB94CDB1474237A00D22845 /* bottomRowSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB94CCE1474237A00D22845 /* bottomRowSelected.png */; };
 		9BB94CDC1474237A00D22845 /* gradientBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB94CCF1474237A00D22845 /* gradientBackground.png */; };
@@ -73,6 +76,10 @@
 
 /* Begin PBXFileReference section */
 		9B1ABD38147D2B530028DAE0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		9B1ABD5C147D74EA0028DAE0 /* NewsDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailsViewController.h; sourceTree = "<group>"; };
+		9B1ABD5D147D74EA0028DAE0 /* NewsDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailsViewController.m; sourceTree = "<group>"; };
+		9B1ABD5E147D74EA0028DAE0 /* NewsDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsDetailsView.xib; path = TDP/NewsDetailsView.xib; sourceTree = "<group>"; };
+		9B1ABD62147D8F030028DAE0 /* redButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redButton.png; sourceTree = "<group>"; };
 		9BB94CCD1474237A00D22845 /* bottomRow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottomRow.png; sourceTree = "<group>"; };
 		9BB94CCE1474237A00D22845 /* bottomRowSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottomRowSelected.png; sourceTree = "<group>"; };
 		9BB94CCF1474237A00D22845 /* gradientBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradientBackground.png; sourceTree = "<group>"; };
@@ -188,6 +195,7 @@
 			children = (
 				9BBDCA4A147C226000829FA0 /* news.png */,
 				9BBDCA4D147C227400829FA0 /* shopping-cart.png */,
+				9B1ABD62147D8F030028DAE0 /* redButton.png */,
 				9BBDCA4F147C228800829FA0 /* envelope.png */,
 				9BBDCA51147C229C00829FA0 /* calendar.png */,
 				9BBDCA53147C22A900829FA0 /* beer-mug.png */,
@@ -258,6 +266,8 @@
 				AB7C945A147433F4008F46E5 /* EventDetailsViewController.m */,
 				AB7C93E31473FA03008F46E5 /* NewsViewController.h */,
 				AB7C93E41473FA03008F46E5 /* NewsViewController.m */,
+				9B1ABD5C147D74EA0028DAE0 /* NewsDetailsViewController.h */,
+				9B1ABD5D147D74EA0028DAE0 /* NewsDetailsViewController.m */,
 				AB7C93ED1473FA40008F46E5 /* BuyNowViewController.h */,
 				AB7C93EE1473FA40008F46E5 /* BuyNowViewController.m */,
 				AB7C93F21473FA65008F46E5 /* AboutViewController.h */,
@@ -294,6 +304,7 @@
 				9BBDCA26147BD13800829FA0 /* BeersTypesView.xib */,
 				AB49368E1475705900EFEA96 /* ImageSliderView.xib */,
 				AB7C93E51473FA03008F46E5 /* NewsView.xib */,
+				9B1ABD5E147D74EA0028DAE0 /* NewsDetailsView.xib */,
 				AB7C93E01473F9EC008F46E5 /* BeersView.xib */,
 				AB7C93B61473F6B9008F46E5 /* MainWindow.xib */,
 				AB7C93F814741432008F46E5 /* URLs.plist */,
@@ -414,6 +425,8 @@
 				9BBDCA52147C229C00829FA0 /* calendar.png in Resources */,
 				9BBDCA54147C22A900829FA0 /* beer-mug.png in Resources */,
 				9BBDCA63147C28AB00829FA0 /* indicator.png in Resources */,
+				9B1ABD60147D74EA0028DAE0 /* NewsDetailsView.xib in Resources */,
+				9B1ABD63147D8F030028DAE0 /* redButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +464,7 @@
 				9BBA4B0A14769642006575D3 /* BeersDetailsViewController.m in Sources */,
 				9BBDCA27147BD13800829FA0 /* BeersTypesViewController.m in Sources */,
 				9BBD890D147D28B600B6E116 /* Beer.m in Sources */,
+				9B1ABD5F147D74EA0028DAE0 /* NewsDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
