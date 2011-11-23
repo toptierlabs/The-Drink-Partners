@@ -15,6 +15,7 @@
 @synthesize dicEvents;
 @synthesize keys;
 @synthesize eventDetailsController;
+@synthesize tableView;
 
 NSMutableArray *listOfEvents;
 
@@ -22,51 +23,133 @@ NSMutableArray *listOfEvents;
 
 
 // Table View Events
-- (UITableViewCell *)tableView:(UITableView *)tableView
+- (UITableViewCell *)tableView:(UITableView *)aTableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"Cell";
+    const NSInteger TOP_LABEL_TAG = 1001;
+	const NSInteger BOTTOM_LABEL_TAG = 1002;
+
+    
+    static NSString *CellIdentifier = @"CellEvent";
+    
     UILabel *mainLabel, *secondLabel;
+
+    NSDictionary *event = [dicEvents objectForKey: [keys objectAtIndex:indexPath.row]];
     
-    
-    //---try to get a reusable cell---
-    UITableViewCell *cell =
-    [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    //---create new cell if no reusable cell is available---
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                       reuseIdentifier:CellIdentifier]
-                autorelease];
+    UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+    {
+        //
+        // Create the cell.
+        //
+        cell =
+        [[[UITableViewCell alloc]
+          initWithFrame:CGRectZero
+          reuseIdentifier:CellIdentifier]
+         autorelease];
+        
+        
+        UIImage *indicatorImage = [UIImage imageNamed:@"indicator.png"];
+        cell.accessoryView =
+        [[[UIImageView alloc]
+          initWithImage:indicatorImage]
+         autorelease];
+        
+        const CGFloat LABEL_HEIGHT = 15;
+        
+        //
+        // Create the label for the top row of text
+        //
+        mainLabel =
+        [[[UILabel alloc]
+          initWithFrame:
+          CGRectMake(
+                     cell.indentationWidth,
+                     5,
+                     aTableView.bounds.size.width - 60,LABEL_HEIGHT)]
+         autorelease];
+        [cell.contentView addSubview:mainLabel];
+        
+        //
+        // Configure the properties for the text that are the same on every row
+        //
+        mainLabel.tag = TOP_LABEL_TAG;
+        mainLabel.backgroundColor = [UIColor clearColor];
+        mainLabel.textColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
+        mainLabel.highlightedTextColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.9 alpha:1.0];
+        mainLabel.font = [UIFont systemFontOfSize:14.0];;
+        
+        
+        mainLabel.text = [event objectForKey: @"title"];
+        
+
+        secondLabel = [[[UILabel alloc] initWithFrame:CGRectMake(cell.indentationWidth + 30, 23.0, 220.0, 16.0)] autorelease];
+        [cell.contentView addSubview:secondLabel];
+        secondLabel.font = [UIFont systemFontOfSize:11.0];
+        secondLabel.textAlignment = UITextAlignmentLeft;
+        secondLabel.backgroundColor = [UIColor clearColor];
+        secondLabel.textColor = [UIColor darkGrayColor];
+        secondLabel.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
+        secondLabel.text = [event objectForKey: @"eventdate"];
+        //
+        // Create a background image view.
+        //
+        cell.backgroundView =
+        [[[UIImageView alloc] init] autorelease];
+        cell.selectedBackgroundView =
+        [[[UIImageView alloc] init] autorelease];
+        
     }
     
-    //---set the text to display for the cell---
-    NSDictionary *event = [dicEvents objectForKey: [keys objectAtIndex:indexPath.row]];
-    NSString *cellValue = [event objectForKey: @"title"];
-    NSString *dateValue = [event objectForKey: @"eventdate"];
+    else
+    {
+        mainLabel = (UILabel *)[cell viewWithTag:TOP_LABEL_TAG];
+        
+    }
     
-    mainLabel = [[[UILabel alloc] initWithFrame:CGRectMake(8, 3.0, 290.0,20.0)] autorelease];
-    mainLabel.font = [UIFont boldSystemFontOfSize:13.0];
-    mainLabel.textAlignment = UITextAlignmentLeft;
-    mainLabel.textColor = [UIColor blackColor];
-    mainLabel.text = cellValue;
+    
 
-    mainLabel.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
-    [cell.contentView addSubview:mainLabel];
+
+        
     
-    secondLabel = [[[UILabel alloc] initWithFrame:CGRectMake(8, 23.0, 220.0, 16.0)] autorelease];
-    secondLabel.font = [UIFont systemFontOfSize:12.0];
-    secondLabel.textAlignment = UITextAlignmentLeft;
-    secondLabel.textColor = [UIColor darkGrayColor];
-    secondLabel.text = dateValue;
-    secondLabel.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
-    [cell.contentView addSubview:secondLabel];
+    //
+    // Set the background and selected background images for the text.
+    // Since we will round the corners at the top and bottom of sections, we
+    // need to conditionally choose the images based on the row index and the
+    // number of rows in the section.
+    //
+    UIImage *rowBackground;
+    UIImage *selectionBackground;
+    NSInteger sectionRows = [aTableView numberOfRowsInSection:[indexPath section]];
+    NSInteger row = [indexPath row];
+    if (row == 0 && row == sectionRows - 1)
+    {
+        rowBackground = [UIImage imageNamed:@"topAndBottomRow.png"];
+        selectionBackground = [UIImage imageNamed:@"topAndBottomRowSelected.png"];
+    }
+    else if (row == 0)
+    {
+        rowBackground = [UIImage imageNamed:@"topRow.png"];
+        selectionBackground = [UIImage imageNamed:@"topRowSelected.png"];
+    }
+    else if (row == sectionRows - 1)
+    {
+        rowBackground = [UIImage imageNamed:@"bottomRow.png"];
+        selectionBackground = [UIImage imageNamed:@"bottomRowSelected.png"];
+    }
+    else
+    {
+        rowBackground = [UIImage imageNamed:@"middleRow.png"];
+        selectionBackground = [UIImage imageNamed:@"middleRowSelected.png"];
+    }
+    ((UIImageView *)cell.backgroundView).image = rowBackground;
+    ((UIImageView *)cell.selectedBackgroundView).image = selectionBackground;
     
-//    cell.textLabel.text = cellValue;
-//    cell.textLabel.font = [UIFont systemFontOfSize:12.0];
     
     
     return cell;
+
+
 }
 //---set the number of rows in the table view---
 - (NSInteger)tableView:(UITableView *)tableView

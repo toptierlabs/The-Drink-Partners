@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "Beer.h"
 #import "PlistHelper.h"
+#import "TDPAppDelegate.h"
 
 @implementation BuyNowViewController
 
@@ -20,25 +21,26 @@
 @synthesize emptyLabel;
 @synthesize totalLabel, totalPrice;
 @synthesize message;
+@synthesize beersDetailsController;
+
 // Table events
 
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    NSDictionary *beer = [dicBeers objectForKey: [keys objectAtIndex:indexPath.row]];
-//    self.beersDetailsController.text = [beer objectForKey:@"writeup"]; 
-//    
-//    NSArray *images = [beer objectForKey:@"images"];
-//    self.beersDetailsController.imageURL = [NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], [images objectAtIndex:0]];
-//    
-//    self.beersDetailsController.size = [NSString stringWithFormat:@"%@",[beer objectForKey:@"ml"]];
-//    self.beersDetailsController.abv = [NSString stringWithFormat:@"%@",[beer objectForKey:@"abv"]];
-//    self.beersDetailsController.price = [NSString stringWithFormat:@"%@",[beer objectForKey:@"retailprice"]];
-//    self.beersDetailsController.beerName = [NSString stringWithFormat:@"%@",[beer objectForKey:@"name"]];
-//    
-//    TDPAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-//    [delegate.navBeersController pushViewController:self.BuyNowViewController animated:YES];
-//    [self.beersDetailsController resetInfo];
+    Beer *beer = [beers objectAtIndex:indexPath.row];
+    self.beersDetailsController.text = beer.text; 
+
+    self.beersDetailsController.imageURL = beer.imageURL;
+    
+    self.beersDetailsController.size = beer.size;
+    self.beersDetailsController.abv = beer.abv;
+    self.beersDetailsController.price = beer.priceString;
+    self.beersDetailsController.beerName = beer.name;
+    
+    TDPAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    [delegate.navBuyNowController pushViewController:self.beersDetailsController animated:YES];
+    [self.beersDetailsController resetInfo];
     
 }
 
@@ -275,7 +277,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	tableView.backgroundColor = [UIColor clearColor];
 	imageView.image = [UIImage imageNamed:@"gradientBackground.png"];
 	
-
+    BeersDetailsViewController *auxBeerDetails = [[BeersDetailsViewController alloc] initWithNibName:@"BeersDetailsView" bundle:nil];
+    self.beersDetailsController = auxBeerDetails;    
+    self.beersDetailsController.managedObjectContext = managedObjectContext;
     
 
 //    beers = [[NSMutableArray alloc] init];

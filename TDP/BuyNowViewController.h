@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import <MessageUI/MFMailComposeViewController.h>
+#import "BeersDetailsViewController.h"
 
 @interface BuyNowViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate>{
     UITableView *tableView;
@@ -22,6 +23,8 @@
     NSManagedObjectContext *managedObjectContext;
     NSArray *beers;
     IBOutlet UILabel *message;
+    
+    BeersDetailsViewController *beersDetailsController;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *message;
@@ -31,6 +34,8 @@
 @property (nonatomic, retain) IBOutlet UITableViewCell *tableViewCell;
 @property (nonatomic, retain) IBOutlet UILabel *totalLabel;
 @property (nonatomic, retain) IBOutlet UILabel *emptyLabel;
+
+@property (nonatomic, retain) BeersDetailsViewController *beersDetailsController;
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
