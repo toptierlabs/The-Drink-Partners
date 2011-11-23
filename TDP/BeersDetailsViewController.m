@@ -15,6 +15,115 @@
 @synthesize managedObjectContext,fetchedResultsController;
 @synthesize buttonAdd, buttonReduce;
 
+UIImage *scaleAndRotateImage2(UIImage *image,int kMaxResolution)  
+{  
+    
+    CGImageRef imgRef = image.CGImage;  
+    
+    CGFloat width = CGImageGetWidth(imgRef);  
+    CGFloat height = CGImageGetHeight(imgRef);  
+    
+    CGAffineTransform transform = CGAffineTransformIdentity;  
+    CGRect bounds = CGRectMake(0, 0, width, height);  
+    if (width > kMaxResolution || height > kMaxResolution) {  
+        CGFloat ratio = width/height;  
+        if (ratio > 1) {  
+            bounds.size.width = kMaxResolution;  
+            bounds.size.height = bounds.size.width / ratio;  
+        }  
+        else {  
+            bounds.size.height = kMaxResolution;  
+            bounds.size.width = bounds.size.height * ratio;  
+        }  
+    }  
+    
+    CGFloat scaleRatio = bounds.size.width / width;  
+    CGSize imageSize = CGSizeMake(CGImageGetWidth(imgRef), CGImageGetHeight(imgRef));  
+    CGFloat boundHeight;  
+    UIImageOrientation orient = image.imageOrientation;  
+    switch(orient) {  
+            
+        case UIImageOrientationUp: //EXIF = 1  
+            transform = CGAffineTransformIdentity;  
+            break;  
+            
+        case UIImageOrientationUpMirrored: //EXIF = 2  
+            transform = CGAffineTransformMakeTranslation(imageSize.width, 0.0);  
+            transform = CGAffineTransformScale(transform, -1.0, 1.0);  
+            break;  
+            
+        case UIImageOrientationDown: //EXIF = 3  
+            transform = CGAffineTransformMakeTranslation(imageSize.width, imageSize.height);  
+            transform = CGAffineTransformRotate(transform, M_PI);  
+            break;  
+            
+        case UIImageOrientationDownMirrored: //EXIF = 4  
+            transform = CGAffineTransformMakeTranslation(0.0, imageSize.height);  
+            transform = CGAffineTransformScale(transform, 1.0, -1.0);  
+            break;  
+            
+        case UIImageOrientationLeftMirrored: //EXIF = 5  
+            boundHeight = bounds.size.height;  
+            bounds.size.height = bounds.size.width;  
+            bounds.size.width = boundHeight;  
+            transform = CGAffineTransformMakeTranslation(imageSize.height, imageSize.width);  
+            transform = CGAffineTransformScale(transform, -1.0, 1.0);  
+            transform = CGAffineTransformRotate(transform, 3.0 * M_PI / 2.0);  
+            break;  
+            
+        case UIImageOrientationLeft: //EXIF = 6  
+            boundHeight = bounds.size.height;  
+            bounds.size.height = bounds.size.width;  
+            bounds.size.width = boundHeight;  
+            transform = CGAffineTransformMakeTranslation(0.0, imageSize.width);  
+            transform = CGAffineTransformRotate(transform, 3.0 * M_PI / 2.0);  
+            break;  
+            
+        case UIImageOrientationRightMirrored: //EXIF = 7  
+            boundHeight = bounds.size.height;  
+            bounds.size.height = bounds.size.width;  
+            bounds.size.width = boundHeight;  
+            transform = CGAffineTransformMakeScale(-1.0, 1.0);  
+            transform = CGAffineTransformRotate(transform, M_PI / 2.0);  
+            break;  
+            
+        case UIImageOrientationRight: //EXIF = 8  
+            boundHeight = bounds.size.height;  
+            bounds.size.height = bounds.size.width;  
+            bounds.size.width = boundHeight;  
+            transform = CGAffineTransformMakeTranslation(imageSize.height, 0.0);  
+            transform = CGAffineTransformRotate(transform, M_PI / 2.0);  
+            break;  
+            
+        default:  
+            [NSException raise:NSInternalInconsistencyException format:@"Invalid image orientation"];  
+            
+    }  
+    
+    UIGraphicsBeginImageContext(bounds.size);  
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();  
+    
+    if (orient == UIImageOrientationRight || orient == UIImageOrientationLeft) {  
+        CGContextScaleCTM(context, -scaleRatio, scaleRatio);  
+        CGContextTranslateCTM(context, -height, 0);  
+    }  
+    else {  
+        CGContextScaleCTM(context, scaleRatio, -scaleRatio);  
+        CGContextTranslateCTM(context, 0, -height);  
+    }  
+    
+    CGContextConcatCTM(context, transform);  
+    
+    CGContextDrawImage(UIGraphicsGetCurrentContext(), CGRectMake(0, 0, width, height), imgRef);  
+    UIImage *imageCopy = UIGraphicsGetImageFromCurrentImageContext();  
+    UIGraphicsEndImageContext();  
+    
+    return imageCopy;  
+} 
+
+
+
 //Events
 -(IBAction) addClicked:(id) sender{
     
@@ -29,6 +138,8 @@
     NSString *qText = [NSString stringWithFormat:@"%d",q];
     [quantityText setText:qText];
     quantity = [NSNumber numberWithInt:q]; 
+    
+    [(UIViewController *)[self.tabBarController.viewControllers objectAtIndex:3] tabBarItem].badgeValue =qText;
     
     NSManagedObjectContext *context = [self managedObjectContext];
 //    NSManagedObject *beer = [NSEntityDescription
@@ -127,6 +238,8 @@
         NSString *qText = [NSString stringWithFormat:@"%d",q];
         [quantityText setText:qText];
         quantity = [NSNumber numberWithInt:q];
+        
+         [(UIViewController *)[self.tabBarController.viewControllers objectAtIndex:3] tabBarItem].badgeValue =qText;
 
         NSManagedObjectContext *context = [self managedObjectContext];
 
@@ -178,6 +291,8 @@
             NSString *qText = [NSString stringWithFormat:@"%d",q];
             [quantityText setText:qText];
             quantity = [NSNumber numberWithInt:q];
+            
+            [(UIViewController *)[self.tabBarController.viewControllers objectAtIndex:3] tabBarItem].badgeValue = nil;
         }
         NSManagedObjectContext *context = [self managedObjectContext];
 
@@ -274,21 +389,12 @@
         NSString *qText = [NSString stringWithFormat:@"%d",0];
         [quantityText setText:qText];
     }
-
-//    Codigo para limpiar la base de datos
-//    NSFetchRequest * allBeers = [[NSFetchRequest alloc] init];
-//    [allBeers setEntity:[NSEntityDescription entityForName:@"Beer" inManagedObjectContext:context]];
-//    [allBeers setIncludesPropertyValues:NO]; //only fetch the managedObjectID
-//    
-//    NSError * error = nil;
-//    NSArray * beers = [context executeFetchRequest:allBeers error:&error];
-//    [allBeers release];
-//    //error handling goes here
-//    for (NSManagedObject * beer in beers) {
-//        [context deleteObject:beer];
-//    }
-//    NSError *saveError = nil;
-//    [context save:&saveError];
+    
+    NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:imageURL]];  
+    UIImage * imageAux = [[UIImage alloc] initWithData:imageData]; 
+    image.contentMode = UIViewContentModeScaleAspectFit;
+    [image setImage:imageAux];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -311,6 +417,8 @@
     
     UIImage *imageMinus = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"redminus" ofType:@"png"]];
     [buttonReduce setImage:imageMinus forState:UIControlStateNormal];
+    
+    
         
 }
 

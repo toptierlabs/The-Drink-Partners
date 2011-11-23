@@ -193,7 +193,7 @@ NSInteger sort4(id a, id b, void* p) {
 		//
 		topLabel.tag = TOP_LABEL_TAG;
 		topLabel.backgroundColor = [UIColor clearColor];
-		topLabel.textColor = [UIColor colorWithRed:0.25 green:0.0 blue:0.0 alpha:1.0];
+		topLabel.textColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 		topLabel.highlightedTextColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.9 alpha:1.0];
 		topLabel.font = [UIFont systemFontOfSize:[UIFont labelFontSize]];
         
@@ -218,7 +218,7 @@ NSInteger sort4(id a, id b, void* p) {
 		//
 		bottomText.tag = BOTTOM_LABEL_TAG;
 		bottomText.backgroundColor = [UIColor clearColor];
-		bottomText.textColor = [UIColor colorWithRed:0.25 green:0.0 blue:0.0 alpha:1.0];
+		bottomText.textColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
         bottomText.scrollEnabled = NO;
         bottomText.editable = NO;
 //		bottomText.highlightedTextColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.9 alpha:1.0];

@@ -40,6 +40,135 @@ NSManagedObjectContext * managedObjectContext;
     [tableView reloadData];
 }
 
+UIImage *scaleAndRotateImage(UIImage *image,int kMaxResolution)  
+{  
+      
+    CGImageRef imgRef = image.CGImage;  
+    
+    CGFloat width = CGImageGetWidth(imgRef);  
+    CGFloat height = CGImageGetHeight(imgRef);  
+    
+    CGAffineTransform transform = CGAffineTransformIdentity;  
+    CGRect bounds = CGRectMake(0, 0, width, height);  
+    if (width > kMaxResolution || height > kMaxResolution) {  
+        CGFloat ratio = width/height;  
+        if (ratio > 1) {  
+            bounds.size.width = kMaxResolution;  
+            bounds.size.height = bounds.size.width / ratio;  
+        }  
+        else {  
+            bounds.size.height = kMaxResolution;  
+            bounds.size.width = bounds.size.height * ratio;  
+        }  
+    }  
+    
+    CGFloat scaleRatio = bounds.size.width / width;  
+    CGSize imageSize = CGSizeMake(CGImageGetWidth(imgRef), CGImageGetHeight(imgRef));  
+    CGFloat boundHeight;  
+    UIImageOrientation orient = image.imageOrientation;  
+    switch(orient) {  
+            
+        case UIImageOrientationUp: //EXIF = 1  
+            transform = CGAffineTransformIdentity;  
+            break;  
+            
+        case UIImageOrientationUpMirrored: //EXIF = 2  
+            transform = CGAffineTransformMakeTranslation(imageSize.width, 0.0);  
+            transform = CGAffineTransformScale(transform, -1.0, 1.0);  
+            break;  
+            
+        case UIImageOrientationDown: //EXIF = 3  
+            transform = CGAffineTransformMakeTranslation(imageSize.width, imageSize.height);  
+            transform = CGAffineTransformRotate(transform, M_PI);  
+            break;  
+            
+        case UIImageOrientationDownMirrored: //EXIF = 4  
+            transform = CGAffineTransformMakeTranslation(0.0, imageSize.height);  
+            transform = CGAffineTransformScale(transform, 1.0, -1.0);  
+            break;  
+            
+        case UIImageOrientationLeftMirrored: //EXIF = 5  
+            boundHeight = bounds.size.height;  
+            bounds.size.height = bounds.size.width;  
+            bounds.size.width = boundHeight;  
+            transform = CGAffineTransformMakeTranslation(imageSize.height, imageSize.width);  
+            transform = CGAffineTransformScale(transform, -1.0, 1.0);  
+            transform = CGAffineTransformRotate(transform, 3.0 * M_PI / 2.0);  
+            break;  
+            
+        case UIImageOrientationLeft: //EXIF = 6  
+            boundHeight = bounds.size.height;  
+            bounds.size.height = bounds.size.width;  
+            bounds.size.width = boundHeight;  
+            transform = CGAffineTransformMakeTranslation(0.0, imageSize.width);  
+            transform = CGAffineTransformRotate(transform, 3.0 * M_PI / 2.0);  
+            break;  
+            
+        case UIImageOrientationRightMirrored: //EXIF = 7  
+            boundHeight = bounds.size.height;  
+            bounds.size.height = bounds.size.width;  
+            bounds.size.width = boundHeight;  
+            transform = CGAffineTransformMakeScale(-1.0, 1.0);  
+            transform = CGAffineTransformRotate(transform, M_PI / 2.0);  
+            break;  
+            
+        case UIImageOrientationRight: //EXIF = 8  
+            boundHeight = bounds.size.height;  
+            bounds.size.height = bounds.size.width;  
+            bounds.size.width = boundHeight;  
+            transform = CGAffineTransformMakeTranslation(imageSize.height, 0.0);  
+            transform = CGAffineTransformRotate(transform, M_PI / 2.0);  
+            break;  
+            
+        default:  
+            [NSException raise:NSInternalInconsistencyException format:@"Invalid image orientation"];  
+            
+    }  
+    
+    UIGraphicsBeginImageContext(bounds.size);  
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();  
+    
+    if (orient == UIImageOrientationRight || orient == UIImageOrientationLeft) {  
+        CGContextScaleCTM(context, -scaleRatio, scaleRatio);  
+        CGContextTranslateCTM(context, -height, 0);  
+    }  
+    else {  
+        CGContextScaleCTM(context, scaleRatio, -scaleRatio);  
+        CGContextTranslateCTM(context, 0, -height);  
+    }  
+    
+    CGContextConcatCTM(context, transform);  
+    
+    CGContextDrawImage(UIGraphicsGetCurrentContext(), CGRectMake(0, 0, width, height), imgRef);  
+    UIImage *imageCopy = UIGraphicsGetImageFromCurrentImageContext();  
+    UIGraphicsEndImageContext();  
+    
+    return imageCopy;  
+} 
+
+NSString *addStringToURL(NSString * urlString){
+    
+    NSMutableString *stringBufferTail = [[NSMutableString alloc] initWithCapacity:[urlString length]];
+    NSMutableString *stringBuffer = [[NSMutableString alloc] init];
+    
+    NSUInteger tam = [urlString length];
+    
+    for (int i = 0; i < tam; i++) {
+        int index = tam - 1 - i;
+        NSString *compare = @"/";
+        if ([urlString characterAtIndex:index] == [compare characterAtIndex:0]){
+            NSString * substrig = [urlString substringToIndex:index];
+            NSString * tail = [urlString substringFromIndex:index];
+            [stringBuffer appendString:substrig];
+            [stringBuffer appendString:@"/resized"];
+            [stringBuffer appendString:tail];
+            break;
+        }
+    }
+    return urlString;
+}
+
 - (void)dealloc
 {
     [super dealloc];
@@ -201,7 +330,6 @@ NSInteger sort2(id a, id b, void* p) {
          autorelease];
 		
 		const CGFloat LABEL_HEIGHT = 20;
-		UIImage *image = [UIImage imageNamed:@"imageA.png"];
         
 		//
 		// Create the label for the top row of text
@@ -210,10 +338,10 @@ NSInteger sort2(id a, id b, void* p) {
         [[[UILabel alloc]
           initWithFrame:
           CGRectMake(
-                     image.size.width + 2.0 * cell.indentationWidth,
+                     8 * cell.indentationWidth,
                      0.3 * (aTableView.rowHeight - 2 * LABEL_HEIGHT),
                      aTableView.bounds.size.width -
-                     image.size.width - 4.0 * cell.indentationWidth
+                     15 * cell.indentationWidth
                      - indicatorImage.size.width,
                      LABEL_HEIGHT)]
          autorelease];
@@ -224,7 +352,7 @@ NSInteger sort2(id a, id b, void* p) {
 		//
 		topLabel.tag = TOP_LABEL_TAG;
 		topLabel.backgroundColor = [UIColor clearColor];
-		topLabel.textColor = [UIColor colorWithRed:0.25 green:0.0 blue:0.0 alpha:1.0];
+		topLabel.textColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 		topLabel.highlightedTextColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.9 alpha:1.0];
 		topLabel.font = [UIFont systemFontOfSize:[UIFont labelFontSize]];
         
@@ -235,10 +363,10 @@ NSInteger sort2(id a, id b, void* p) {
         [[[UILabel alloc]
           initWithFrame:
           CGRectMake(
-                     image.size.width + 3.0 * cell.indentationWidth,
+                     8 * cell.indentationWidth,
                      0.1 * (aTableView.rowHeight - 2 * LABEL_HEIGHT) + LABEL_HEIGHT,
                      aTableView.bounds.size.width + 50 -
-                     image.size.width - 4.0 * cell.indentationWidth
+                     15 * cell.indentationWidth
                      - indicatorImage.size.width,
                      LABEL_HEIGHT+50)]
          autorelease];
@@ -250,7 +378,7 @@ NSInteger sort2(id a, id b, void* p) {
 		bottomLabel.tag = BOTTOM_LABEL_TAG;
         bottomLabel.numberOfLines = 3;
 		bottomLabel.backgroundColor = [UIColor clearColor];
-		bottomLabel.textColor = [UIColor colorWithRed:0.25 green:0.0 blue:0.0 alpha:1.0];
+		bottomLabel.textColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 		bottomLabel.highlightedTextColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.9 alpha:1.0];
 		bottomLabel.font = [UIFont systemFontOfSize:[UIFont labelFontSize] - 4];
         
@@ -317,11 +445,16 @@ NSInteger sort2(id a, id b, void* p) {
     NSArray *images = [beer objectForKey:@"images"];
 	
     NSString *urlString = [NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], [images objectAtIndex:0]]; 
-
     
-    //NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:urlString]];  
     
-    cell.image =[UIImage imageNamed:@"imageA.png"];   //[[UIImage alloc] initWithData:imageData]; 
+    urlString = addStringToURL(urlString);
+    
+    NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:urlString]];  
+    UIImage * imageCell = [[UIImage alloc] initWithData:imageData]; 
+    
+    NSLog(@"urlstring : %@",urlString);
+    
+    cell.image = scaleAndRotateImage(imageCell,80);
 	
 	//cell.text = [NSString stringWithFormat:@"Cell at row %ld.", [indexPath row]];
 	
@@ -335,7 +468,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.beersDetailsController.text = [beer objectForKey:@"writeup"]; 
     
     NSArray *images = [beer objectForKey:@"images"];
-    self.beersDetailsController.imageURL = [NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], [images objectAtIndex:0]];
+    self.beersDetailsController.imageURL = addStringToURL([NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], [images objectAtIndex:0]]);
     
     self.beersDetailsController.size = [NSString stringWithFormat:@"%@",[beer objectForKey:@"ml"]];
     self.beersDetailsController.abv = [NSString stringWithFormat:@"%@",[beer objectForKey:@"abv"]];
