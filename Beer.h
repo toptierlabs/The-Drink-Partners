@@ -2,7 +2,7 @@
 //  Beer.h
 //  TDP
 //
-//  Created by TopTier on 11/22/11.
+//  Created by fernando colman on 11/23/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
@@ -13,11 +13,13 @@
 @interface Beer : NSManagedObject {
 @private
 }
-@property (nonatomic, retain) NSString * size;
 @property (nonatomic, retain) NSNumber * quantity;
+@property (nonatomic, retain) NSString * size;
 @property (nonatomic, retain) NSNumber * priceValue;
-@property (nonatomic, retain) NSString * priceString;
-@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * abv;
+@property (nonatomic, retain) NSString * imageURL;
+@property (nonatomic, retain) NSString * text;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * priceString;
 
 @end

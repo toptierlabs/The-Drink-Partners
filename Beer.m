@@ -2,7 +2,7 @@
 //  Beer.m
 //  TDP
 //
-//  Created by TopTier on 11/22/11.
+//  Created by fernando colman on 11/23/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
@@ -10,11 +10,13 @@
 
 
 @implementation Beer
-@dynamic size;
 @dynamic quantity;
+@dynamic size;
 @dynamic priceValue;
-@dynamic priceString;
-@dynamic name;
 @dynamic abv;
+@dynamic imageURL;
+@dynamic text;
+@dynamic name;
+@dynamic priceString;
 
 @end

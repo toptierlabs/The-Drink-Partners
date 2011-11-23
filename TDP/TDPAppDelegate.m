@@ -128,11 +128,16 @@
     }
     NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory]
                                                stringByAppendingPathComponent: @"<Project Name>.sqlite"]];
+    
+    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
+                             [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
+                             [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
+    
     NSError *error = nil;
     persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc]
                                   initWithManagedObjectModel:[self managedObjectModel]];
     if(![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
-                                                 configuration:nil URL:storeUrl options:nil error:&error]) {
+                                                 configuration:nil URL:storeUrl options:options error:&error]) {
         /*Error for store creation should be handled in here*/
     }
     
