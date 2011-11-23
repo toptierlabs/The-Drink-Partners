@@ -12,13 +12,14 @@
 @interface EventsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
     NSDictionary *dicEvents;
     NSArray *keys;
-    
-    EventDetailsViewController *eventDetailsController;
+  
 }
 
 @property(nonatomic, retain) NSDictionary *dicEvents;
-
 @property(nonatomic, retain) NSArray *keys;
 @property (nonatomic,retain) EventDetailsViewController * eventDetailsController;
+
+
+-(id)initWithFrame:(CGRect) theFrame;
 
 @end

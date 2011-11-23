@@ -132,12 +132,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         [[[UILabel alloc]
           initWithFrame:
           CGRectMake(
-                     image.size.width + 5.0 * cell.indentationWidth,
-                     0.26 * (aTableView.rowHeight),
-                     aTableView.bounds.size.width + 50 -
+                     image.size.width + 3.0 * cell.indentationWidth,
+                     0.12 * (aTableView.rowHeight),
+                     aTableView.bounds.size.width + 60 -
                      image.size.width - 4.0 * cell.indentationWidth
-                     - indicatorImage.size.width,
-                     LABEL_HEIGHT+50)]
+                     - indicatorImage.size.width + 40,
+                     120)]
          autorelease];
 		[cell.contentView addSubview:beerDetailsLabel];
         
@@ -145,7 +145,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 		// Configure the properties for the text that are the same on every row
 		//
 		beerDetailsLabel.tag = BOTTOM_LABEL_TAG;
-        beerDetailsLabel.numberOfLines = 3;
+        beerDetailsLabel.numberOfLines = 4;
 		beerDetailsLabel.backgroundColor = [UIColor clearColor];
 		beerDetailsLabel.textColor = [UIColor colorWithRed:0.25 green:0.0 blue:0.0 alpha:1.0];
 		beerDetailsLabel.highlightedTextColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.9 alpha:1.0];
@@ -170,7 +170,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     Beer *beer = [beers objectAtIndex:[indexPath row]];
 	beerTitleLabel.text = [NSString stringWithFormat:@"%@", beer.name];
-	beerDetailsLabel.text = [NSString stringWithFormat:@"Size: %@ml\nAbv: %@\nS$%@\nQuantity: %@", beer.size, beer.abv, beer.priceString, beer.quantity];
+	beerDetailsLabel.text = [NSString stringWithFormat:@"Size: %@ml\nAbv: %@\nS$%@\nQuantity: %d", beer.size, beer.abv, beer.priceString, [beer.quantity integerValue]];
 
 	//
 	// Set the background and selected background images for the text.
@@ -333,10 +333,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.totalPrice = 0;
     for (Beer *beer in self.beers)
     {
-        self.totalPrice += [beer.priceValue floatValue] * [beer.quantity floatValue];
+        self.totalPrice += [beer.priceValue floatValue] * [beer.quantity intValue];
     }
     
-    self.totalLabel.text = [NSString stringWithFormat:@"Total S$%d", self.totalPrice];
+    self.totalLabel.text = [NSString stringWithFormat:@"Total S$%.2f", self.totalPrice];
     [self.tableView reloadData];
     
     if ([self.beers count] == 0){
@@ -345,6 +345,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     else
         [emptyLabel setHidden:YES];
     [fetchRequest release];
+    
+    
     
 }
 
