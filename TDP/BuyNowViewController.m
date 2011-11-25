@@ -1,4 +1,4 @@
-//
+    //
 //  BuyNowViewController.m
 //  TDP
 //
@@ -11,6 +11,7 @@
 #import "Beer.h"
 #import "PlistHelper.h"
 #import "TDPAppDelegate.h"
+#import "asyncimageview.h"
 
 @implementation BuyNowViewController
 
@@ -174,6 +175,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Beer *beer = [beers objectAtIndex:[indexPath row]];
 	beerTitleLabel.text = [NSString stringWithFormat:@"%@", beer.name];
 	beerDetailsLabel.text = [NSString stringWithFormat:@"Size: %@ml\nAbv: %@\nS$%@\nQuantity: %d", beer.size, beer.abv, beer.priceString, [beer.quantity integerValue]];
+    
 
 	//
 	// Set the background and selected background images for the text.
@@ -208,26 +210,19 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	((UIImageView *)cell.backgroundView).image = rowBackground;
 	((UIImageView *)cell.selectedBackgroundView).image = selectionBackground;
 	
-	//
-	// Here I set an image based on the row. This is just to have something
-	// colorful to show on each row.
-	//
-	if ((row % 3) == 0)
-	{
-		cell.image = [UIImage imageNamed:@"imageA.png"];
-	}
-	else if ((row % 3) == 1)
-	{
-		cell.image = [UIImage imageNamed:@"imageB.png"];
-	}
-	else
-	{
-		cell.image = [UIImage imageNamed:@"imageC.png"];
-	}
+		
+    CGRect frame;
+	frame.size.width=90; frame.size.height=90;
+	frame.origin.x=5; frame.origin.y=20;
+	AsyncImageView* asyncImage = [[[AsyncImageView alloc]
+                                   initWithFrame:frame] autorelease];
+	asyncImage.tag = 999;
+	NSURL* url = [[NSURL alloc] initWithString:beer.imageURL];
+	[asyncImage loadImageFromURL:url];
+   
     
-	//cell.text = [NSString stringWithFormat:@"Cell at row %ld.", [indexPath row]];
-	
-    
+	[cell.contentView addSubview:asyncImage];
+
     
 	return cell;
 }

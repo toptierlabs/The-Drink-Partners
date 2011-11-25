@@ -14,6 +14,7 @@
 @interface BeersViewController : UIViewController {
     UITableView *tableView;
     UIImageView *imageView;
+    NSString *beerTypeName;
     
     NSDictionary *dicBeers;
     NSArray *keys;
@@ -24,6 +25,7 @@
 
 @property(nonatomic, retain) NSDictionary *dicBeers;
 @property(nonatomic, retain) NSArray *keys;
+@property(nonatomic, retain) NSString *beerTypeName;
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;

@@ -7,6 +7,7 @@
 //
 
 #import "BeersDetailsViewController.h"
+#import "asyncimageview.h"
 
 @implementation BeersDetailsViewController
 
@@ -14,6 +15,8 @@
 @synthesize size,abv,price,text,imageURL,beerName;
 @synthesize managedObjectContext,fetchedResultsController;
 @synthesize buttonAdd, buttonReduce;
+
+AsyncImageView* asyncImage;
 
 UIImage *scaleAndRotateImage2(UIImage *image,int kMaxResolution)  
 {  
@@ -356,7 +359,7 @@ UIImage *scaleAndRotateImage2(UIImage *image,int kMaxResolution)
 -(void) resetInfo{
     [textView setText:text];
     
-    NSError *error = nil;
+
 
  //   NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:self.imageURL]];  
 //    self.image.image = [[UIImage alloc] initWithData:imageData]; 
@@ -369,31 +372,27 @@ UIImage *scaleAndRotateImage2(UIImage *image,int kMaxResolution)
     [label3 setText:priceText];
     
        
-     NSManagedObjectContext *context = [self managedObjectContext];
-    NSFetchRequest * request = [[NSFetchRequest alloc] init];
-    [request setEntity:[NSEntityDescription entityForName:@"Beer" inManagedObjectContext:context]];
-    [request setPredicate:[NSPredicate predicateWithFormat:@"name=%@",beerName]];
+         
+//    NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:imageURL]];  
+//    UIImage * imageAux = [[UIImage alloc] initWithData:imageData]; 
+//    image.contentMode = UIViewContentModeScaleAspectFit;
+//    [image setImage:scaleAndRotateImage(imageAux,120)];
     
-    NSManagedObject *beer = [[context executeFetchRequest:request error:&error] lastObject];
-    
-    if (error) {
-        //Handle any errors
-        NSLog(@"Hay un erro al hacer fetch de beer para update");
+    if(asyncImage){
+        [asyncImage removeFromSuperview];
     }
     
-    if (beer) {
-        NSString *qText = [NSString stringWithFormat:@"%@",[beer valueForKey:@"quantity"]];
-        [quantityText setText:qText];
-    }
-    else{
-        NSString *qText = [NSString stringWithFormat:@"%d",0];
-        [quantityText setText:qText];
-    }
+    CGRect frame;
+	frame.size.width=175; frame.size.height=175;
+	frame.origin.x=0; frame.origin.y=10;
+	asyncImage = [[[AsyncImageView alloc]
+                                   initWithFrame:frame] autorelease];
+	asyncImage.tag = 999;
+	NSURL* url = [[NSURL alloc] initWithString:imageURL];
+	[asyncImage loadImageFromURL:url];
+
+	[self.view addSubview:asyncImage];
     
-    NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:imageURL]];  
-    UIImage * imageAux = [[UIImage alloc] initWithData:imageData]; 
-    image.contentMode = UIViewContentModeScaleAspectFit;
-    [image setImage:imageAux];
     
 }
 
@@ -420,6 +419,33 @@ UIImage *scaleAndRotateImage2(UIImage *image,int kMaxResolution)
     
     
         
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    
+    NSError *error = nil;
+    
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSFetchRequest * request = [[NSFetchRequest alloc] init];
+    [request setEntity:[NSEntityDescription entityForName:@"Beer" inManagedObjectContext:context]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"name=%@",beerName]];
+    
+    NSManagedObject *beer = [[context executeFetchRequest:request error:&error] lastObject];
+    
+    if (error) {
+        //Handle any errors
+        NSLog(@"Hay un erro al hacer fetch de beer para update");
+    }
+    
+    if (beer) {
+        NSString *qText = [NSString stringWithFormat:@"%@",[beer valueForKey:@"quantity"]];
+        [quantityText setText:qText];
+    }
+    else{
+        NSString *qText = [NSString stringWithFormat:@"%d",0];
+        [quantityText setText:qText];
+    }
+
 }
 
 - (void)viewDidUnload

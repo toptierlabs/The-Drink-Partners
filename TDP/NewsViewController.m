@@ -11,6 +11,7 @@
 #import "SBJson.h"
 #import "TDPAppDelegate.h"
 #import "NewsDetailsViewController.h"
+#import "asyncimageview.h"
 
 
 @implementation NewsViewController
@@ -107,7 +108,7 @@ NSInteger sort4(id a, id b, void* p) {
 
 - (void) viewWillAppear:(BOOL)animated
 {
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillAppear:animated];
 }
 
@@ -322,12 +323,28 @@ NSInteger sort4(id a, id b, void* p) {
     NSString *urlString = [NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], [imageDic objectForKey:@"thumb"]]; 
     
     
-    NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:urlString]];  
-    UIImage * imageCell = [[UIImage alloc] initWithData:imageData]; 
+//    NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:urlString]];  
+//    UIImage * imageCell = [[UIImage alloc] initWithData:imageData]; 
         
     NSLog(@"urlstringNews : %@",urlString);
     
-    cell.image = scaleAndRotateImage(imageCell,70);
+    //cell.image = scaleAndRotateImage(imageCell,70);
+    
+    CGRect frame;
+	frame.size.width=65; frame.size.height=80;
+	frame.origin.x=10; frame.origin.y=20;
+	AsyncImageView* asyncImage = [[[AsyncImageView alloc]
+                                   initWithFrame:frame] autorelease];
+	asyncImage.tag = 999;
+	NSURL* url = [[NSURL alloc] initWithString:urlString];
+	[asyncImage loadImageFromURL:url];
+    
+    if ([[cell.contentView subviews] count]>3) {
+		//then this must be another image, the old one is still in subviews
+        [[[cell.contentView subviews] objectAtIndex:3] removeFromSuperview]; //so remove it (releases it also)
+	}
+    
+	[cell.contentView addSubview:asyncImage];
 	
 	//cell.text = [NSString stringWithFormat:@"Cell at row %ld.", [indexPath row]];
 	
@@ -348,6 +365,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     TDPAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     [delegate.navNewsController pushViewController:self.newsDetailsViewController animated:YES];
     [self.newsDetailsViewController resetInfo];
+    
+     [tableView deselectRowAtIndexPath:indexPath animated:YES];  
     
 }
 

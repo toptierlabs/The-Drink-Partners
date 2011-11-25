@@ -11,6 +11,7 @@
 #import "TDPAppDelegate.h"
 #import "PlistHelper.h"
 #import "BeersDetailsViewController.h"
+#import "asyncimageview.h"
 
 
 @implementation BeersViewController
@@ -20,6 +21,7 @@
 @synthesize dicBeers;
 @synthesize keys;
 @synthesize beersDetailsController;
+@synthesize beerTypeName;
 
 NSManagedObjectContext * managedObjectContext;
 
@@ -193,10 +195,14 @@ NSInteger sort2(id a, id b, void* p) {
     return  [b compare:a options:NSNumericSearch];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+       self.title = beerTypeName;
+}   
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Beers";
+ 
     
     BeersDetailsViewController *auxBeerDetails = [[BeersDetailsViewController alloc] initWithNibName:@"BeersDetailsView" bundle:nil];
     self.beersDetailsController = auxBeerDetails;    
@@ -449,14 +455,24 @@ NSInteger sort2(id a, id b, void* p) {
     
     urlString = addStringToURL(urlString);
     
-    NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:urlString]];  
-    UIImage * imageCell = [[UIImage alloc] initWithData:imageData]; 
+    CGRect frame;
+	frame.size.width=75; frame.size.height=75;
+	frame.origin.x=0; frame.origin.y=7;
+	AsyncImageView* asyncImage = [[[AsyncImageView alloc]
+                                   initWithFrame:frame] autorelease];
+	asyncImage.tag = 999;
+	NSURL* url = [[NSURL alloc] initWithString:urlString];
+	[asyncImage loadImageFromURL:url];
+    
+    if ([[cell.contentView subviews] count]>2) {
+		//then this must be another image, the old one is still in subviews
+		 [[[cell.contentView subviews] objectAtIndex:2] removeFromSuperview]; //so remove it (releases it also)
+	}
+                              
+	[cell.contentView addSubview:asyncImage];
+    
     
     NSLog(@"urlstring : %@",urlString);
-    
-    cell.image = scaleAndRotateImage(imageCell,80);
-	
-	//cell.text = [NSString stringWithFormat:@"Cell at row %ld.", [indexPath row]];
 	
 	return cell;
 }
@@ -478,6 +494,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     TDPAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     [delegate.navBeersController pushViewController:self.beersDetailsController animated:YES];
     [self.beersDetailsController resetInfo];
+    
+     [tableView deselectRowAtIndexPath:indexPath animated:YES];  
     
 }
 

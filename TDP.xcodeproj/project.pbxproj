@@ -34,6 +34,7 @@
 		9BBDCA52147C229C00829FA0 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BBDCA51147C229C00829FA0 /* calendar.png */; };
 		9BBDCA54147C22A900829FA0 /* beer-mug.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BBDCA53147C22A900829FA0 /* beer-mug.png */; };
 		9BBDCA63147C28AB00829FA0 /* indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BBDCA62147C28AB00829FA0 /* indicator.png */; };
+		9BF63862147E947E0060EABD /* asyncimageview.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF63861147E947E0060EABD /* asyncimageview.m */; };
 		AB49368F1475705900EFEA96 /* ImageSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49368D1475705900EFEA96 /* ImageSliderViewController.m */; };
 		AB4936901475705900EFEA96 /* ImageSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB49368E1475705900EFEA96 /* ImageSliderView.xib */; };
 		AB7C93A51473F6B9008F46E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7C93A41473F6B9008F46E5 /* UIKit.framework */; };
@@ -107,6 +108,8 @@
 		9BBDCA51147C229C00829FA0 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
 		9BBDCA53147C22A900829FA0 /* beer-mug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beer-mug.png"; sourceTree = "<group>"; };
 		9BBDCA62147C28AB00829FA0 /* indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = indicator.png; sourceTree = "<group>"; };
+		9BF63860147E947E0060EABD /* asyncimageview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asyncimageview.h; sourceTree = "<group>"; };
+		9BF63861147E947E0060EABD /* asyncimageview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = asyncimageview.m; sourceTree = "<group>"; };
 		AB49368C1475705900EFEA96 /* ImageSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageSliderViewController.h; sourceTree = "<group>"; };
 		AB49368D1475705900EFEA96 /* ImageSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageSliderViewController.m; sourceTree = "<group>"; };
 		AB49368E1475705900EFEA96 /* ImageSliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageSliderView.xib; path = TDP/ImageSliderView.xib; sourceTree = "<group>"; };
@@ -249,6 +252,8 @@
 		AB7C93AA1473F6B9008F46E5 /* TDP */ = {
 			isa = PBXGroup;
 			children = (
+				9BF63860147E947E0060EABD /* asyncimageview.h */,
+				9BF63861147E947E0060EABD /* asyncimageview.m */,
 				AB7C93FA14741525008F46E5 /* JsonParser */,
 				AB7C93B31473F6B9008F46E5 /* TDPAppDelegate.h */,
 				AB7C93B41473F6B9008F46E5 /* TDPAppDelegate.m */,
@@ -465,6 +470,7 @@
 				9BBDCA27147BD13800829FA0 /* BeersTypesViewController.m in Sources */,
 				9BBD890D147D28B600B6E116 /* Beer.m in Sources */,
 				9B1ABD5F147D74EA0028DAE0 /* NewsDetailsViewController.m in Sources */,
+				9BF63862147E947E0060EABD /* asyncimageview.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

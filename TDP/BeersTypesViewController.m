@@ -281,6 +281,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         
         self.beersViewController.keys = beersKeysBuffer;
         
+        self.beersViewController.beerTypeName = [beerType objectForKey:@"name"];
+        
         [beersMutableKeys release];
         
         [self.beersViewController resetInfo];
@@ -290,7 +292,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         
     }
 
-   
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];   
 
     
 }

@@ -7,10 +7,13 @@
 //
 
 #import "NewsDetailsViewController.h"
+#import "asyncimageview.h"
 
 @implementation NewsDetailsViewController
 
 @synthesize text,textView,image,imageURL,newsTitle;
+
+AsyncImageView* asyncImage;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,9 +31,24 @@
     
     NSLog(@"imageURLNewsDet: %@", imageURL);
     
-    UIImage * imageAux = [[UIImage alloc] initWithData:imageData]; 
-    image.contentMode = UIViewContentModeScaleAspectFit;
-    [image setImage:imageAux];
+//    UIImage * imageAux = [[UIImage alloc] initWithData:imageData]; 
+//    image.contentMode = UIViewContentModeScaleAspectFit;
+//    [image setImage:imageAux];
+    
+    if(asyncImage){
+        [asyncImage removeFromSuperview];
+    }
+    
+    CGRect frame;
+	frame.size.width=175; frame.size.height=160;
+	frame.origin.x=70; frame.origin.y=0;
+	asyncImage = [[[AsyncImageView alloc]
+                   initWithFrame:frame] autorelease];
+	asyncImage.tag = 999;
+	NSURL* url = [[NSURL alloc] initWithString:imageURL];
+	[asyncImage loadImageFromURL:url];
+    
+	[self.view addSubview:asyncImage];
     
 }
 
