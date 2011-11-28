@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-static NSDictionary *dicTexts;
+
 
 @interface PlistHelper : NSObject {
 

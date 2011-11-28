@@ -541,6 +541,7 @@
 				GCC_PREFIX_HEADER = "TDP/TDP-Prefix.pch";
 				INFOPLIST_FILE = "TDP/TDP-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -554,6 +555,7 @@
 				GCC_PREFIX_HEADER = "TDP/TDP-Prefix.pch";
 				INFOPLIST_FILE = "TDP/TDP-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

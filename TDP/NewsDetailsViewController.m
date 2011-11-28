@@ -24,6 +24,17 @@ AsyncImageView* asyncImage;
     return self;
 }
 
+- (void)dealloc
+{
+    [textView release];
+    [image release];
+    [text release];
+    [imageURL release];
+    [newsTitle release];
+    
+    [super dealloc];
+}
+
 -(void) resetInfo{
     [textView setText:text];
        
@@ -31,10 +42,12 @@ AsyncImageView* asyncImage;
 //    image.contentMode = UIViewContentModeScaleAspectFit;
 //    [image setImage:imageAux];
     
+    //remove async image from superview
     if(asyncImage){
         [asyncImage removeFromSuperview];
     }
     
+    //Load async image
     CGRect frame;
 	frame.size.width=175; frame.size.height=160;
 	frame.origin.x=70; frame.origin.y=0;
@@ -44,6 +57,7 @@ AsyncImageView* asyncImage;
 	NSURL* url = [[NSURL alloc] initWithString:imageURL];
 	[asyncImage loadImageFromURL:url];
     
+    [url release];
 	[self.view addSubview:asyncImage];
     
 }
@@ -65,6 +79,7 @@ AsyncImageView* asyncImage;
     // Do any additional setup after loading the view from its nib.
     
     self.title = newsTitle;
+    
 }
 
 - (void)viewDidUnload
@@ -72,6 +87,8 @@ AsyncImageView* asyncImage;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    self.textView = nil;
+    self.image = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

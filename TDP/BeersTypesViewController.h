@@ -35,3 +35,4 @@
 
 -(void) setCoreDataContext: (NSManagedObjectContext *) context;
 @end
+ 

@@ -81,7 +81,7 @@ NSInteger sort2(id a, id b, void* p) {
 	tableView.rowHeight = 100;
 	tableView.backgroundColor = [UIColor clearColor];
 	imageView.image = [UIImage imageNamed:@"gradientBackground.png"];
-    
+     
     BeersDetailsViewController *auxBeerDetails = [[BeersDetailsViewController alloc] initWithNibName:@"BeersDetailsView" bundle:nil];
     self.beersDetailsController = auxBeerDetails;    
     [auxBeerDetails release];

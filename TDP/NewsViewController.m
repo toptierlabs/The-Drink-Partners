@@ -30,6 +30,12 @@
 
 - (void)dealloc
 {
+    [tableView release];
+    [imageView release];
+    [dicNews release];
+    [keys release];
+    [newsDetailsViewController release];
+    
     [super dealloc];
 }
 
@@ -55,33 +61,34 @@ NSInteger sort4(id a, id b, void* p) {
     
     self.title = @"News";
     
+    //Initialize details controller
     NewsDetailsViewController *auxNewsDetails = [[NewsDetailsViewController alloc] initWithNibName:@"NewsDetailsView" bundle:nil];
     self.newsDetailsViewController = auxNewsDetails;
+    [auxNewsDetails release];
     
     NSString *newsJson =  [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:[PlistHelper readValue:@"News URL"]]];
-    if ([newsJson length] == 0) {
-        [newsJson release];
-        return;
+    if ([newsJson length] > 0) {
+        SBJsonParser *parser = [[SBJsonParser alloc] init];
+        NSDictionary *dicNewsAux = [[parser objectWithString:newsJson error:nil] copy]; 
+        
+        
+        NSArray *immutableKeys = [dicNewsAux allKeys];
+        
+        
+        NSMutableArray *newsMutableKeys = [[NSMutableArray alloc] initWithArray:immutableKeys];
+        [newsMutableKeys removeObject: @"otheryears"];
+        NSArray *newsKeysBuffer = [newsMutableKeys sortedArrayUsingFunction:&sort4 context:nil];
+        
+        
+        self.dicNews = dicNewsAux;
+        self.keys = newsKeysBuffer;
+        
+        [dicNewsAux release];
+        [newsMutableKeys release];
+        [parser release];
     }
     
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
-    NSDictionary *dicNewsAux = [[parser objectWithString:newsJson error:nil] copy]; 
-    
-    
-    NSArray *immutableKeys = [dicNewsAux allKeys];
-    
-    
-    NSMutableArray *newsMutableKeys = [[NSMutableArray alloc] initWithArray:immutableKeys];
-    [newsMutableKeys removeObject: @"otheryears"];
-    NSArray *newsKeysBuffer = [newsMutableKeys sortedArrayUsingFunction:&sort4 context:nil];
-    
-    
-    self.dicNews = dicNewsAux;
-    self.keys = newsKeysBuffer;
-    
-    
-    [newsMutableKeys release];
-    [parser release];
+    [newsJson release];
     
     // Change the properties of the imageView and tableView (these could be set
 	// in interface builder instead).
@@ -98,6 +105,8 @@ NSInteger sort4(id a, id b, void* p) {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    self.tableView = nil;
+    self.imageView = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -250,7 +259,6 @@ NSInteger sort4(id a, id b, void* p) {
         bottomText.scrollEnabled = NO;
         bottomText.editable = NO;
         bottomText.userInteractionEnabled = NO;
-//		bottomText.highlightedTextColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.9 alpha:1.0];
 		bottomText.font = [UIFont systemFontOfSize:[UIFont labelFontSize] - 4];
         
 		//
@@ -265,17 +273,17 @@ NSInteger sort4(id a, id b, void* p) {
     
 	else
 	{
+        //Get label and text by tag
 		topLabel = (UILabel *)[cell viewWithTag:TOP_LABEL_TAG];
 		bottomText = (UITextView *)[cell viewWithTag:BOTTOM_LABEL_TAG];
-        middleLabel = (UITextView *)[cell viewWithTag:MIDDLE_LABEL_TAG];
+        middleLabel = (UILabel *)[cell viewWithTag:MIDDLE_LABEL_TAG];
 	}
     
     NSDictionary *news = [dicNews objectForKey: [keys objectAtIndex:indexPath.row]];
 	
+    //Set texts
 	topLabel.text = [news objectForKey:@"title"];
-    
 	bottomText.text = [news objectForKey:@"content"];
-    
     middleLabel.text = [news objectForKey:@"postedon"];
 	
 	//
@@ -317,19 +325,11 @@ NSInteger sort4(id a, id b, void* p) {
 	//
     
     NSArray *images = [news objectForKey:@"images"];
-	
+    //Get images Dictionary
     NSDictionary *imageDic = [images objectAtIndex:0];
+    NSString *urlString = [[NSString alloc] initWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], [imageDic objectForKey:@"thumb"]]; 
     
-    NSString *urlString = [NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], [imageDic objectForKey:@"thumb"]]; 
-    
-    
-//    NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:urlString]];  
-//    UIImage * imageCell = [[UIImage alloc] initWithData:imageData]; 
-        
-    NSLog(@"urlstringNews : %@",urlString);
-    
-    //cell.image = scaleAndRotateImage(imageCell,70);
-    
+    //Set frame to load async image
     CGRect frame;
 	frame.size.width=65; frame.size.height=80;
 	frame.origin.x=10; frame.origin.y=20;
@@ -346,27 +346,29 @@ NSInteger sort4(id a, id b, void* p) {
     
 	[cell.contentView addSubview:asyncImage];
 	
-	//cell.text = [NSString stringWithFormat:@"Cell at row %ld.", [indexPath row]];
-	
+    [url release];
+    [urlString release];
 	return cell;
-}
+} 
 
-- (void)tableView:(UITableView *)tableView
+- (void)tableView:(UITableView *)aTableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-        
+    //Load news content    
     NSDictionary *news = [dicNews objectForKey: [keys objectAtIndex:indexPath.row]];
     self.newsDetailsViewController.text = [news objectForKey:@"content"]; 
     
+    //Load image and title
     NSArray *images = [news objectForKey:@"images"];
     NSDictionary *imageDic = [images objectAtIndex:0];
     self.newsDetailsViewController.imageURL = [NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], [imageDic objectForKey:@"big"]];
     self.newsDetailsViewController.newsTitle = [NSString stringWithFormat:@"%@",[news objectForKey:@"title"]];
     
-    TDPAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    //Push view
+    TDPAppDelegate *delegate = (TDPAppDelegate *)[[UIApplication sharedApplication] delegate];
     [delegate.navNewsController pushViewController:self.newsDetailsViewController animated:YES];
     [self.newsDetailsViewController resetInfo];
     
-     [tableView deselectRowAtIndexPath:indexPath animated:YES];  
+     [aTableView deselectRowAtIndexPath:indexPath animated:YES];  
     
 }
 

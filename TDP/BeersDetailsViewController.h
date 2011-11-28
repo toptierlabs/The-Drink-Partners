@@ -39,7 +39,7 @@
 @property (nonatomic, retain) UILabel *quantityText;
 @property (nonatomic, retain) UIButton *buttonReduce;
 @property (nonatomic, retain) UIButton *buttonAdd;
-
+ 
 @property (nonatomic, retain) NSString *text;
 @property (nonatomic, retain) NSString *imageURL;
 @property (nonatomic, retain) NSString *size;
