@@ -397,25 +397,49 @@
                shouldBeEnabled = "Yes"
                ignoreCount = "0"
                continueAfterRunningActions = "No"
-               symbolName = "-[EventsViewController dicEvents]"
+               symbolName = "-[EventsViewController imageView]"
                urlString = "file://localhost/EventsViewController.m"
-               timestampString = "343945938.499142"
+               timestampString = "344182650.722675"
                startingColumnNumber = "9223372036854775807"
                endingColumnNumber = "9223372036854775807"
-               startingLineNumber = "15"
-               endingLineNumber = "15">
+               startingLineNumber = "16"
+               endingLineNumber = "16">
             </Location>
             <Location
                shouldBeEnabled = "Yes"
                ignoreCount = "0"
                continueAfterRunningActions = "No"
-               symbolName = "-[EventsViewController setDicEvents:]"
+               symbolName = "-[EventsViewController setImageView:]"
                urlString = "file://localhost/EventsViewController.m"
-               timestampString = "343945938.499344"
+               timestampString = "344182650.722994"
                startingColumnNumber = "9223372036854775807"
                endingColumnNumber = "9223372036854775807"
-               startingLineNumber = "15"
-               endingLineNumber = "15">
+               startingLineNumber = "16"
+               endingLineNumber = "16">
+            </Location>
+            <Location
+               shouldBeEnabled = "Yes"
+               ignoreCount = "0"
+               continueAfterRunningActions = "No"
+               symbolName = "-[EventsViewController tableView]"
+               urlString = "file://localhost/EventsViewController.m"
+               timestampString = "344182650.723255"
+               startingColumnNumber = "9223372036854775807"
+               endingColumnNumber = "9223372036854775807"
+               startingLineNumber = "16"
+               endingLineNumber = "16">
+            </Location>
+            <Location
+               shouldBeEnabled = "Yes"
+               ignoreCount = "0"
+               continueAfterRunningActions = "No"
+               symbolName = "-[EventsViewController setTableView:]"
+               urlString = "file://localhost/EventsViewController.m"
+               timestampString = "344182650.723517"
+               startingColumnNumber = "9223372036854775807"
+               endingColumnNumber = "9223372036854775807"
+               startingLineNumber = "16"
+               endingLineNumber = "16">
             </Location>
          </Locations>
       </FileBreakpoint>
