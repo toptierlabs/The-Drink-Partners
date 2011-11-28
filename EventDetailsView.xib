@@ -111,11 +111,11 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">textView</string>
+						<string key="label">eventText</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="28042232"/>
 					</object>
-					<int key="connectionID">15</int>
+					<int key="connectionID">21</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -152,6 +152,7 @@
 						<int key="objectID">9</int>
 						<reference key="object" ref="28042232"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">Text View</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">20</int>
@@ -195,7 +196,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">20</int>
+			<int key="maxID">21</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -215,13 +216,13 @@
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">textView</string>
+						<string key="NS.key.0">eventText</string>
 						<string key="NS.object.0">UITextView</string>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">textView</string>
+						<string key="NS.key.0">eventText</string>
 						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">textView</string>
+							<string key="name">eventText</string>
 							<string key="candidateClassName">UITextView</string>
 						</object>
 					</object>

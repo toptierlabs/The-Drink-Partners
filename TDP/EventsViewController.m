@@ -182,12 +182,14 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
 
-    //Reset next screen
-    [self.eventDetailsController resetInfo];
+    
     
     
     TDPAppDelegate *delegate = (TDPAppDelegate *)[[UIApplication sharedApplication] delegate];
     [delegate.navEventsController pushViewController:self.eventDetailsController animated:YES];
+    
+//    //Reset next screen
+    [self.eventDetailsController resetInfo];
     
     //Deselect row
     [aTableView deselectRowAtIndexPath:indexPath animated:YES];

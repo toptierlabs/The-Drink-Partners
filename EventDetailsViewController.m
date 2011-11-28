@@ -16,11 +16,11 @@
 
 
 @synthesize images, imagesBig;
-@synthesize text, textView;
+@synthesize text, eventText;
 @synthesize image1, image2, image3, image4, image5;
 @synthesize imageSliderController;
-//@synthesize scrollView;
 
+//Variables for the AsyncImages one for each image
 AsyncImageView* asyncImage;
 AsyncImageView* asyncImage2;
 AsyncImageView* asyncImage3;
@@ -52,7 +52,7 @@ AsyncImageView* asyncImage5;
 
 - (void)dealloc
 {
-    [textView release];
+    [eventText release];
     [image1 release];
     [image2 release];
     [image3 release];
@@ -69,7 +69,7 @@ AsyncImageView* asyncImage5;
     [super dealloc];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)didReceiveMemoryWarning 
 {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
@@ -82,7 +82,7 @@ AsyncImageView* asyncImage5;
 -(void) initButtons
 {
 
-    [image5 setImage:nil forState:UIControlStateNormal];;
+    [image5 setImage:nil forState:UIControlStateNormal];
     [image4 setImage:nil forState:UIControlStateNormal];
     [image3 setImage:nil forState:UIControlStateNormal];
     [image2 setImage:nil forState:UIControlStateNormal];
@@ -97,51 +97,81 @@ AsyncImageView* asyncImage5;
     
 }
 
+//Method that refresh the controls of the view
 -(void) resetInfo
 {
-    [textView setText:self.text];
+    //Set the text to the TextView
+    [eventText setText:self.text];
+    //Init the buttons
     [self initButtons];
     int i = 1;
     
+    //Remove the AsyncImages from the buttons
+    if(asyncImage){
+        [asyncImage  removeFromSuperview];
+        asyncImage = nil;
+    }
+    if(asyncImage2){
+        [asyncImage2 removeFromSuperview];
+        asyncImage2 = nil;
+    }
+    if(asyncImage3){
+        [asyncImage3 removeFromSuperview];
+        asyncImage3 = nil;
+    }
+    if(asyncImage4){
+        [asyncImage4 removeFromSuperview];
+        asyncImage4 = nil;
+    }
+    if(asyncImage5){
+        [asyncImage5 removeFromSuperview];
+        asyncImage5 = nil;
+    }
     
-    NSMutableArray *imageList = [[NSMutableArray alloc] init];
+    //Creates the array of URLs
+    NSMutableArray *urlList = [[NSMutableArray alloc] init];
     for (NSString *imageUrl in images)
     {
         if (i <= 5) 
         {
             
+            //Creates the URL of the image
             NSString *urlString = [[NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], imageUrl] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]; 
-            CGRect frame;
-           
             NSURL* url = [[NSURL alloc] initWithString:urlString];
-
-   
-         //   NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:urlString]];  
-         //   UIImage *newImage = [[UIImage alloc] initWithData:imageData];
+            
+            //Frame variable for the AsyncImages
+            CGRect frame;
+            
+            
             switch (i)
             {
                 case 1:
+                    //Crete the frame
                     frame = CGRectMake(5, 15, 110, 140);
                     
-                    image1.frame = frame;//CGRectMake(13, 15, 136, 178);
+                    image1.frame = frame;
                     image1.adjustsImageWhenHighlighted = NO;
+                    //Set the action to the button
                     [image1 addTarget:self action:@selector(imgClicked:)
                      forControlEvents:UIControlEventTouchUpInside];
                     image1.enabled = true;
-
+                    
                     asyncImage = [[[AsyncImageView alloc]
                                                    initWithFrame:frame] autorelease];
                     asyncImage.tag = 990;
-                   
+                    //Create the AsyncImage whith the URL
                     [asyncImage loadImageFromURL:url];
+                    
+                    //Add the AsyncImage to the Button    
                     [image1 addSubview:asyncImage];
                     
-                    //[image1 setImage:newImage forState:UIControlStateNormal];
                     break;
                 case 2:
+                    //Crete the frame
                     frame = CGRectMake(70, 5, 80, 80);
                     
-                    image2.frame = frame;//CGRectMake(165, 15, 60, 60);
+                    image2.frame = frame;
+                    //Set the action to the button
                     [image2 addTarget:self action:@selector(imgClicked:)
                      forControlEvents:UIControlEventTouchUpInside];
                     image2.adjustsImageWhenHighlighted = NO;
@@ -151,36 +181,43 @@ AsyncImageView* asyncImage5;
                                                    initWithFrame:frame] autorelease];
                     asyncImage2.tag = 991;
                     
+                    //Create the AsyncImage whith the URL
                     [asyncImage2 loadImageFromURL:url];
                     
+                     //Add the AsyncImage to the Button 
                     [image2 addSubview:asyncImage2];
-                    
-                //    [image2 setImage:newImage forState:UIControlStateNormal];
+
                     break;
                 case 3:
+                    //Crete the frame
                     frame = CGRectMake(115, 5, 80, 80);
 
-                    image3.frame = frame;//CGRectMake(251, 15, 60, 60);
+                    image3.frame = frame;
                     image3.adjustsImageWhenHighlighted = NO;
+                    //Set the action to the button
                     [image3 addTarget:self action:@selector(imgClicked:)
                      forControlEvents:UIControlEventTouchUpInside];
                      image3.enabled = true;
                     
                     asyncImage3 = [[[AsyncImageView alloc]
                                    initWithFrame:frame] autorelease];
+                    
                     asyncImage3.tag = 992;
                     
+                    //Create the AsyncImage whith the URL
                     [asyncImage3 loadImageFromURL:url];
-
+                    
+                    //Add the AsyncImage to the Button 
                     [image3 addSubview:asyncImage3];
-                //    [image3 setImage:newImage forState:UIControlStateNormal];
                    
                     break;
                 case 4:
+                    //Crete the frame
                     frame = CGRectMake(70, 40, 80, 80);
                     
                     image4.frame = frame;
                     image4.adjustsImageWhenHighlighted = NO;
+                    //Set the action to the button
                     [image4 addTarget:self action:@selector(imgClicked:)
                      forControlEvents:UIControlEventTouchUpInside];
                      image4.enabled = true;
@@ -189,20 +226,20 @@ AsyncImageView* asyncImage5;
                                                     initWithFrame:frame] autorelease];
                     asyncImage4.tag = 993;
                     
+                    //Create the AsyncImage whith the URL
                     [asyncImage4 loadImageFromURL:url];
                     
+                    //Add the AsyncImage to the Button 
                     [image4 addSubview:asyncImage4];
-
-                    
-                 //   [image4 setImage:newImage forState:UIControlStateNormal];
-                   
                    
                     break;
                 case 5:
+                    //Crete the frame
                     frame = CGRectMake(115, 40, 80, 80);
                     
                     image5.frame = frame;
                     image5.adjustsImageWhenHighlighted = NO;
+                    //Set the action to the button
                     [image5 addTarget:self action:@selector(imgClicked:)
                      forControlEvents:UIControlEventTouchUpInside];
                      image5.enabled = true;
@@ -210,14 +247,12 @@ AsyncImageView* asyncImage5;
                     asyncImage5 = [[[AsyncImageView alloc]
                                                     initWithFrame:frame] autorelease];
                     asyncImage5.tag = 994;
-                    
+                    //Create the AsyncImage whith the URL
                     [asyncImage5 loadImageFromURL:url];
                     
+                    //Add the AsyncImage to the Button 
                     [image5 addSubview:asyncImage5];
-                    
-                    //[image5 setImage:newImage forState:UIControlStateNormal];
-                   
-                    
+              
                     break;
                     
                 default:
@@ -230,15 +265,19 @@ AsyncImageView* asyncImage5;
         }
         
         
-//        NSString *imageBigUrl = [imagesBig objectAtIndex:(i-1)];
-//        NSString *urlBigString = [[NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], imageBigUrl] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]; 
-//        NSData* imageBigData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:urlBigString]];  
-//        UIImage *newBigImage = [[UIImage alloc] initWithData:imageBigData];
-//        [imageList addObject:newBigImage];
+        //Create the URL of the image and add it to the collection
+        NSString *imageBigUrl = [imagesBig objectAtIndex:(i-1)];
+        NSString *urlBigString = [[NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], imageBigUrl] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]; 
+        NSURL* urlBig = [[NSURL alloc] initWithString:urlBigString];
+        [urlList addObject:urlBig];
+        
+        [urlBig release];
+        
         i++;
     }
-    self.imageSliderController.views = imageList;
-    [imageList release];
+    //Set the collection of URLs to the slider view
+    self.imageSliderController.views = urlList;
+    [urlList release];
 }
 
 - (void)viewDidLoad
@@ -262,45 +301,28 @@ AsyncImageView* asyncImage5;
     [self.view addSubview:image4];
     [self.view addSubview:image5];
     
-    
+    //Create the Slider Controller
     ImageSliderViewController *auximageSlider = [[ImageSliderViewController alloc] initWithNibName:@"ImageSliderView" bundle:nil];
     self.imageSliderController = auximageSlider;
     [auximageSlider release];
-    // Do any additional setup after loading the view from its nib.
 
-    [self resetInfo];
+
     
 }
 
--(void) viewWillDisappear:(BOOL)animated{
-    if(asyncImage){
-        [asyncImage  removeFromSuperview];
-        asyncImage = nil;
-    }
-    if(asyncImage2){
-        [asyncImage2 removeFromSuperview];
-        asyncImage2 = nil;
-    }
-    if(asyncImage3){
-        [asyncImage3 removeFromSuperview];
-        asyncImage3 = nil;
-    }
-    if(asyncImage4){
-        [asyncImage4 removeFromSuperview];
-        asyncImage4 = nil;
-    }
-    if(asyncImage5){
-        [asyncImage5 removeFromSuperview];
-        asyncImage5 = nil;
-    }
+-(void) viewWillAppear:(BOOL)animated{
+    //When the view appears reloads de info of the view
+    [self resetInfo];
 }
+
+
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-    self.textView = nil;
+    self.eventText = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

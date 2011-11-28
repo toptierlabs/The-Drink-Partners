@@ -15,7 +15,7 @@
     NSArray *imagesBig;
     NSString *text;
     
-    IBOutlet UITextView *textView;
+    IBOutlet UITextView *eventText;
     UIButton *image1;
     UIButton *image2;
     UIButton *image3;
@@ -24,13 +24,12 @@
     
     ImageSliderViewController *imageSliderController;
     
-//    IBOutlet UIScrollView *scrollView;
 }
 
 @property (nonatomic, retain) NSArray *images;
 @property (nonatomic, retain) NSArray *imagesBig;
 @property (nonatomic, retain) NSString *text;
-@property (nonatomic, retain) UITextView *textView;
+@property (nonatomic, retain) UITextView *eventText;
 @property (nonatomic, retain) UIButton *image1;
 @property (nonatomic, retain) UIButton *image2;
 @property (nonatomic, retain) UIButton *image3;
@@ -38,7 +37,6 @@
 @property (nonatomic, retain) UIButton *image5;
 @property (nonatomic, retain)  ImageSliderViewController *imageSliderController;
 
-//@property (nonatomic, retain) UIScrollView *scrollView;
 
 -(IBAction) imgClicked:(id) sender;
 -(void) resetInfo;

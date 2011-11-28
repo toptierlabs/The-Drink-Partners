@@ -8,6 +8,7 @@
 
 #import "ImageSliderViewController.h"
 #import "TDPAppDelegate.h"
+#import "asyncimageview.h"
 
 @implementation ImageSliderViewController
 
@@ -94,12 +95,19 @@
     int i = 1;
     
     //Add images to scroll view
-    for (UIView *view in views)
+    for (NSURL *url in views)
     {
-        UIImageView *image = [[UIImageView alloc] initWithImage: (UIImage *) view];
-        image.frame = CGRectMake((i-1) * 320, 0, 320, 367);
-        [scroller addSubview: image];
-        [image release];
+//        UIImageView *image = [[UIImageView alloc] initWithImage: (UIImage *) view];
+//        image.frame = CGRectMake((i-1) * 320, 0, 320, 367);
+//        [scroller addSubview: image];
+//        [image release];
+         
+        CGRect frame = CGRectMake((i-1) * 320, 0, 320, 367);
+        AsyncImageView *asyncImageBig = [[[AsyncImageView alloc] initWithFrame:frame] autorelease];;
+        [asyncImageBig loadImageFromURL:url];
+        
+         [scroller addSubview: asyncImageBig];
+        
         i++;
     }
     
