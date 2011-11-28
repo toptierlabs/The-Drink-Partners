@@ -14,15 +14,15 @@ cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/Events
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/BuyNowViewController.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/BuyNowViewController.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/AboutViewController.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/AboutViewController.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/NSObject+SBJson.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/NSObject+SBJson.m normal armv6 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonParser.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonParser.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonStreamParser.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonStreamParser.m normal armv6 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonParser.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonParser.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonStreamParserAccumulator.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonStreamParserAccumulator.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonStreamParserAdapter.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonStreamParserAdapter.m normal armv6 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonStreamParserState.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonStreamParserState.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonStreamWriter.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonStreamWriter.m normal armv6 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonStreamParserState.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonStreamParserState.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonStreamWriterAccumulator.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonStreamWriterAccumulator.m normal armv6 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonTokeniser.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonTokeniser.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonStreamWriterState.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonStreamWriterState.m normal armv6 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonTokeniser.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonTokeniser.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonUTF8Stream.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonUTF8Stream.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonWriter.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonWriter.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/PlistHelper.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/PlistHelper.m normal armv6 objective-c com.apple.compilers.llvmgcc42
@@ -30,32 +30,32 @@ cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/EventD
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/ImageSliderViewController.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/ImageSliderViewController.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/BeersDetailsViewController.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/BeersDetailsViewController.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/BeersTypesViewController.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/BeersTypesViewController.m normal armv6 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/Beer.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/Beer.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/NewsDetailsViewController.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/NewsDetailsViewController.m normal armv6 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/Beer.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/Beer.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/asyncimageview.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/asyncimageview.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/main.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/main.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/TDPAppDelegate.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/NavController.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/NavController.m normal armv7 objective-c com.apple.compilers.llvmgcc42
+cLd /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/TDP normal armv6
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/BeersViewController.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/BeersViewController.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/NewsViewController.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/NewsViewController.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/EventsViewController.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/BuyNowViewController.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/BuyNowViewController.m normal armv7 objective-c com.apple.compilers.llvmgcc42
-cLd /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/TDP normal armv6
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/AboutViewController.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/AboutViewController.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/NSObject+SBJson.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/NSObject+SBJson.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonParser.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonParser.m normal armv7 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonStreamParserAccumulator.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonStreamParserAccumulator.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonStreamParser.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonStreamParser.m normal armv7 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonStreamParserAccumulator.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonStreamParserAccumulator.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonStreamParserAdapter.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonStreamParserAdapter.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonStreamParserState.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonStreamParserState.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonStreamWriter.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonStreamWriter.m normal armv7 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonStreamWriterState.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonStreamWriterState.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonStreamWriterAccumulator.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonStreamWriterAccumulator.m normal armv7 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonStreamWriterState.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonStreamWriterState.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonTokeniser.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonTokeniser.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonUTF8Stream.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonUTF8Stream.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonWriter.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonWriter.m normal armv7 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/EventDetailsViewController.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/PlistHelper.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/PlistHelper.m normal armv7 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/EventDetailsViewController.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/ImageSliderViewController.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/ImageSliderViewController.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/BeersDetailsViewController.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/BeersDetailsViewController.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/BeersTypesViewController.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/BeersTypesViewController.m normal armv7 objective-c com.apple.compilers.llvmgcc42
@@ -67,23 +67,23 @@ cCreateUniversalBinary /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build
 cGenerateDSYMFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app.dSYM /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/TDP
 cCopyStringsFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/en.lproj/InfoPlist.strings TDP/en.lproj/InfoPlist.strings
 cCompileXIB /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/en.lproj/MainWindow.xib
-cCompileXIB /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/NewsView.xib
 cCompileXIB /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/BeersView.xib
+cCompileXIB /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/NewsView.xib
 cCompileXIB /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsView.xib
 cCompileXIB /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/BuyNowView.xib
 cCompileXIB /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/AboutView.xib
 cCopyPNGFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/bottomRow.png bottomRow.png
 cCopyPNGFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/bottomRowSelected.png bottomRowSelected.png
 cCopyPNGFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/gradientBackground.png gradientBackground.png
-cCopyPNGFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/imageA.png imageA.png
 cCopyPNGFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/middleRow.png middleRow.png
+cCopyPNGFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/imageA.png imageA.png
 cCopyPNGFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/middleRowSelected.png middleRowSelected.png
 cCopyPNGFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/topAndBottomRow.png topAndBottomRow.png
 cCopyPNGFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/topRow.png topRow.png
 cCopyPNGFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/topAndBottomRowSelected.png topAndBottomRowSelected.png
 cCopyPNGFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/topRowSelected.png topRowSelected.png
-cCopyPlistFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/URLs.plist URLs.plist
 cCompileXIB /Users/toptier/Desktop/Proyectos/The-Drink-Partners/EventDetailsView.xib
+cCopyPlistFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/URLs.plist URLs.plist
 cCompileXIB /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/ImageSliderView.xib
 cCompileXIB /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/BeersDetailsView.xib
 cCopyPNGFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/greenplus.png greenplus.png
@@ -95,8 +95,8 @@ cCopyPNGFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-i
 cCopyPNGFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/calendar.png calendar.png
 cCopyPNGFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/beer-mug.png beer-mug.png
 cCopyPNGFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/indicator.png indicator.png
-cCopyPNGFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/redButton.png redButton.png
 cCompileXIB /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/NewsDetailsView.xib
+cCopyPNGFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/redButton.png redButton.png
 cProcessProductPackaging "/Users/toptier/Library/MobileDevice/Provisioning Profiles/895548E1-4B03-4E50-862C-A2FB42EA1BBE.mobileprovision" /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/embedded.mobileprovision
 cTouch /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app
 cProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/Entitlements.plist /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP.xcent
@@ -200,21 +200,21 @@ s2530
 i"AboutViewController.h"
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/BeersDetailsView.xib
-c000000004ED379F800000000000061A2
-t1322482168
+c000000004ED3821700000000000061A2
+t1322484247
 s24994
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/BeersDetailsViewController.h
-c000000004ED37A1800000000000006F3
-t1322482200
+c000000004ED3821700000000000006F3
+t1322484247
 s1779
 i<UIKit/UIKit.h>
 i<CoreData/CoreData.h>
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/BeersDetailsViewController.m
-c000000004ED37DA60000000000003631
-t1322483110
-s13873
+c000000004ED382170000000000003928
+t1322484247
+s14632
 i"BeersDetailsViewController.h"
 i"asyncimageview.h"
 
@@ -224,15 +224,15 @@ t1322047763
 s18346
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/BeersTypesViewController.h
-c000000004ECFF2AE000000000000041C
-t1322250926
+c000000004ED38217000000000000041C
+t1322484247
 s1052
 i<UIKit/UIKit.h>
 i<CoreData/CoreData.h>
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/BeersTypesViewController.m
-c000000004ECFFADE0000000000002923
-t1322253022
+c000000004ED382170000000000002923
+t1322484247
 s10531
 i"BeersTypesViewController.h"
 i"SBJson.h"
@@ -246,15 +246,15 @@ t1321535475
 s11592
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/BeersViewController.h
-c000000004ECFF2B300000000000003DB
-t1322250931
+c000000004ED3821700000000000003DB
+t1322484247
 s987
 i<UIKit/UIKit.h>
 i<CoreData/CoreData.h>
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/BeersViewController.m
-c000000004ECFF9AE0000000000003F17
-t1322252718
+c000000004ED382170000000000003F17
+t1322484247
 s16151
 i"BeersViewController.h"
 i"SBJson.h"
@@ -278,8 +278,8 @@ i<MessageUI/MFMailComposeViewController.h>
 i"BeersDetailsViewController.h"
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/BuyNowViewController.m
-c000000004ECFFB640000000000003DC2
-t1322253156
+c000000004ED382170000000000003DC2
+t1322484247
 s15810
 i"BuyNowViewController.h"
 i<QuartzCore/QuartzCore.h>
@@ -294,15 +294,15 @@ t1322243680
 s11832
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.h
-c000000004ECFD66000000000000002F4
-t1322243680
-s756
+c000000004ED382FA00000000000002D5
+t1322484474
+s725
 i<UIKit/UIKit.h>
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m
-c000000004ECFFB4E0000000000002129
-t1322253134
-s8489
+c000000004ED3857D00000000000022FC
+t1322485117
+s8956
 i"EventsViewController.h"
 i"SBJson.h"
 i"TDPAppDelegate.h"
@@ -365,8 +365,8 @@ s655
 i<UIKit/UIKit.h>
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/NewsDetailsViewController.m
-c000000004ECFFA4A00000000000007B0
-t1322252874
+c000000004ED3821700000000000007B0
+t1322484247
 s1968
 i"NewsDetailsViewController.h"
 i"asyncimageview.h"
@@ -580,8 +580,8 @@ i<UIKit/UIKit.h>
 i<CoreData/CoreData.h>
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.m
-c000000004ECFF6280000000000001F45
-t1322251816
+c000000004ED382170000000000001F45
+t1322484247
 s8005
 i"TDPAppDelegate.h"
 i"NavController.h"
@@ -642,409 +642,409 @@ t1321985538
 s4638
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app
-t1322483320
+t1322485294
 s1394
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app.dSYM
-t1322483319
+t1322485263
 s102
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/AboutView.nib
-t1322252304
+t1322484247
 s2222
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/BeersDetailsView.nib
-t1322483319
+t1322484247
 s6044
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/BeersTypesView.nib
-t1322252305
+t1322484247
 s2093
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/BeersView.nib
-t1322252304
+t1322484247
 s2144
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/BuyNowView.nib
-t1322252304
+t1322484247
 s5934
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/EventDetailsView.nib
-t1322252305
+t1322484247
 s3052
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/EventsView.nib
-t1322252304
+t1322484247
 s2141
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/ImageSliderView.nib
-t1322252305
+t1322484247
 s2221
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/Info.plist
-t1322252286
+t1322484247
 s1035
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/NewsDetailsView.nib
-t1322252305
+t1322484247
 s3054
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/NewsView.nib
-t1322252304
+t1322484247
 s2093
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/PkgInfo
-t1322252286
+t1322484247
 s8
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/ResourceRules.plist
-t1322252286
+t1322484247
 s485
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/TDP
-t1322483318
+t1322485263
 s452656
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/TDP.momd
-t1322252286
+t1322484247
 s170
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/URLs.plist
-t1322252305
+t1322484247
 s482
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/beer-mug.png
-t1322252305
+t1322484247
 s3247
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/bottomRow.png
-t1322252304
+t1322484247
 s2231
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/bottomRowSelected.png
-t1322252304
+t1322484247
 s5963
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/calendar.png
-t1322252305
+t1322484247
 s2905
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/embedded.mobileprovision
-t1322252305
+t1322484247
 s7240
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/en.lproj/InfoPlist.strings
-t1322252304
+t1322484247
 s42
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/en.lproj/MainWindow.nib
-t1322252304
+t1322484247
 s2135
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/envelope.png
-t1322252305
+t1322484247
 s3062
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/gradientBackground.png
-t1322252304
+t1322484247
 s5758
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/greenplus.png
-t1322252305
+t1322484247
 s4606
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/imageA.png
-t1322252304
+t1322484247
 s4615
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/indicator.png
-t1322252305
+t1322484247
 s3393
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/middleRow.png
-t1322252304
+t1322484247
 s1597
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/middleRowSelected.png
-t1322252304
+t1322484247
 s5244
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/news.png
-t1322252305
+t1322484247
 s4225
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/redButton.png
-t1322252305
+t1322484247
 s2463
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/redminus.png
-t1322252305
+t1322484247
 s4698
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/shopping-cart.png
-t1322252305
+t1322484247
 s3084
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/topAndBottomRow.png
-t1322252305
+t1322484247
 s2660
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/topAndBottomRowSelected.png
-t1322252305
+t1322484247
 s6374
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/topRow.png
-t1322252305
+t1322484247
 s2091
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/topRowSelected.png
-t1322252305
+t1322484247
 s5704
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/AboutViewController.o
-t1322252288
+t1322484247
 s40360
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/Beer.o
-t1322252294
+t1322484247
 s5592
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/BeersDetailsViewController.o
-t1322483315
+t1322484247
 s84380
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/BeersTypesViewController.o
-t1322483316
+t1322484247
 s76236
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/BeersViewController.o
-t1322483314
+t1322484247
 s89584
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/BuyNowViewController.o
-t1322483315
+t1322484247
 s101780
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/EventDetailsViewController.o
-t1322483315
+t1322484247
 s71272
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/EventsViewController.o
-t1322483314
-s76076
+t1322485263
+s76636
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/ImageSliderViewController.o
-t1322252292
+t1322484247
 s52708
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/NSObject+SBJson.o
-t1322252289
+t1322484247
 s8772
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/NavController.o
-t1322252287
+t1322484247
 s40596
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/NewsDetailsViewController.o
-t1322252938
+t1322484247
 s47632
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/NewsViewController.o
-t1322483314
+t1322484247
 s75672
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/PlistHelper.o
-t1322483315
+t1322484247
 s8164
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonParser.o
-t1322252289
+t1322484247
 s16064
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonStreamParser.o
-t1322252289
+t1322484247
 s23256
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonStreamParserAccumulator.o
-t1322252289
+t1322484247
 s10028
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonStreamParserAdapter.o
-t1322252290
+t1322484247
 s21340
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonStreamParserState.o
-t1322252290
+t1322484247
 s39788
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonStreamWriter.o
-t1322252290
+t1322484247
 s37740
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonStreamWriterAccumulator.o
-t1322252290
+t1322484247
 s10704
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonStreamWriterState.o
-t1322252290
+t1322484247
 s25760
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonTokeniser.o
-t1322252291
+t1322484247
 s24596
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonUTF8Stream.o
-t1322252291
+t1322484247
 s16268
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonWriter.o
-t1322252291
+t1322484247
 s17396
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/TDP
-t1322483317
+t1322485263
 s215956
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/TDP.LinkFileList
-c000000004ECFF7FE0000000000000F09
-t1322252286
+c000000004ED382170000000000000F09
+t1322484247
 s3849
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/TDPAppDelegate.o
-t1322483314
+t1322485263
 s81756
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/asyncimageview.o
-t1322252294
+t1322484247
 s44612
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/main.o
-t1322252287
+t1322484247
 s6544
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/AboutViewController.o
-t1322252296
+t1322484247
 s40380
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/Beer.o
-t1322252301
+t1322484247
 s5592
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/BeersDetailsViewController.o
-t1322483318
+t1322484247
 s84064
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/BeersTypesViewController.o
-t1322483318
+t1322484247
 s76152
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/BeersViewController.o
-t1322483316
+t1322484247
 s88536
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/BuyNowViewController.o
-t1322483317
+t1322484247
 s100636
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/EventDetailsViewController.o
-t1322483317
+t1322484247
 s71344
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/EventsViewController.o
-t1322483317
-s75944
+t1322485263
+s76484
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/ImageSliderViewController.o
-t1322252300
+t1322484247
 s52264
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/NSObject+SBJson.o
-t1322252296
+t1322484247
 s8816
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/NavController.o
-t1322252295
+t1322484247
 s40612
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/NewsDetailsViewController.o
-t1322252941
+t1322484247
 s47660
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/NewsViewController.o
-t1322483316
+t1322484247
 s74816
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/PlistHelper.o
-t1322483317
+t1322484247
 s8164
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonParser.o
-t1322252297
+t1322484247
 s16084
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonStreamParser.o
-t1322252297
+t1322484247
 s23172
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonStreamParserAccumulator.o
-t1322252297
+t1322484247
 s10020
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonStreamParserAdapter.o
-t1322252297
+t1322484247
 s21232
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonStreamParserState.o
-t1322252298
+t1322484247
 s39644
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonStreamWriter.o
-t1322252298
+t1322484247
 s37064
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonStreamWriterAccumulator.o
-t1322252298
+t1322484247
 s10708
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonStreamWriterState.o
-t1322252298
+t1322484247
 s25808
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonTokeniser.o
-t1322252299
+t1322484247
 s24520
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonUTF8Stream.o
-t1322252299
+t1322484247
 s16004
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonWriter.o
-t1322252299
+t1322484247
 s17404
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/TDP
-t1322483318
+t1322485263
 s216436
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/TDP.LinkFileList
-c000000004ECFF7FE0000000000000F09
-t1322252286
+c000000004ED382170000000000000F09
+t1322484247
 s3849
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/TDPAppDelegate.o
-t1322483316
+t1322485263
 s81832
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/asyncimageview.o
-t1322252302
+t1322484247
 s44592
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/main.o
-t1322252294
+t1322484247
 s6524
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP.xcent
-t1322252305
+t1322484247
 s404
 
 N/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/com.apple.build-tools.platform.validate
@@ -1143,16 +1143,16 @@ s1186
 
 CCheck dependencies
 r0
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesb7b2ec39b683b441^6c935a3ab683b441^---0#1#0#--18"Check dependencies
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciescf9e4bd0bd83b441^a4a5bad0bd83b441^---0#1#0#--18"Check dependencies
 
 CCodeSign /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app
-s344176186.428402
-e344176186.592707
+s344178128.795766
+e344178128.957547
 r1
 xCodeSign
 x/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app
 o/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app: replacing existing signature
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection39"CodeSign build/Release-iphoneos/TDP.app5fd16d3ab683b441^88ba973ab683b441^-113"/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app: replacing existing signature-0#0#0#-19%DVTDocumentLocation2@99"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/0000000000000000^925"CodeSign build/Release-iphoneos/TDP.app    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    setenv _CODESIGN_ALLOCATE_ /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    /usr/bin/codesign -f -s "iPhone Developer: fernando colman (4N594RZJN3)" --resource-rules=/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/ResourceRules.plist --entitlements /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP.xcent /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection39"CodeSign build/Release-iphoneos/TDP.app15e0cbd0bd83b441^9f20f5d0bd83b441^-113"/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app: replacing existing signature-0#0#0#-19%DVTDocumentLocation2@99"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/0000000000000000^925"CodeSign build/Release-iphoneos/TDP.app    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    setenv _CODESIGN_ALLOCATE_ /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    /usr/bin/codesign -f -s "iPhone Developer: fernando colman (4N594RZJN3)" --resource-rules=/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/ResourceRules.plist --entitlements /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP.xcent /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app
 
 CCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/AboutViewController.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/AboutViewController.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 s343945088.628026
@@ -1291,8 +1291,8 @@ o3 warnings generated.
 lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Compile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.ma0c4dbf2b583b441^228dc6f3b583b441^-1527"/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m: In function '-[EventDetailsViewController imgClicked:]':/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m:32: warning: type 'id <UIApplicationDelegate>' does not conform to the 'UITabBarControllerDelegate' protocol/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m: At top level:/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/PlistHelper.h:11: warning: 'dicTexts' defined but not used/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m:168:32: warning: Potential leak of an object allocated on line 168 and stored into 'newBigImage'        UIImage *newBigImage = [[UIImage alloc] initWithData:imageBigData];                               ^/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m:167:32: warning: Potential leak of an object allocated on line 167 and stored into 'imageBigData'        NSData* imageBigData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:urlBigString]];                                 ^/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m:108:33: warning: Potential leak of an object allocated on line 108 and stored into 'imageData'            NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:urlString]];                                  ^3 warnings generated.6(21%IDEActivityLogMessage2@95"Type 'id <UIApplicationDelegate>' does not conform to the 'UITabBarControllerDelegate' protocol-344176115#146#197#-1#-23%DVTTextDocumentLocation3@103"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m0000000000000000^31#18446744073709551615#31#18446744073709551615#18446744073709551615#0#45"Type '*' does not conform to the '*' protocol--32%IDEActivityLogContextInfoMessage4@13"At top level:-344176115#343#103#-0#-3@103"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#19"LLVM GCC 4.2 Notice--2@31"'dicTexts' defined but not used-344176115#446#115#-1#-3@85"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/PlistHelper.h0000000000000000^10#18446744073709551615#10#18446744073709551615#18446744073709551615#0#24"'*' defined but not used--2@79"Potential leak of an object allocated on line 168 and stored into 'newBigImage'-344176115#561#185#-1#-3@103"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m0000000000000000^167#18446744073709551615#167#18446744073709551615#18446744073709551615#0#20"LLVM GCC 4.2 Warning--2@80"Potential leak of an object allocated on line 167 and stored into 'imageBigData'-344176115#855#186#-1#-3@103"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m0000000000000000^166#18446744073709551615#166#18446744073709551615#18446744073709551615#0#20"LLVM GCC 4.2 Warning--2@77"Potential leak of an object allocated on line 108 and stored into 'imageData'-344176115#1182#183#-1#-3@103"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m0000000000000000^107#18446744073709551615#107#18446744073709551615#18446744073709551615#0#20"LLVM GCC 4.2 Warning--0#0#0#-19%DVTDocumentLocation5@103"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m0000000000000000^2182"CompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/EventDetailsViewController.o TDP/../EventDetailsViewController.m normal armv6 objective-c com.apple.compilers.llvmgcc42    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    /Users/toptier/Downloads/checker-258/libexec/ccc-analyzer -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -Os -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.3 -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-generated-files.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-own-target-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-all-target-headers.hmap -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-project-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/include -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources/armv6 -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources -F/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -include /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDP-Prefix.pch -c /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m -o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/EventDetailsViewController.o
 
 CCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/EventsViewController.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m normal armv6 objective-c com.apple.compilers.llvmgcc42
-s344176113.138228
-e344176114.840663
+s344178062.496484
+e344178063.513330
 r1
 xCompileC
 xbuild/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/EventsViewController.o
@@ -1301,23 +1301,8 @@ xnormal
 xarmv6
 xobjective-c
 xcom.apple.compilers.llvmgcc42
-o/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:286: warning: incomplete implementation of class 'EventsViewController'
-o/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:286: warning: method definition for '-initWithFrame:' not found
 o/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/PlistHelper.h:11: warning: 'dicTexts' defined but not used
-o/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:106:9: warning: Value stored to 'mainLabel' is never read
-o        mainLabel = (UILabel *)[cell viewWithTag:TOP_LABEL_TAG];
-o        ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-o/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:177:45: warning: Potential leak of an object allocated on line 177
-o    self.eventDetailsController.imagesBig = [[NSArray alloc] initWithArray:imagesBig];
-o                                            ^
-o/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:176:42: warning: Potential leak of an object allocated on line 176
-o    self.eventDetailsController.images = [[NSArray alloc] initWithArray:imagesThumbnails];
-o                                         ^
-o/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:241:29: warning: Potential leak of an object allocated on line 241 and stored into 'eventsJson'
-o    NSString *eventsJson =  [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:[PlistHelper readValue:@"Events URL"]]];
-o                            ^
-o4 warnings generated.
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection86"Compile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.ma79423f1b583b441^6e35d7f2b583b441^-1591"/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:286: warning: incomplete implementation of class 'EventsViewController'/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:286: warning: method definition for '-initWithFrame:' not found/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/PlistHelper.h:11: warning: 'dicTexts' defined but not used/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:106:9: warning: Value stored to 'mainLabel' is never read        mainLabel = (UILabel *)[cell viewWithTag:TOP_LABEL_TAG];        ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:177:45: warning: Potential leak of an object allocated on line 177    self.eventDetailsController.imagesBig = [[NSArray alloc] initWithArray:imagesBig];                                            ^/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:176:42: warning: Potential leak of an object allocated on line 176    self.eventDetailsController.images = [[NSArray alloc] initWithArray:imagesThumbnails];                                         ^/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:241:29: warning: Potential leak of an object allocated on line 241 and stored into 'eventsJson'    NSString *eventsJson =  [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:[PlistHelper readValue:@"Events URL"]]];                            ^4 warnings generated.7(21%IDEActivityLogMessage2@57"Incomplete implementation of class 'EventsViewController'-344176113#0#151#-1#-23%DVTTextDocumentLocation3@94"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m0000000000000000^285#18446744073709551615#285#18446744073709551615#18446744073709551615#0#38"Incomplete implementation of class '*'--2@49"Method definition for '-initWithFrame:' not found-344176113#151#143#-1#-3@94"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m0000000000000000^285#18446744073709551615#285#18446744073709551615#18446744073709551615#0#35"Method definition for '*' not found--2@31"'dicTexts' defined but not used-344176113#294#115#-1#-3@85"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/PlistHelper.h0000000000000000^10#18446744073709551615#10#18446744073709551615#18446744073709551615#0#24"'*' defined but not used--2@41"Value stored to 'mainLabel' is never read-344176114#409#137#-1#-3@94"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m0000000000000000^105#18446744073709551615#105#18446744073709551615#18446744073709551615#0#20"LLVM GCC 4.2 Warning--2@49"Potential leak of an object allocated on line 177-344176114#675#146#-1#-3@94"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m0000000000000000^176#18446744073709551615#176#18446744073709551615#18446744073709551615#0#20"LLVM GCC 4.2 Warning--2@49"Potential leak of an object allocated on line 176-344176114#954#146#-1#-3@94"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m0000000000000000^175#18446744073709551615#175#18446744073709551615#18446744073709551615#0#20"LLVM GCC 4.2 Warning--2@78"Potential leak of an object allocated on line 241 and stored into 'eventsJson'-344176114#1234#175#-1#-3@94"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m0000000000000000^240#18446744073709551615#240#18446744073709551615#18446744073709551615#0#20"LLVM GCC 4.2 Warning--0#0#0#-19%DVTDocumentLocation4@94"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m0000000000000000^2152"CompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/EventsViewController.o TDP/EventsViewController.m normal armv6 objective-c com.apple.compilers.llvmgcc42    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    /Users/toptier/Downloads/checker-258/libexec/ccc-analyzer -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -Os -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.3 -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-generated-files.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-own-target-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-all-target-headers.hmap -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-project-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/include -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources/armv6 -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources -F/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -include /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDP-Prefix.pch -c /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m -o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/EventsViewController.o
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection86"Compile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.mdb337f8ebd83b441^3868838fbd83b441^-115"/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/PlistHelper.h:11: warning: 'dicTexts' defined but not used1(21%IDEActivityLogMessage2@31"'dicTexts' defined but not used-344178062#0#115#-1#-23%DVTTextDocumentLocation3@85"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/PlistHelper.h0000000000000000^10#18446744073709551615#10#18446744073709551615#18446744073709551615#0#24"'*' defined but not used--0#0#0#-19%DVTDocumentLocation4@94"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m0000000000000000^2152"CompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/EventsViewController.o TDP/EventsViewController.m normal armv6 objective-c com.apple.compilers.llvmgcc42    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    /Users/toptier/Downloads/checker-258/libexec/ccc-analyzer -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -Os -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.3 -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-generated-files.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-own-target-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-all-target-headers.hmap -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-project-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/include -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources/armv6 -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources -F/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -include /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDP-Prefix.pch -c /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m -o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/EventsViewController.o
 
 CCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/ImageSliderViewController.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/ImageSliderViewController.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 s343945092.185016
@@ -1570,8 +1555,8 @@ xcom.apple.compilers.llvmgcc42
 lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection78"Compile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonWriter.mdc9f2f832f80b441^444edb832f80b441^---0#0#0#-19%DVTDocumentLocation2@86"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonWriter.m0000000000000000^2120"CompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonWriter.o TDP/SBJsonWriter.m normal armv6 objective-c com.apple.compilers.llvmgcc42    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    /Users/toptier/Downloads/checker-258/libexec/ccc-analyzer -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -Os -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.3 -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-generated-files.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-own-target-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-all-target-headers.hmap -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-project-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/include -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources/armv6 -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources -F/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -include /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDP-Prefix.pch -c /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonWriter.m -o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/SBJsonWriter.o
 
 CCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/TDPAppDelegate.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.m normal armv6 objective-c com.apple.compilers.llvmgcc42
-s344176113.137099
-e344176114.810777
+s344178062.495394
+e344178063.498813
 r1
 xCompileC
 xbuild/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/TDPAppDelegate.o
@@ -1584,7 +1569,7 @@ o/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.m:82:66:
 o    navEventsController.tabBarItem.image = [[UIImage imageNamed:@"calendar.png"] autorelease];
 o                                                                 ^~~~~~~~~~~~~~
 o1 warning generated.
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection80"Compile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.mc74b23f1b583b441^f6b4cff2b583b441^-325"/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.m:82:66: warning: Object sent -autorelease too many times    navEventsController.tabBarItem.image = [[UIImage imageNamed:@"calendar.png"] autorelease];                                                                 ^~~~~~~~~~~~~~1 warning generated.1(21%IDEActivityLogMessage2@39"Object sent -autorelease too many times-344176114#0#129#-1#-23%DVTTextDocumentLocation3@88"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.m0000000000000000^81#18446744073709551615#81#18446744073709551615#18446744073709551615#0#20"LLVM GCC 4.2 Warning--0#0#0#-19%DVTDocumentLocation4@88"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.m0000000000000000^2128"CompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/TDPAppDelegate.o TDP/TDPAppDelegate.m normal armv6 objective-c com.apple.compilers.llvmgcc42    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    /Users/toptier/Downloads/checker-258/libexec/ccc-analyzer -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -Os -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.3 -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-generated-files.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-own-target-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-all-target-headers.hmap -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-project-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/include -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources/armv6 -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources -F/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -include /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDP-Prefix.pch -c /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.m -o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/TDPAppDelegate.o
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection80"Compile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.mbd007f8ebd83b441^9ab27f8fbd83b441^-325"/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.m:82:66: warning: Object sent -autorelease too many times    navEventsController.tabBarItem.image = [[UIImage imageNamed:@"calendar.png"] autorelease];                                                                 ^~~~~~~~~~~~~~1 warning generated.1(21%IDEActivityLogMessage2@39"Object sent -autorelease too many times-344178063#0#129#-1#-23%DVTTextDocumentLocation3@88"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.m0000000000000000^81#18446744073709551615#81#18446744073709551615#18446744073709551615#0#20"LLVM GCC 4.2 Warning--0#0#0#-19%DVTDocumentLocation4@88"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.m0000000000000000^2128"CompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/TDPAppDelegate.o TDP/TDPAppDelegate.m normal armv6 objective-c com.apple.compilers.llvmgcc42    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    /Users/toptier/Downloads/checker-258/libexec/ccc-analyzer -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -Os -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.3 -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-generated-files.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-own-target-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-all-target-headers.hmap -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-project-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/include -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources/armv6 -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources -F/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -include /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDP-Prefix.pch -c /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.m -o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/TDPAppDelegate.o
 
 CCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/asyncimageview.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/asyncimageview.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 s343945094.001130
@@ -1753,8 +1738,8 @@ o3 warnings generated.
 lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Compile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m40c250f5b583b441^dfe23df6b583b441^-1527"/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m: In function '-[EventDetailsViewController imgClicked:]':/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m:32: warning: type 'id <UIApplicationDelegate>' does not conform to the 'UITabBarControllerDelegate' protocol/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m: At top level:/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/PlistHelper.h:11: warning: 'dicTexts' defined but not used/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m:167:32: warning: Potential leak of an object allocated on line 167 and stored into 'imageBigData'        NSData* imageBigData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:urlBigString]];                                 ^/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m:168:32: warning: Potential leak of an object allocated on line 168 and stored into 'newBigImage'        UIImage *newBigImage = [[UIImage alloc] initWithData:imageBigData];                               ^/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m:108:33: warning: Potential leak of an object allocated on line 108 and stored into 'imageData'            NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:urlString]];                                  ^3 warnings generated.6(21%IDEActivityLogMessage2@95"Type 'id <UIApplicationDelegate>' does not conform to the 'UITabBarControllerDelegate' protocol-344176117#146#197#-1#-23%DVTTextDocumentLocation3@103"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m0000000000000000^31#18446744073709551615#31#18446744073709551615#18446744073709551615#0#45"Type '*' does not conform to the '*' protocol--32%IDEActivityLogContextInfoMessage4@13"At top level:-344176117#343#103#-0#-3@103"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#19"LLVM GCC 4.2 Notice--2@31"'dicTexts' defined but not used-344176117#446#115#-1#-3@85"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/PlistHelper.h0000000000000000^10#18446744073709551615#10#18446744073709551615#18446744073709551615#0#24"'*' defined but not used--2@80"Potential leak of an object allocated on line 167 and stored into 'imageBigData'-344176118#561#186#-1#-3@103"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m0000000000000000^166#18446744073709551615#166#18446744073709551615#18446744073709551615#0#20"LLVM GCC 4.2 Warning--2@79"Potential leak of an object allocated on line 168 and stored into 'newBigImage'-344176118#888#185#-1#-3@103"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m0000000000000000^167#18446744073709551615#167#18446744073709551615#18446744073709551615#0#20"LLVM GCC 4.2 Warning--2@77"Potential leak of an object allocated on line 108 and stored into 'imageData'-344176118#1182#183#-1#-3@103"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m0000000000000000^107#18446744073709551615#107#18446744073709551615#18446744073709551615#0#20"LLVM GCC 4.2 Warning--0#0#0#-19%DVTDocumentLocation5@103"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m0000000000000000^2182"CompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/EventDetailsViewController.o TDP/../EventDetailsViewController.m normal armv7 objective-c com.apple.compilers.llvmgcc42    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    /Users/toptier/Downloads/checker-258/libexec/ccc-analyzer -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -Os -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.3 -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-generated-files.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-own-target-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-all-target-headers.hmap -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-project-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/include -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources/armv7 -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources -F/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -include /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDP-Prefix.pch -c /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/../EventDetailsViewController.m -o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/EventDetailsViewController.o
 
 CCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/EventsViewController.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m normal armv7 objective-c com.apple.compilers.llvmgcc42
-s344176116.451495
-e344176117.381796
+s344178062.516096
+e344178063.518500
 r1
 xCompileC
 xbuild/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/EventsViewController.o
@@ -1763,23 +1748,8 @@ xnormal
 xarmv7
 xobjective-c
 xcom.apple.compilers.llvmgcc42
-o/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:286: warning: incomplete implementation of class 'EventsViewController'
-o/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:286: warning: method definition for '-initWithFrame:' not found
 o/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/PlistHelper.h:11: warning: 'dicTexts' defined but not used
-o/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:106:9: warning: Value stored to 'mainLabel' is never read
-o        mainLabel = (UILabel *)[cell viewWithTag:TOP_LABEL_TAG];
-o        ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-o/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:176:42: warning: Potential leak of an object allocated on line 176
-o    self.eventDetailsController.images = [[NSArray alloc] initWithArray:imagesThumbnails];
-o                                         ^
-o/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:177:45: warning: Potential leak of an object allocated on line 177
-o    self.eventDetailsController.imagesBig = [[NSArray alloc] initWithArray:imagesBig];
-o                                            ^
-o/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:241:29: warning: Potential leak of an object allocated on line 241 and stored into 'eventsJson'
-o    NSString *eventsJson =  [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:[PlistHelper readValue:@"Events URL"]]];
-o                            ^
-o4 warnings generated.
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection86"Compile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m7dcc73f4b583b441^0ad961f5b583b441^-1591"/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:286: warning: incomplete implementation of class 'EventsViewController'/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:286: warning: method definition for '-initWithFrame:' not found/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/PlistHelper.h:11: warning: 'dicTexts' defined but not used/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:106:9: warning: Value stored to 'mainLabel' is never read        mainLabel = (UILabel *)[cell viewWithTag:TOP_LABEL_TAG];        ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:176:42: warning: Potential leak of an object allocated on line 176    self.eventDetailsController.images = [[NSArray alloc] initWithArray:imagesThumbnails];                                         ^/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:177:45: warning: Potential leak of an object allocated on line 177    self.eventDetailsController.imagesBig = [[NSArray alloc] initWithArray:imagesBig];                                            ^/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m:241:29: warning: Potential leak of an object allocated on line 241 and stored into 'eventsJson'    NSString *eventsJson =  [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:[PlistHelper readValue:@"Events URL"]]];                            ^4 warnings generated.7(21%IDEActivityLogMessage2@57"Incomplete implementation of class 'EventsViewController'-344176116#0#151#-1#-23%DVTTextDocumentLocation3@94"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m0000000000000000^285#18446744073709551615#285#18446744073709551615#18446744073709551615#0#38"Incomplete implementation of class '*'--2@49"Method definition for '-initWithFrame:' not found-344176116#151#143#-1#-3@94"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m0000000000000000^285#18446744073709551615#285#18446744073709551615#18446744073709551615#0#35"Method definition for '*' not found--2@31"'dicTexts' defined but not used-344176116#294#115#-1#-3@85"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/PlistHelper.h0000000000000000^10#18446744073709551615#10#18446744073709551615#18446744073709551615#0#24"'*' defined but not used--2@41"Value stored to 'mainLabel' is never read-344176117#409#137#-1#-3@94"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m0000000000000000^105#18446744073709551615#105#18446744073709551615#18446744073709551615#0#20"LLVM GCC 4.2 Warning--2@49"Potential leak of an object allocated on line 176-344176117#675#146#-1#-3@94"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m0000000000000000^175#18446744073709551615#175#18446744073709551615#18446744073709551615#0#20"LLVM GCC 4.2 Warning--2@49"Potential leak of an object allocated on line 177-344176117#955#146#-1#-3@94"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m0000000000000000^176#18446744073709551615#176#18446744073709551615#18446744073709551615#0#20"LLVM GCC 4.2 Warning--2@78"Potential leak of an object allocated on line 241 and stored into 'eventsJson'-344176117#1234#175#-1#-3@94"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m0000000000000000^240#18446744073709551615#240#18446744073709551615#18446744073709551615#0#20"LLVM GCC 4.2 Warning--0#0#0#-19%DVTDocumentLocation4@94"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m0000000000000000^2152"CompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/EventsViewController.o TDP/EventsViewController.m normal armv7 objective-c com.apple.compilers.llvmgcc42    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    /Users/toptier/Downloads/checker-258/libexec/ccc-analyzer -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -Os -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.3 -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-generated-files.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-own-target-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-all-target-headers.hmap -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-project-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/include -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources/armv7 -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources -F/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -include /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDP-Prefix.pch -c /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m -o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/EventsViewController.o
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection86"Compile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m386b848ebd83b441^05c0848fbd83b441^-115"/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/PlistHelper.h:11: warning: 'dicTexts' defined but not used1(21%IDEActivityLogMessage2@31"'dicTexts' defined but not used-344178062#0#115#-1#-23%DVTTextDocumentLocation3@85"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/PlistHelper.h0000000000000000^10#18446744073709551615#10#18446744073709551615#18446744073709551615#0#24"'*' defined but not used--0#0#0#-19%DVTDocumentLocation4@94"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m0000000000000000^2152"CompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/EventsViewController.o TDP/EventsViewController.m normal armv7 objective-c com.apple.compilers.llvmgcc42    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    /Users/toptier/Downloads/checker-258/libexec/ccc-analyzer -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -Os -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.3 -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-generated-files.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-own-target-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-all-target-headers.hmap -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-project-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/include -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources/armv7 -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources -F/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -include /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDP-Prefix.pch -c /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/EventsViewController.m -o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/EventsViewController.o
 
 CCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/ImageSliderViewController.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/ImageSliderViewController.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 s343945099.895985
@@ -2032,8 +2002,8 @@ xcom.apple.compilers.llvmgcc42
 lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection78"Compile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonWriter.m4c19ec8a2f80b441^9fe89a8b2f80b441^---0#0#0#-19%DVTDocumentLocation2@86"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonWriter.m0000000000000000^2120"CompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonWriter.o TDP/SBJsonWriter.m normal armv7 objective-c com.apple.compilers.llvmgcc42    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    /Users/toptier/Downloads/checker-258/libexec/ccc-analyzer -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -Os -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.3 -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-generated-files.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-own-target-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-all-target-headers.hmap -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-project-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/include -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources/armv7 -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources -F/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -include /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDP-Prefix.pch -c /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/SBJsonWriter.m -o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/SBJsonWriter.o
 
 CCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/TDPAppDelegate.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.m normal armv7 objective-c com.apple.compilers.llvmgcc42
-s344176115.781377
-e344176116.646181
+s344178062.509976
+e344178063.493213
 r1
 xCompileC
 xbuild/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/TDPAppDelegate.o
@@ -2046,7 +2016,7 @@ o/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.m:82:66:
 o    navEventsController.tabBarItem.image = [[UIImage imageNamed:@"calendar.png"] autorelease];
 o                                                                 ^~~~~~~~~~~~~~
 o1 warning generated.
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection80"Compile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.mbc3dc8f3b583b441^7577a5f4b583b441^-325"/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.m:82:66: warning: Object sent -autorelease too many times    navEventsController.tabBarItem.image = [[UIImage imageNamed:@"calendar.png"] autorelease];                                                                 ^~~~~~~~~~~~~~1 warning generated.1(21%IDEActivityLogMessage2@39"Object sent -autorelease too many times-344176116#0#129#-1#-23%DVTTextDocumentLocation3@88"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.m0000000000000000^81#18446744073709551615#81#18446744073709551615#18446744073709551615#0#20"LLVM GCC 4.2 Warning--0#0#0#-19%DVTDocumentLocation4@88"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.m0000000000000000^2128"CompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/TDPAppDelegate.o TDP/TDPAppDelegate.m normal armv7 objective-c com.apple.compilers.llvmgcc42    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    /Users/toptier/Downloads/checker-258/libexec/ccc-analyzer -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -Os -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.3 -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-generated-files.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-own-target-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-all-target-headers.hmap -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-project-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/include -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources/armv7 -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources -F/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -include /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDP-Prefix.pch -c /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.m -o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/TDPAppDelegate.o
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection80"Compile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.m5dc1828ebd83b441^4e417e8fbd83b441^-325"/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.m:82:66: warning: Object sent -autorelease too many times    navEventsController.tabBarItem.image = [[UIImage imageNamed:@"calendar.png"] autorelease];                                                                 ^~~~~~~~~~~~~~1 warning generated.1(21%IDEActivityLogMessage2@39"Object sent -autorelease too many times-344178063#0#129#-1#-23%DVTTextDocumentLocation3@88"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.m0000000000000000^81#18446744073709551615#81#18446744073709551615#18446744073709551615#0#20"LLVM GCC 4.2 Warning--0#0#0#-19%DVTDocumentLocation4@88"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.m0000000000000000^2128"CompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/TDPAppDelegate.o TDP/TDPAppDelegate.m normal armv7 objective-c com.apple.compilers.llvmgcc42    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    /Users/toptier/Downloads/checker-258/libexec/ccc-analyzer -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -Os -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.3 -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-generated-files.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-own-target-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-all-target-headers.hmap -iquote /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP-project-headers.hmap -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/include -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources/armv7 -I/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/DerivedSources -F/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos -DNS_BLOCK_ASSERTIONS=1 -include /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDP-Prefix.pch -c /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/TDPAppDelegate.m -o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/TDPAppDelegate.o
 
 CCompileC build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/asyncimageview.o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP/asyncimageview.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 s343945101.722410
@@ -2367,14 +2337,14 @@ xbuild/Release-iphoneos/TDP.app/ResourceRules.plist
 lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection55"Copy build/Release-iphoneos/TDP.app/ResourceRules.plist2159c47e2f80b441^7270c97e2f80b441^---0#0#0#-19%DVTDocumentLocation2@118"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/ResourceRules.plist0000204dfb01f041^824"CpResource /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/ResourceRules.plist build/Release-iphoneos/TDP.app/ResourceRules.plist    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/ResourceRules.plist /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app
 
 CCreateUniversalBinary /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/TDP normal "armv6 armv7"
-s344176118.857964
-e344176118.896756
+s344178063.634437
+e344178063.641419
 r1
 xCreateUniversalBinary
 x/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/TDP
 xnormal
 xarmv6 armv7
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection110"Create universal binary /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/TDP90bcdbf6b583b441^d190e5f6b583b441^---0#0#0#-19%DVTDocumentLocation2@102"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/TDP0000000000000000^818"CreateUniversalBinary build/Release-iphoneos/TDP.app/TDP normal "armv6 armv7"    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    /usr/bin/lipo -create /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/TDP /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/TDP -output /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/TDP
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection110"Create universal binary /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/TDP2784a28fbd83b441^db32a48fbd83b441^---0#0#0#-19%DVTDocumentLocation2@102"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/TDP0000000000000000^818"CreateUniversalBinary build/Release-iphoneos/TDP.app/TDP normal "armv6 armv7"    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    /usr/bin/lipo -create /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/TDP /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/TDP -output /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/TDP
 
 CDataModelVersionCompile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/TDP.momd /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP.xcdatamodeld
 s343945086.790772
@@ -2386,33 +2356,33 @@ x/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP.xcdatamodeld
 lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection80"DataModelVersionCompile build/Release-iphoneos/TDP.app/TDP.momd TDP.xcdatamodeldd09bca7e2f80b441^ecd9df7e2f80b441^---0#0#0#-19%DVTDocumentLocation2@85"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP.xcdatamodeld/0000000000000000^649"DataModelVersionCompile build/Release-iphoneos/TDP.app/TDP.momd TDP.xcdatamodeld    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    /Developer/usr/bin/momc /Users/toptier/Desktop/Proyectos/The-Drink-Partners/TDP.xcdatamodeld /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/TDP.momd
 
 CGenerateDSYMFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app.dSYM /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/TDP
-s344176118.897974
-e344176119.035654
+s344178063.643424
+e344178063.725686
 r1
 xGenerateDSYMFile
 x/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app.dSYM
 x/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/TDP
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Generating /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app.dSYMb9fee5f6b583b441^3f1f09f7b583b441^---0#0#0#-19%DVTDocumentLocation2@104"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app.dSYM/0000000000000000^677"GenerateDSYMFile build/Release-iphoneos/TDP.app.dSYM build/Release-iphoneos/TDP.app/TDP    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    /Developer/usr/bin/dsymutil /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/TDP -o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app.dSYM
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Generating /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app.dSYM45d4a48fbd83b441^f8c5b98fbd83b441^---0#0#0#-19%DVTDocumentLocation2@104"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app.dSYM/0000000000000000^677"GenerateDSYMFile build/Release-iphoneos/TDP.app.dSYM build/Release-iphoneos/TDP.app/TDP    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    /Developer/usr/bin/dsymutil /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/TDP -o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app.dSYM
 
 CLd /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/TDP normal armv6
-s344176116.647419
-e344176117.313452
+s344178063.514516
+e344178063.627624
 r1
 xLd
 x/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/TDP
 xnormal
 xarmv6
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection124"Link /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/TDPaaeea5f4b583b441^4b5750f5b583b441^---0#0#0#--1222"Ld build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/TDP normal armv6    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv IPHONEOS_DEPLOYMENT_TARGET 4.3    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    /Users/toptier/Downloads/checker-258/libexec/ccc-analyzer -arch armv6 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -L/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos -F/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos -filelist /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/TDP.LinkFileList -dead_strip -miphoneos-version-min=4.3 -framework MessageUI -framework CoreData -framework UIKit -framework Foundation -framework CoreGraphics -o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/TDP
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection124"Link /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/TDPe4d7838fbd83b441^b9aaa08fbd83b441^---0#0#0#--1222"Ld build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/TDP normal armv6    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv IPHONEOS_DEPLOYMENT_TARGET 4.3    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    /Users/toptier/Downloads/checker-258/libexec/ccc-analyzer -arch armv6 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -L/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos -F/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos -filelist /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/TDP.LinkFileList -dead_strip -miphoneos-version-min=4.3 -framework MessageUI -framework CoreData -framework UIKit -framework Foundation -framework CoreGraphics -o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv6/TDP
 
 CLd /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/TDP normal armv7
-s344176118.560773
-e344176118.856550
+s344178063.520180
+e344178063.633213
 r1
 xLd
 x/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/TDP
 xnormal
 xarmv7
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection124"Link /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/TDP47aa8ff6b583b441^4a45dbf6b583b441^---0#0#0#--1222"Ld build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/TDP normal armv7    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv IPHONEOS_DEPLOYMENT_TARGET 4.3    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    /Users/toptier/Downloads/checker-258/libexec/ccc-analyzer -arch armv7 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -L/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos -F/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos -filelist /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/TDP.LinkFileList -dead_strip -miphoneos-version-min=4.3 -framework MessageUI -framework CoreData -framework UIKit -framework Foundation -framework CoreGraphics -o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/TDP
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection124"Link /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/TDP0d55858fbd83b441^4419a28fbd83b441^---0#0#0#--1222"Ld build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/TDP normal armv7    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv IPHONEOS_DEPLOYMENT_TARGET 4.3    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    /Users/toptier/Downloads/checker-258/libexec/ccc-analyzer -arch armv7 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -L/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos -F/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos -filelist /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/TDP.LinkFileList -dead_strip -miphoneos-version-min=4.3 -framework MessageUI -framework CoreData -framework UIKit -framework Foundation -framework CoreGraphics -o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/Objects-normal/armv7/TDP
 
 CProcessInfoPlistFile /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/Info.plist TDP/TDP-Info.plist
 s343945086.766175
@@ -2442,22 +2412,22 @@ x/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iph
 lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection165"ProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/Entitlements.plist build/TDP.build/Release-iphoneos/TDP.build/TDP.xcentb70874912f80b441^84d475912f80b441^---0#0#0#-19%DVTDocumentLocation2@120"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP.xcent0000204dfb01f041^810"ProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/Entitlements.plist build/TDP.build/Release-iphoneos/TDP.build/TDP.xcent    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    <com.apple.tools.product-pkg-utility> /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/Entitlements.plist -entitlements -format xml -o /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/TDP.build/Release-iphoneos/TDP.build/TDP.xcent
 
 CTouch /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app
-s344176119.994071
-e344176120.008771
+s344178063.742876
+e344178063.748904
 r1
 xTouch
 x/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection88"Touch /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app2195fef7b583b441^083e02f8b583b441^---0#0#0#--521"Touch build/Release-iphoneos/TDP.app    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    /usr/bin/touch -c /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection88"Touch /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app7c42be8fbd83b441^41b7bf8fbd83b441^---0#0#0#--521"Touch build/Release-iphoneos/TDP.app    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    /usr/bin/touch -c /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app
 
 CValidate /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app
-s344176186.595208
-e344176186.690455
+s344178128.960244
+e344178129.051635
 r1
 xValidate
 x/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app
-o2011-11-28 10:29:46.620 Validation[2335:607] *** Warning: Defaulting to the standard codesign tool
+o2011-11-28 11:02:08.978 Validation[4209:607] *** Warning: Defaulting to the standard codesign tool
 owarning: iPhone/iPod Touch: Info.plist: Unable to verify icon dimensions, no icon found.  You must define CFBundleIconFile, CFBundleIconFiles, or provide a default Icon.png that is 57x57 (-19013)
 oUnable to validate your application. - (null)
 o
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection39"Validate build/Release-iphoneos/TDP.app747c983ab683b441^83c2b03ab683b441^-342"2011-11-28 10:29:46.620 Validation[2335:607] *** Warning: Defaulting to the standard codesign toolwarning: iPhone/iPod Touch: Info.plist: Unable to verify icon dimensions, no icon found.  You must define CFBundleIconFile, CFBundleIconFiles, or provide a default Icon.png that is 57x57 (-19013)Unable to validate your application. - (null)1(21%IDEActivityLogMessage2@187" iPhone/iPod Touch: Info.plist: Unable to verify icon dimensions, no icon found.  You must define CFBundleIconFile, CFBundleIconFiles, or provide a default Icon.png that is 57x57 (-19013)177"IPhone/iPod Touch: Info.plist: Unable to verify icon dimensions, no icon found.  You must define CFBundleIconFile, CFBundleIconFiles, or provide a default Icon.png that is 57x57344176186#18446744073709551615#0#-1#-23%DVTTextDocumentLocation3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#---0#0#0#-19%DVTDocumentLocation4@99"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/0000000000000000^633"Validate build/Release-iphoneos/TDP.app    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    setenv PRODUCT_TYPE com.apple.product-type.application    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/Validation /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection39"Validate build/Release-iphoneos/TDP.app6ff4f5d0bd83b441^0c3a0dd1bd83b441^-342"2011-11-28 11:02:08.978 Validation[4209:607] *** Warning: Defaulting to the standard codesign toolwarning: iPhone/iPod Touch: Info.plist: Unable to verify icon dimensions, no icon found.  You must define CFBundleIconFile, CFBundleIconFiles, or provide a default Icon.png that is 57x57 (-19013)Unable to validate your application. - (null)1(21%IDEActivityLogMessage2@187" iPhone/iPod Touch: Info.plist: Unable to verify icon dimensions, no icon found.  You must define CFBundleIconFile, CFBundleIconFiles, or provide a default Icon.png that is 57x57 (-19013)177"IPhone/iPod Touch: Info.plist: Unable to verify icon dimensions, no icon found.  You must define CFBundleIconFile, CFBundleIconFiles, or provide a default Icon.png that is 57x57344178129#18446744073709551615#0#-1#-23%DVTTextDocumentLocation3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#---0#0#0#-19%DVTDocumentLocation4@99"file://localhost/Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app/0000000000000000^633"Validate build/Release-iphoneos/TDP.app    cd /Users/toptier/Desktop/Proyectos/The-Drink-Partners    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/toptier/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/toptier/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin"    setenv PRODUCT_TYPE com.apple.product-type.application    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/Validation /Users/toptier/Desktop/Proyectos/The-Drink-Partners/build/Release-iphoneos/TDP.app
 

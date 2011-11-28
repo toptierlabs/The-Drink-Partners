@@ -10,16 +10,21 @@
 
 @class EventDetailsViewController;
 @interface EventsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
+    UITableView IBOutlet *tableView;
+    UIImageView IBOutlet *imageView;
+    
     NSDictionary *dicEvents;
     NSArray *keys;
-    UITableView *tableView;
-    UIImageView *imageView;
+
 }
+
+@property (nonatomic, retain) UITableView *tableView;
+@property (nonatomic, retain) UIImageView *imageView;
 
 @property(nonatomic, retain) NSDictionary *dicEvents;
 @property(nonatomic, retain) NSArray *keys;
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
+
 @property (nonatomic,retain) EventDetailsViewController * eventDetailsController;
-@property (nonatomic, retain) IBOutlet UIImageView *imageView;
+
 
 @end

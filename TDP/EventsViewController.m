@@ -13,14 +13,12 @@
 #import "EventDetailsViewController.h"
 @implementation EventsViewController
 
-@synthesize dicEvents;
-@synthesize keys;
+@synthesize tableView, imageView;
+@synthesize dicEvents, keys;
 @synthesize eventDetailsController;
-@synthesize tableView;
-@synthesize imageView;
+
 
 NSMutableArray *listOfEvents;
-
 
 
 
@@ -29,11 +27,10 @@ NSMutableArray *listOfEvents;
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     const NSInteger TOP_LABEL_TAG = 1001;
-
+    const NSInteger SECOND_LABEL_TAG = 1002;
     static NSString *CellIdentifier = @"CellEvent";
     
     UILabel *mainLabel, *secondLabel;
-
     NSDictionary *event = [dicEvents objectForKey: [keys objectAtIndex:indexPath.row]];
     
     UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -48,7 +45,7 @@ NSMutableArray *listOfEvents;
           reuseIdentifier:CellIdentifier]
          autorelease];
         
-        
+        //Initialize indicator image
         UIImage *indicatorImage = [UIImage imageNamed:@"indicator.png"];
         cell.accessoryView =
         [[[UIImageView alloc]
@@ -79,9 +76,6 @@ NSMutableArray *listOfEvents;
         mainLabel.highlightedTextColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.9 alpha:1.0];
         mainLabel.font = [UIFont systemFontOfSize:14.0];;
         
-        
-        mainLabel.text = [event objectForKey: @"title"];
-        
 
         secondLabel = [[[UILabel alloc] initWithFrame:CGRectMake(cell.indentationWidth + 30, 23.0, 220.0, 16.0)] autorelease];
         [cell.contentView addSubview:secondLabel];
@@ -90,7 +84,8 @@ NSMutableArray *listOfEvents;
         secondLabel.backgroundColor = [UIColor clearColor];
         secondLabel.textColor = [UIColor darkGrayColor];
         secondLabel.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
-        secondLabel.text = [event objectForKey: @"eventdate"];
+        secondLabel.tag = SECOND_LABEL_TAG;
+        
         //
         // Create a background image view.
         //
@@ -104,13 +99,13 @@ NSMutableArray *listOfEvents;
     else
     {
         mainLabel = (UILabel *)[cell viewWithTag:TOP_LABEL_TAG];
+        secondLabel = (UILabel *)[cell viewWithTag:SECOND_LABEL_TAG];
         
     }
     
     
-
-
-        
+    mainLabel.text = [event objectForKey: @"title"];
+    secondLabel.text = [event objectForKey: @"eventdate"];
     
     //
     // Set the background and selected background images for the text.
@@ -161,6 +156,7 @@ NSMutableArray *listOfEvents;
 - (void)tableView:(UITableView *)aTableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    //Load thumbnails for the next screen
     NSDictionary *event = [dicEvents objectForKey: [keys objectAtIndex:indexPath.row]];
     self.eventDetailsController.text = [event objectForKey:@"content"];
     NSMutableArray *imagesThumbnails =  [[NSMutableArray alloc] init];
@@ -173,23 +169,28 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         
     }
     
-    self.eventDetailsController.images = [[NSArray alloc] initWithArray:imagesThumbnails];
-    self.eventDetailsController.imagesBig = [[NSArray alloc] initWithArray:imagesBig];
+    NSArray *thumbnailsArray = [[NSArray alloc] initWithArray:imagesThumbnails];
+    self.eventDetailsController.images = thumbnailsArray;
+    [thumbnailsArray release];
+    
+    NSArray *imagesBigArray = [[NSArray alloc] initWithArray:imagesBig];
+    self.eventDetailsController.imagesBig = imagesBigArray;
+    
+    [imagesBigArray release];
     [imagesThumbnails release];
     [imagesBig release];
     
     
 
-    
+    //Reset next screen
     [self.eventDetailsController resetInfo];
     
     
     TDPAppDelegate *delegate = (TDPAppDelegate *)[[UIApplication sharedApplication] delegate];
     [delegate.navEventsController pushViewController:self.eventDetailsController animated:YES];
     
+    //Deselect row
     [aTableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-  
 
 }
 
@@ -210,6 +211,11 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)dealloc
 {
     [listOfEvents release];
+    [tableView release];
+    [imageView release];
+    [dicEvents release];
+    [keys release];
+
     [super dealloc];
 }
 
@@ -239,13 +245,13 @@ NSInteger sort(id a, id b, void* p) {
     
     listOfEvents = [[NSMutableArray alloc] init];
     NSString *eventsJson =  [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:[PlistHelper readValue:@"Events URL"]]];
-    if ([eventsJson length] == 0) {
-        [eventsJson release];
-        return;
-    }
+
     
     SBJsonParser *parser = [[SBJsonParser alloc] init];
     NSDictionary *dicEventsAux = [[parser objectWithString:eventsJson error:nil] copy]; 
+    [eventsJson release];
+    
+    
     self.dicEvents = dicEventsAux;
     [dicEventsAux release];
     
@@ -272,6 +278,8 @@ NSInteger sort(id a, id b, void* p) {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    self.tableView = nil;
+    self.imageView = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
