@@ -9,20 +9,25 @@
 #import <UIKit/UIKit.h>
 
 @interface NewsDetailsViewController : UIViewController{
+    IBOutlet UITextView *textView;
+    IBOutlet UIImageView *image;
+    
     NSString *text;
     NSString *imageURL;
     NSString *newsTitle;
     
-    IBOutlet UITextView *textView;
-    IBOutlet UIImageView *image;
 }
-@property (nonatomic, retain) NSString *text;
-@property (nonatomic, retain) NSString *imageURL;
-@property (nonatomic, retain) NSString *newsTitle;
 
 @property (nonatomic, retain) UITextView *textView;
 @property (nonatomic, retain) UIImageView *image;
 
+@property (nonatomic, retain) NSString *text;
+@property (nonatomic, retain) NSString *imageURL;
+@property (nonatomic, retain) NSString *newsTitle;
+
+
+
 -(void) resetInfo;
 
 @end
+ 

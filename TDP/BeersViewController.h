@@ -12,8 +12,8 @@
 @class BeersDetailsViewController;
 
 @interface BeersViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
-    UITableView IBOutlet *tableView;
-    UIImageView IBOutlet *imageView;
+    IBOutlet UITableView *tableView;
+    IBOutlet UIImageView *imageView;
     
     NSString *beerTypeName;
     NSDictionary *dicBeers;

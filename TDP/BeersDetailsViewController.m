@@ -43,7 +43,7 @@ UIImage *scaleAndRotateImage2(UIImage *image,int kMaxResolution)
             bounds.size.width = bounds.size.height * ratio;  
         }  
     }  
-    
+     
     //Scale the image based on orientation
     CGFloat scaleRatio = bounds.size.width / width;  
     CGSize imageSize = CGSizeMake(CGImageGetWidth(imgRef), CGImageGetHeight(imgRef));  

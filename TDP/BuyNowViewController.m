@@ -24,21 +24,126 @@
 @synthesize message;
 @synthesize beersDetailsController;
 
-// Table events
 
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    [tableView release];
+    [imageView release];
+    [tableViewCell release];
+    [totalLabel release];
+    [emptyLabel release];
+    [message release];
+    
+    [fetchedResultsController release];
+    [managedObjectContext release];
+    [beers release];
+    
+    [beersDetailsController release];
+    [super dealloc];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
+}
+
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    //Hide sent mail status message
+    message.hidden = YES;
+    self.title = @"Buy Now";
+    
+    // Do any additional setup after loading the view from its nib.
+    
+    // Do any additional setup after loading the view from its nib.
+    //
+	// Change the properties of the imageView and tableView (these could be set
+	// in interface builder instead).
+	//
+	tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+	tableView.rowHeight = 135;
+	tableView.backgroundColor = [UIColor clearColor];
+	imageView.image = [UIImage imageNamed:@"gradientBackground.png"];
+	
+    //Load details controller
+    BeersDetailsViewController *auxBeerDetails = [[BeersDetailsViewController alloc] initWithNibName:@"BeersDetailsView" bundle:nil];
+    self.beersDetailsController = auxBeerDetails;    
+    self.beersDetailsController.managedObjectContext =  managedObjectContext;
+    [auxBeerDetails release];
+    
+    
+
+    //
+    // Create a background image view.
+    //
+    tableViewCell.backgroundView = [[[UIImageView alloc] init] autorelease];
+    ((UIImageView *)tableViewCell.backgroundView).image = [UIImage imageNamed:@"topAndBottomRow.png"];
+    
+    UIBarButtonItem *checkoutBtn = [[UIBarButtonItem alloc] initWithTitle:@"Check Out"
+                                                                    style:UIBarButtonItemStyleBordered
+                                                                   target:self
+                                                                   action:@selector(checkOut)];
+    
+    // Add checkout button on the top right corner
+    self.navigationItem.rightBarButtonItem = checkoutBtn;
+    [checkoutBtn release];
+    
+}
+
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+    
+    self.tableView = nil;  // Table
+    self.imageView = nil;  //Background image
+    self.tableViewCell = nil; // total price cell
+    self.totalLabel = nil; // total price label
+    self.emptyLabel = nil; //Empty cart message
+    self.message = nil;     // Mail status label 
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+// Table events
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    //Select a beer
     Beer *beer = [beers objectAtIndex:indexPath.row];
     self.beersDetailsController.text = beer.text; 
 
+    //Loading beer details
     self.beersDetailsController.imageURL = beer.imageURL;
-    
     self.beersDetailsController.size = beer.size;
     self.beersDetailsController.abv = beer.abv;
     self.beersDetailsController.price = beer.priceString;
     self.beersDetailsController.beerName = beer.name;
     
+    //Push view
     TDPAppDelegate *delegate = (TDPAppDelegate *)[[UIApplication sharedApplication] delegate];
     [delegate.navBuyNowController pushViewController:self.beersDetailsController animated:YES];
     [self.beersDetailsController resetInfo];
@@ -52,7 +157,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 // Return the number of sections for the table.
 //
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+{ 
 	return 1;
 }
 
@@ -171,7 +276,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 		beerDetailsLabel = (UILabel *)[cell viewWithTag:BOTTOM_LABEL_TAG];
 	}
 	
-    
+    //Set labels text
     Beer *beer = [beers objectAtIndex:[indexPath row]];
 	beerTitleLabel.text = [NSString stringWithFormat:@"%@", beer.name];
 	beerDetailsLabel.text = [NSString stringWithFormat:@"Size: %@ml\nAbv: %@\nS$%@\nQuantity: %d", beer.size, beer.abv, beer.priceString, [beer.quantity integerValue]];
@@ -210,7 +315,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	((UIImageView *)cell.backgroundView).image = rowBackground;
 	((UIImageView *)cell.selectedBackgroundView).image = selectionBackground;
 	
-		
+    //Load async image
     CGRect frame;
 	frame.size.width=90; frame.size.height=90;
 	frame.origin.x=5; frame.origin.y=20;
@@ -219,7 +324,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	asyncImage.tag = 999;
 	NSURL* url = [[NSURL alloc] initWithString:beer.imageURL];
 	[asyncImage loadImageFromURL:url];
-   
+    [url release];
     
 	[cell.contentView addSubview:asyncImage];
 
@@ -230,71 +335,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 // End table events
 
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)dealloc
-{
-    [super dealloc];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    message.hidden = YES;
-    self.title = @"Buy Now";
-
-    // Do any additional setup after loading the view from its nib.
-    
-    // Do any additional setup after loading the view from its nib.
-    //
-	// Change the properties of the imageView and tableView (these could be set
-	// in interface builder instead).
-	//
-	tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-	tableView.rowHeight = 135;
-	tableView.backgroundColor = [UIColor clearColor];
-	imageView.image = [UIImage imageNamed:@"gradientBackground.png"];
-	
-    BeersDetailsViewController *auxBeerDetails = [[BeersDetailsViewController alloc] initWithNibName:@"BeersDetailsView" bundle:nil];
-    self.beersDetailsController = auxBeerDetails;    
-    self.beersDetailsController.managedObjectContext =  managedObjectContext;
-
-    
-
-//    beers = [[NSMutableArray alloc] init];
-    //
-    // Create a background image view.
-    //
-    tableViewCell.backgroundView = [[[UIImageView alloc] init] autorelease];
-    ((UIImageView *)tableViewCell.backgroundView).image = [UIImage imageNamed:@"topAndBottomRow.png"];
-    
-    UIBarButtonItem *checkoutBtn = [[UIBarButtonItem alloc] initWithTitle:@"Check Out"
-                                                                  style:UIBarButtonItemStyleBordered
-                                                                 target:self
-                                                                 action:@selector(checkOut)];
-        
-    self.navigationItem.rightBarButtonItem = checkoutBtn;
-    
-}
-
 -(void)checkOut {
+    //Checkout, must call Mail composer view
     Class mailClass = (NSClassFromString(@"MFMailComposeViewController"));
     if (mailClass != nil)
     {
@@ -331,26 +373,15 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // Set up recipients
     NSArray *toRecipients = [NSArray arrayWithObject:mailTo]; 
-    //NSArray *ccRecipients = [NSArray arrayWithObjects:@"second@example.com", @"third@example.com", nil]; 
-    //NSArray *bccRecipients = [NSArray arrayWithObject:@"fourth@example.com"]; 
-    
+
     [picker setToRecipients:toRecipients];
-    //[picker setCcRecipients:ccRecipients];  
-    //[picker setBccRecipients:bccRecipients];
-    
-    // Attach an image to the email
-    //NSString *path = [[NSBundle mainBundle] pathForResource:@"rainy" ofType:@"png"];
-    //NSData *myData = [NSData dataWithContentsOfFile:path];
-    //[picker addAttachmentData:myData mimeType:@"image/png" fileName:@"rainy"];
-    
+
     // Fill out the email body text
-    
     NSString *body = @"";
     for (Beer *beer in beers) {
         NSString *beerInfo = [NSString stringWithFormat:@"Name: %@\nUnit price: %@\nQuantity: %d\n\n\n", beer.name, beer.priceString,  [beer.quantity integerValue]];
         body = [NSString stringWithFormat:@"%@%@", body, beerInfo];
     }
-
     body = [NSString stringWithFormat:@"\n\n\n%@%@", body, [totalLabel text]];
 
     [picker setMessageBody:body isHTML:NO];
@@ -409,54 +440,55 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     body = [NSString stringWithFormat:@"\n\n\n%@%@", body, [totalLabel text]];
 
     
-    NSString *email = [NSString stringWithFormat:@"%@%@", recipients, body];
-    email = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *email = [[NSString alloc] initWithFormat:@"%@%@", recipients, body];
+    NSString *encodedEmail = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:email]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:encodedEmail]];
+    [email release];
 }
 
 
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
 
 
 -(void) reloadBeerList {
+    
+    //Set up context
     NSError *error = nil;
     NSManagedObjectContext *context = [self managedObjectContext];
     
-    
-    
+    //Fetch beers
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription 
                                    entityForName:@"Beer" inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
+    //Save beers array
     self.beers = [context executeFetchRequest:fetchRequest error:&error];
     
+    
+    //Update total price
     self.totalPrice = 0;
+    
     for (Beer *beer in self.beers)
     {
         self.totalPrice += [beer.priceValue floatValue] * [beer.quantity intValue];
     }
     
+    //Set total label
     self.totalLabel.text = [NSString stringWithFormat:@"Total S$%.2f", self.totalPrice];
+    
+    //Reload table
     [self.tableView reloadData];
     
+    //Update empty label
     if ([self.beers count] == 0){
         [emptyLabel setHidden:NO];
     }
     else
         [emptyLabel setHidden:YES];
+    
+    //Release variables
     [fetchRequest release];
     
     
@@ -465,7 +497,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void) viewWillAppear:(BOOL)animated
 {
-
+    //Reload beer list on will appear event
     [self reloadBeerList];
     
 }
@@ -476,29 +508,34 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 
 -(void) removeAllObjects {
+    //Set up context
     NSManagedObjectContext *context = [self managedObjectContext];
     NSFetchRequest * allBeers = [[NSFetchRequest alloc] init];
     [allBeers setEntity:[NSEntityDescription entityForName:@"Beer" inManagedObjectContext:context]];
     [allBeers setIncludesPropertyValues:NO]; //only fetch the managedObjectID
     
     NSError * error = nil;
+    //Get all beers
     NSArray * beerList = [context executeFetchRequest:allBeers error:&error];
     [allBeers release];
     //error handling goes here
     for (NSManagedObject * beer in beerList) {
+        //Delete beer
         [context deleteObject:beer];
     }
+    
+    //Save
     NSError *saveError = nil;
     [context save:&saveError];
     
+    //Reload beer list and tableview
     [self reloadBeerList];
-    
-    [self.tableView reloadData];
 }
 
 
 -(IBAction) emptyCart:(id) sender {
     [self removeAllObjects];
+    
     //Clean budge
     [(UIViewController *)[self.tabBarController.viewControllers objectAtIndex:3] tabBarItem].badgeValue = nil;
 }

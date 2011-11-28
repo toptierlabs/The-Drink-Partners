@@ -10,8 +10,8 @@
 
 @class EventDetailsViewController;
 @interface EventsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
-    UITableView IBOutlet *tableView;
-    UIImageView IBOutlet *imageView;
+    IBOutlet UITableView *tableView;
+    IBOutlet UIImageView *imageView;
     
     NSDictionary *dicEvents;
     NSArray *keys;

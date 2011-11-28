@@ -17,18 +17,22 @@
 
 //Events
 -(void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    //Update page control page based on scroll view position
     int page = scrollView.contentOffset.x / scrollView.frame.size.width;
     pageControl.currentPage = page;
     self.currentPage = page;
 }
 
+//Clicking on page control event
 - (IBAction) clickPageControl:(id)sender {
     int page = pageControl.currentPage;
     
+    //Set frame position
     CGRect frame = scroller.frame;
     frame.origin.x = frame.size.width *page;
     frame.origin.y = 0;
     
+    //Set current page
     self.currentPage = page;
     [scroller scrollRectToVisible:frame animated:YES];
     
@@ -43,16 +47,16 @@
     if (self) {
         // Custom initialization
     }
-    return self;
+    return self; 
 }
 
 - (void)dealloc
 {
-    [super dealloc];
     [views release];
     [pageControl release];
     [scroller release];
-
+    
+    [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,9 +72,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-   
-    
     
 }
 
@@ -91,6 +92,8 @@
 
 -(void) viewDidAppear:(BOOL)animated {
     int i = 1;
+    
+    //Add images to scroll view
     for (UIView *view in views)
     {
         UIImageView *image = [[UIImageView alloc] initWithImage: (UIImage *) view];
@@ -104,9 +107,11 @@
     scroller.contentSize = CGSizeMake(320 * ([views count]), 367);
     scroller.pagingEnabled = TRUE;
     
+    //Refresh number of pages
     pageControl.numberOfPages = [views count];
     pageControl.currentPage = self.currentPage;
     
+    //Set position
     CGRect frame = scroller.frame;
     frame.origin.x = frame.size.width * self.currentPage;
     frame.origin.y = 0;

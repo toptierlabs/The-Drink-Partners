@@ -38,9 +38,6 @@ NSInteger sort3(id a, id b, void* p) {
     return self;
 }
 
--(void) setCoreDataContext: (NSManagedObjectContext *) context{
-    managedObjectContext = context;
-}
 
 
 - (void)dealloc
@@ -59,7 +56,6 @@ NSInteger sort3(id a, id b, void* p) {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
 }
-
 
 
 - (void)viewDidLoad
@@ -107,7 +103,7 @@ NSInteger sort3(id a, id b, void* p) {
             if ( [[[dicBeersTypes objectForKey:typeKey] objectForKey:@"beers"]  isKindOfClass:[NSDictionary class]]) {
                 //If the beers list is not empty, add it to a new dictionary.
                 [dicTypes setValue:[dicBeersTypes objectForKey:typeKey] forKey:typeKey];
-            }
+            } 
             
         }
         
@@ -146,7 +142,9 @@ NSInteger sort3(id a, id b, void* p) {
 }
 
 
-
+-(void) setCoreDataContext: (NSManagedObjectContext *) context{
+    managedObjectContext = context;
+}
 
 //Table view management methods
 

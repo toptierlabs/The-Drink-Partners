@@ -11,6 +11,7 @@
 
 @implementation PlistHelper
 
+static NSDictionary *dicTexts;
 +(NSString *) readValue:(NSString*) key{
     if (dicTexts == nil) 
     {
@@ -21,4 +22,5 @@
     return [dicTexts objectForKey:key];
     
 }
+
 @end

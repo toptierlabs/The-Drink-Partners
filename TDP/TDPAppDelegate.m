@@ -78,11 +78,11 @@
     navBuyNowController.navigationBar.tintColor = [UIColor blackColor];
     
     //Set tab bar images
-    navBeersController.tabBarItem.image = [[UIImage imageNamed:@"beer-mug.png"] autorelease];
-    navEventsController.tabBarItem.image = [[UIImage imageNamed:@"calendar.png"] autorelease];
-    navNewsController.tabBarItem.image = [[UIImage imageNamed:@"news.png"] autorelease];
-    navBuyNowController.tabBarItem.image = [[UIImage imageNamed:@"shopping-cart.png"] autorelease];
-    aboutViewController.tabBarItem.image = [[UIImage imageNamed:@"envelope.png"] autorelease];
+    navBeersController.tabBarItem.image = [UIImage imageNamed:@"beer-mug.png"];
+    navEventsController.tabBarItem.image = [UIImage imageNamed:@"calendar.png"];
+    navNewsController.tabBarItem.image = [UIImage imageNamed:@"news.png"];
+    navBuyNowController.tabBarItem.image = [UIImage imageNamed:@"shopping-cart.png"];
+    aboutViewController.tabBarItem.image = [UIImage imageNamed:@"envelope.png"];
     
     // Add view controllers to the tab bar controller
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:navBeersController, navEventsController, navNewsController, navBuyNowController, aboutViewController, nil];
