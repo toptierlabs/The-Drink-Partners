@@ -10,6 +10,7 @@
 #import "PlistHelper.h"
 #import "ImageSliderViewController.h"
 #import "TDPAppDelegate.h"
+#import "asyncimageview.h"
 
 @implementation EventDetailsViewController
 
@@ -20,6 +21,11 @@
 @synthesize imageSliderController;
 //@synthesize scrollView;
 
+AsyncImageView* asyncImage;
+AsyncImageView* asyncImage2;
+AsyncImageView* asyncImage3;
+AsyncImageView* asyncImage4;
+AsyncImageView* asyncImage5;
 
 //Events
 -(IBAction) imgClicked:(id) sender
@@ -105,50 +111,112 @@
         {
             
             NSString *urlString = [[NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], imageUrl] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]; 
-            NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:urlString]];  
-            UIImage *newImage = [[UIImage alloc] initWithData:imageData];
+            CGRect frame;
+           
+            NSURL* url = [[NSURL alloc] initWithString:urlString];
+
+   
+         //   NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:urlString]];  
+         //   UIImage *newImage = [[UIImage alloc] initWithData:imageData];
             switch (i)
             {
                 case 1:
-                    image1.frame = CGRectMake(13, 15, 136, 178);
+                    frame = CGRectMake(5, 15, 110, 140);
+                    
+                    image1.frame = frame;//CGRectMake(13, 15, 136, 178);
                     image1.adjustsImageWhenHighlighted = NO;
                     [image1 addTarget:self action:@selector(imgClicked:)
                      forControlEvents:UIControlEventTouchUpInside];
                     image1.enabled = true;
-                    [image1 setImage:newImage forState:UIControlStateNormal];
+
+                    asyncImage = [[[AsyncImageView alloc]
+                                                   initWithFrame:frame] autorelease];
+                    asyncImage.tag = 990;
+                   
+                    [asyncImage loadImageFromURL:url];
+                    [image1 addSubview:asyncImage];
+                    
+                    //[image1 setImage:newImage forState:UIControlStateNormal];
                     break;
                 case 2:
-                    image2.frame = CGRectMake(165, 15, 60, 60);
+                    frame = CGRectMake(70, 5, 80, 80);
+                    
+                    image2.frame = frame;//CGRectMake(165, 15, 60, 60);
                     [image2 addTarget:self action:@selector(imgClicked:)
                      forControlEvents:UIControlEventTouchUpInside];
                     image2.adjustsImageWhenHighlighted = NO;
                     image2.enabled = true;
-                    [image2 setImage:newImage forState:UIControlStateNormal];
+                    
+                    asyncImage2 = [[[AsyncImageView alloc]
+                                                   initWithFrame:frame] autorelease];
+                    asyncImage2.tag = 991;
+                    
+                    [asyncImage2 loadImageFromURL:url];
+                    
+                    [image2 addSubview:asyncImage2];
+                    
+                //    [image2 setImage:newImage forState:UIControlStateNormal];
                     break;
                 case 3:
-                    image3.frame = CGRectMake(251, 15, 60, 60);
+                    frame = CGRectMake(115, 5, 80, 80);
+
+                    image3.frame = frame;//CGRectMake(251, 15, 60, 60);
                     image3.adjustsImageWhenHighlighted = NO;
                     [image3 addTarget:self action:@selector(imgClicked:)
                      forControlEvents:UIControlEventTouchUpInside];
-                    [image3 setImage:newImage forState:UIControlStateNormal];
-                    image3.enabled = true;
+                     image3.enabled = true;
+                    
+                    asyncImage3 = [[[AsyncImageView alloc]
+                                   initWithFrame:frame] autorelease];
+                    asyncImage3.tag = 992;
+                    
+                    [asyncImage3 loadImageFromURL:url];
+
+                    [image3 addSubview:asyncImage3];
+                //    [image3 setImage:newImage forState:UIControlStateNormal];
+                   
                     break;
                 case 4:
-                    image4.frame = CGRectMake(165, 97, 60, 60);
+                    frame = CGRectMake(70, 40, 80, 80);
+                    
+                    image4.frame = frame;
                     image4.adjustsImageWhenHighlighted = NO;
                     [image4 addTarget:self action:@selector(imgClicked:)
                      forControlEvents:UIControlEventTouchUpInside];
-                    [image4 setImage:newImage forState:UIControlStateNormal];
-                    image4.enabled = true;
+                     image4.enabled = true;
+                    
+                    asyncImage4 = [[[AsyncImageView alloc]
+                                                    initWithFrame:frame] autorelease];
+                    asyncImage4.tag = 993;
+                    
+                    [asyncImage4 loadImageFromURL:url];
+                    
+                    [image4 addSubview:asyncImage4];
+
+                    
+                 //   [image4 setImage:newImage forState:UIControlStateNormal];
+                   
                    
                     break;
                 case 5:
-                    image5.frame = CGRectMake(251, 97, 60, 60);
+                    frame = CGRectMake(115, 40, 80, 80);
+                    
+                    image5.frame = frame;
                     image5.adjustsImageWhenHighlighted = NO;
                     [image5 addTarget:self action:@selector(imgClicked:)
                      forControlEvents:UIControlEventTouchUpInside];
-                    [image5 setImage:newImage forState:UIControlStateNormal];
-                    image5.enabled = true;
+                     image5.enabled = true;
+                    
+                    asyncImage5 = [[[AsyncImageView alloc]
+                                                    initWithFrame:frame] autorelease];
+                    asyncImage5.tag = 994;
+                    
+                    [asyncImage5 loadImageFromURL:url];
+                    
+                    [image5 addSubview:asyncImage5];
+                    
+                    //[image5 setImage:newImage forState:UIControlStateNormal];
+                   
                     
                     break;
                     
@@ -158,15 +226,15 @@
                     
             }
             
-            [newImage release];
+            [url release];
         }
         
         
-        NSString *imageBigUrl = [imagesBig objectAtIndex:(i-1)];
-        NSString *urlBigString = [[NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], imageBigUrl] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]; 
-        NSData* imageBigData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:urlBigString]];  
-        UIImage *newBigImage = [[UIImage alloc] initWithData:imageBigData];
-        [imageList addObject:newBigImage];
+//        NSString *imageBigUrl = [imagesBig objectAtIndex:(i-1)];
+//        NSString *urlBigString = [[NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], imageBigUrl] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]; 
+//        NSData* imageBigData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:urlBigString]];  
+//        UIImage *newBigImage = [[UIImage alloc] initWithData:imageBigData];
+//        [imageList addObject:newBigImage];
         i++;
     }
     self.imageSliderController.views = imageList;
@@ -200,8 +268,31 @@
     [auximageSlider release];
     // Do any additional setup after loading the view from its nib.
 
-
+    [self resetInfo];
     
+}
+
+-(void) viewWillDisappear:(BOOL)animated{
+    if(asyncImage){
+        [asyncImage  removeFromSuperview];
+        asyncImage = nil;
+    }
+    if(asyncImage2){
+        [asyncImage2 removeFromSuperview];
+        asyncImage2 = nil;
+    }
+    if(asyncImage3){
+        [asyncImage3 removeFromSuperview];
+        asyncImage3 = nil;
+    }
+    if(asyncImage4){
+        [asyncImage4 removeFromSuperview];
+        asyncImage4 = nil;
+    }
+    if(asyncImage5){
+        [asyncImage5 removeFromSuperview];
+        asyncImage5 = nil;
+    }
 }
 
 - (void)viewDidUnload
