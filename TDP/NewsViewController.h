@@ -11,20 +11,22 @@
 @class NewsDetailsViewController;
 
 @interface NewsViewController : UIViewController {
-    UITableView *tableView;
-    UIImageView *imageView;
+    IBOutlet UITableView *tableView;
+    IBOutlet UIImageView *imageView;
     
     NSDictionary *dicNews;
     NSArray *keys;
     
     NewsDetailsViewController * newsDetailsViewController;
 }
+
+@property (nonatomic, retain) UITableView *tableView;
+@property (nonatomic, retain) UIImageView *imageView;
+
 @property(nonatomic, retain) NSDictionary *dicNews;
 @property(nonatomic, retain) NSArray *keys;
-
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
-@property (nonatomic, retain) IBOutlet UIImageView *imageView;
 
 @property (nonatomic, retain) IBOutlet NewsDetailsViewController *newsDetailsViewController;
 
 @end
+ 

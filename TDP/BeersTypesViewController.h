@@ -3,7 +3,7 @@
 //  TDP
 //
 //  Created by fernando colman on 11/22/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 __TopTier labs__. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -11,23 +11,28 @@
 
 @class BeersViewController;
 
-@interface BeersTypesViewController : UIViewController{
-    UITableView *tableView;
-    UIImageView *imageView;
+@interface BeersTypesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
+    //Outlets
+    IBOutlet UITableView *tableView;
+    IBOutlet UIImageView *imageView;
     
-    NSDictionary *dicBeers;
-    NSArray *keys;
+    //Dictionary initialized used parsed jason
+    NSDictionary *dicTypesOfBeer;
+    //Dictionary keys
+    NSArray *typeOfBeersKeys;
     
+    //View controller that shows the list of beers for a type of beer
     BeersViewController *beersViewController;
 }
 
-@property(nonatomic, retain) NSDictionary *dicBeers;
-@property(nonatomic, retain) NSArray *keys;
+@property (nonatomic, retain) UITableView *tableView;
+@property (nonatomic, retain) UIImageView *imageView;
 
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
-@property (nonatomic, retain) IBOutlet UIImageView *imageView;
+@property(nonatomic, retain) NSDictionary *dicTypesOfBeer;
+@property(nonatomic, retain) NSArray *typeOfBeersKeys;
 
-@property (nonatomic, retain) IBOutlet BeersViewController *beersViewController;
+@property (nonatomic, retain) BeersViewController *beersViewController;
 
 -(void) setCoreDataContext: (NSManagedObjectContext *) context;
 @end
+ 

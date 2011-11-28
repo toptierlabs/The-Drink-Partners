@@ -10,23 +10,22 @@
 
 
 @interface ImageSliderViewController : UIViewController <UIScrollViewDelegate> {
+    IBOutlet UIPageControl *pageControl; 
+    IBOutlet UIScrollView *scroller; //Scroll view that contains the images
+    
     NSArray * views;
     NSInteger currentPage;
-    
-    UIPageControl *pageControl;
-    UIScrollView *scroller;
-
 }
 
-@property (nonatomic, retain)  NSArray *views;
-@property (nonatomic, retain) IBOutlet UIPageControl * pageControl;
-@property (nonatomic, retain) IBOutlet UIScrollView *scroller;
+@property (nonatomic, retain) UIPageControl * pageControl;
+@property (nonatomic, retain) UIScrollView *scroller;
+@property (nonatomic, retain) NSArray *views;
+
 
 
 @property (nonatomic) NSInteger currentPage;
 
 - (IBAction) clickPageControl:(id)sender;
-//- (void) animateToView:(UIView *)newView;
-//- (void) animateToViewByPosition:(NSInteger)position;
 
 @end
+ 

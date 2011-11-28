@@ -15,7 +15,7 @@
 #import "AboutViewController.h"
 
 #import "BeersDetailsViewController.h"
-
+#import "BeersTypesViewController.h"
 
 @implementation TDPAppDelegate
 
@@ -44,7 +44,7 @@
     // Add the tab bar controller's current view as a subview of the window
     tabBarController = [[UITabBarController alloc] init];   
     
-    
+    //Create view controllers
     beersTypesViewController = [[BeersTypesViewController alloc] init];
     eventsViewController = [[EventsViewController alloc] init];
     newsViewController = [[NewsViewController alloc] init];
@@ -55,11 +55,13 @@
     [beersTypesViewController setCoreDataContext: self.managedObjectContext];
      buyNowViewController.managedObjectContext = self.managedObjectContext;
     
+    //Create navigation controllers
     navBeersController = [[[NavController alloc] initWithRootViewController:beersTypesViewController] autorelease];
     navEventsController = [[[NavController alloc] initWithRootViewController:eventsViewController] autorelease];
     navNewsController = [[[NavController alloc] initWithRootViewController:newsViewController] autorelease];
     navBuyNowController = [[[NavController alloc] initWithRootViewController:buyNowViewController] autorelease];
     
+    //Set titles
     navBeersController.title = @"Beers";
     navEventsController.title = @"Events";
     navNewsController.title = @"News";
@@ -67,28 +69,22 @@
     aboutViewController.title = @"About";
     
     
-//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 30)];
-//	[label setFont:[UIFont boldSystemFontOfSize:16.0]];
-//	[label setBackgroundColor:[UIColor clearColor]];
-//	[label setTextColor:[UIColor whiteColor]];
-//	[label setText:@"Beers"];
-//	[navBeersController.navigationBar.topItem setTitleView:label];
-//	[label release];
-    
-    
+
+    // Set navigation bar color
     navBeersController.navigationBar.tintColor = [UIColor blackColor];
     navEventsController.navigationBar.tintColor = [UIColor blackColor];
     navNewsController.navigationBar.tintColor = [UIColor blackColor];
     navBeersController.navigationBar.tintColor = [UIColor blackColor];
     navBuyNowController.navigationBar.tintColor = [UIColor blackColor];
     
+    //Set tab bar images
+    navBeersController.tabBarItem.image = [UIImage imageNamed:@"beer-mug.png"];
+    navEventsController.tabBarItem.image = [UIImage imageNamed:@"calendar.png"];
+    navNewsController.tabBarItem.image = [UIImage imageNamed:@"news.png"];
+    navBuyNowController.tabBarItem.image = [UIImage imageNamed:@"shopping-cart.png"];
+    aboutViewController.tabBarItem.image = [UIImage imageNamed:@"envelope.png"];
     
-    navBeersController.tabBarItem.image = [[UIImage imageNamed:@"beer-mug.png"] autorelease];
-    navEventsController.tabBarItem.image = [[UIImage imageNamed:@"calendar.png"] autorelease];
-    navNewsController.tabBarItem.image = [[UIImage imageNamed:@"news.png"] autorelease];
-    navBuyNowController.tabBarItem.image = [[UIImage imageNamed:@"shopping-cart.png"] autorelease];
-    aboutViewController.tabBarItem.image = [[UIImage imageNamed:@"envelope.png"] autorelease];
-    
+    // Add view controllers to the tab bar controller
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:navBeersController, navEventsController, navNewsController, navBuyNowController, aboutViewController, nil];
     
     
@@ -188,6 +184,8 @@
      See also applicationDidEnterBackground:.
      */
 }
+
+
 
 - (void)dealloc
 {

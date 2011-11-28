@@ -16,12 +16,9 @@
 
 @implementation BeersViewController
 
-@synthesize tableView;
-@synthesize imageView;
-@synthesize dicBeers;
-@synthesize keys;
+@synthesize tableView, imageView;
+@synthesize dicBeers, beersKeys, beerTypeName;
 @synthesize beersDetailsController;
-@synthesize beerTypeName;
 
 NSManagedObjectContext * managedObjectContext;
 
@@ -38,13 +35,63 @@ NSManagedObjectContext * managedObjectContext;
     managedObjectContext = context;
 }
 
--(void) resetInfo{
-    [tableView reloadData];
+
+
+- (void)dealloc
+{
+    [tableView release];
+    [imageView release];
+    [beerTypeName release];
+    [dicBeers release];
+    [beersDetailsController release];
+
+    [super dealloc];
 }
 
+- (void)didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
+}
+
+
+#pragma mark - View lifecycle
+NSInteger sort2(id a, id b, void* p) {
+    return  [b compare:a options:NSNumericSearch];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    //Refresh the title every time that the view will appear
+    self.title = beerTypeName;
+}   
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    
+    // Do any additional setup after loading the view from its nib.
+    //
+	// Change the properties of the imageView and tableView (these could be set
+	// in interface builder instead).
+	//
+	tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+	tableView.rowHeight = 100;
+	tableView.backgroundColor = [UIColor clearColor];
+	imageView.image = [UIImage imageNamed:@"gradientBackground.png"];
+     
+    BeersDetailsViewController *auxBeerDetails = [[BeersDetailsViewController alloc] initWithNibName:@"BeersDetailsView" bundle:nil];
+    self.beersDetailsController = auxBeerDetails;    
+    [auxBeerDetails release];
+    self.beersDetailsController.managedObjectContext = managedObjectContext;
+}
+
+// Method that transforms the image displayed in a custom view
 UIImage *scaleAndRotateImage(UIImage *image,int kMaxResolution)  
 {  
-      
+    
     CGImageRef imgRef = image.CGImage;  
     
     CGFloat width = CGImageGetWidth(imgRef);  
@@ -149,136 +196,36 @@ UIImage *scaleAndRotateImage(UIImage *image,int kMaxResolution)
     return imageCopy;  
 } 
 
+// Parses the url and appends resized string to it.
 NSString *addStringToURL(NSString * urlString){
     
-    NSMutableString *stringBufferTail = [[NSMutableString alloc] initWithCapacity:[urlString length]];
     NSMutableString *stringBuffer = [[NSMutableString alloc] init];
     
-    NSUInteger tam = [urlString length];
-    
-    for (int i = 0; i < tam; i++) {
-        int index = tam - 1 - i;
-        NSString *compare = @"/";
-        if ([urlString characterAtIndex:index] == [compare characterAtIndex:0]){
-            NSString * substrig = [urlString substringToIndex:index];
-            NSString * tail = [urlString substringFromIndex:index];
-            [stringBuffer appendString:substrig];
-            [stringBuffer appendString:@"/resized"];
-            [stringBuffer appendString:tail];
-            break;
+    NSUInteger urlLength = [urlString length];
+    if (urlLength > 0) {
+        for (int i = 0; i < urlLength; i++) {
+            int index = urlLength - 1 - i;
+            NSString *compare = @"/";
+            if ([urlString characterAtIndex:index] == [compare characterAtIndex:0]){
+                NSString * substring = [urlString substringToIndex:index];
+                NSString * tail = [urlString substringFromIndex:index];
+                [stringBuffer appendString:substring];
+                [stringBuffer appendString:@"/resized"];
+                [stringBuffer appendString:tail];
+                break;
+            }
         }
     }
+    [stringBuffer release];
     return urlString;
 }
 
-- (void)dealloc
-{
-    [super dealloc];
-}
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
+//Table events
 
-//To call new view in navigation controller
-//    TDPAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-//    [delegate.navBeerController pushViewController:self.BeerDetailsController animated:YES];
-//
-
-#pragma mark - View lifecycle
-
-NSInteger sort2(id a, id b, void* p) {
-    return  [b compare:a options:NSNumericSearch];
-}
-
--(void)viewWillAppear:(BOOL)animated{
-       self.title = beerTypeName;
-}   
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
- 
-    
-    BeersDetailsViewController *auxBeerDetails = [[BeersDetailsViewController alloc] initWithNibName:@"BeersDetailsView" bundle:nil];
-    self.beersDetailsController = auxBeerDetails;    
-    self.beersDetailsController.managedObjectContext = managedObjectContext;
-//    
-//    listOfBeers = [[NSMutableArray alloc] init];
-//    NSString *beersJson =  [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:[PlistHelper readValue:@"Beers URL"]]];
-//    if ([beersJson length] == 0) {
-//        [beersJson release];
-//        return;
-//    }
-//    
-//    SBJsonParser *parser = [[SBJsonParser alloc] init];
-//    NSDictionary *dicBeersTypesAux = [[parser objectWithString:beersJson error:nil] copy]; 
-    
-//    
-//    NSArray *immutableKeys = [dicBeersTypesAux allKeys];
-//    
-//    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-//    
-//    for (NSString *key in immutableKeys) {
-//        
-//        NSDictionary *beersAux = [[dicBeersTypesAux objectForKey:key] objectForKey:@"beers"];
-//        
-//        [dict addEntriesFromDictionary:beersAux];
-//    }
-//    
-//    NSArray *beersImmutableKeys = [dict allKeys];
-//    NSMutableArray *beersMutableKeys = [[NSMutableArray alloc] initWithArray:beersImmutableKeys];
-//    NSArray *beersKeysBuffer = [beersMutableKeys sortedArrayUsingFunction:&sort2 context:nil];
-//
-//    self.keys = beersKeysBuffer;
-//    
-//    NSDictionary *dicBeersAux = [[NSDictionary alloc] initWithDictionary:dict];
-//    self.dicBeers = dicBeersAux ;
-//    
-//    [dicBeersAux release];
-//    [dicBeersTypesAux release];
-//
-//    [beersMutableKeys release];
-//    [parser release];
-  //  [mutableKeys release];
-    
-    
-   
-    
-    // Do any additional setup after loading the view from its nib.
-    //
-	// Change the properties of the imageView and tableView (these could be set
-	// in interface builder instead).
-	//
-	tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-	tableView.rowHeight = 100;
-	tableView.backgroundColor = [UIColor clearColor];
-	imageView.image = [UIImage imageNamed:@"gradientBackground.png"];
-	
-	//
-	// Create a header view. Wrap it in a container to allow us to position
-	// it better.
-	//
-	UIView *containerView =
-    [[[UIView alloc]
-      initWithFrame:CGRectMake(0, 0, 300, 0)]
-     autorelease];
-	UILabel *headerLabel =
-    [[[UILabel alloc]
-      initWithFrame:CGRectMake(10, 20, 300, 40)]
-     autorelease];
-	headerLabel.text = NSLocalizedString(@"Header for the table", @"");
-	headerLabel.textColor = [UIColor whiteColor];
-	headerLabel.shadowColor = [UIColor blackColor];
-	headerLabel.shadowOffset = CGSizeMake(0, 1);
-	headerLabel.font = [UIFont boldSystemFontOfSize:22];
-	headerLabel.backgroundColor = [UIColor clearColor];
-//	[containerView addSubview:headerLabel];
-	self.tableView.tableHeaderView = containerView;
+// Reload the tableview data
+-(void) resetInfo{
+    [tableView reloadData];
 }
 
 //
@@ -315,7 +262,7 @@ NSInteger sort2(id a, id b, void* p) {
 	UILabel *bottomLabel;
 
     
-	static NSString *CellIdentifier = @"Cell";
+	static NSString *CellIdentifier = @"BeerCell";
 	UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil)
 	{
@@ -404,10 +351,13 @@ NSInteger sort2(id a, id b, void* p) {
 		bottomLabel = (UILabel *)[cell viewWithTag:BOTTOM_LABEL_TAG];
 	}
     
-    NSDictionary *beer = [dicBeers objectForKey: [keys objectAtIndex:indexPath.row]];
+    // Get the current index key and object in the dictionary
+    NSDictionary *beer = [dicBeers objectForKey: [beersKeys objectAtIndex:indexPath.row]];
 	
+    //Set the name of the beer
 	topLabel.text = [beer objectForKey:@"name"];
     
+    //Set the info of the beer
 	bottomLabel.text = [NSString stringWithFormat:@"Size: %@ml\nAbv: %@%%\nS$ %@",[beer objectForKey:@"ml"],[beer objectForKey:@"abv"],[beer objectForKey:@"retailprice"] ];
 	
 	//
@@ -443,18 +393,15 @@ NSInteger sort2(id a, id b, void* p) {
 	((UIImageView *)cell.backgroundView).image = rowBackground;
 	((UIImageView *)cell.selectedBackgroundView).image = selectionBackground;
 	
-	//
-	// Here I set an image based on the row. This is just to have something
-	// colorful to show on each row.
-	//
-    
+
+    // Builds the url of the images
     NSArray *images = [beer objectForKey:@"images"];
-	
     NSString *urlString = [NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], [images objectAtIndex:0]]; 
     
-    
+    // Add the resize text to the url 
     urlString = addStringToURL(urlString);
     
+    // Initialize async call to load image
     CGRect frame;
 	frame.size.width=75; frame.size.height=75;
 	frame.origin.x=0; frame.origin.y=7;
@@ -468,34 +415,37 @@ NSInteger sort2(id a, id b, void* p) {
 		//then this must be another image, the old one is still in subviews
 		 [[[cell.contentView subviews] objectAtIndex:2] removeFromSuperview]; //so remove it (releases it also)
 	}
-                              
+    //Add the async image to the cell
 	[cell.contentView addSubview:asyncImage];
     
-    
-    NSLog(@"urlstring : %@",urlString);
-	
+    [url release];
 	return cell;
 }
 
-- (void)tableView:(UITableView *)tableView
+- (void)tableView:(UITableView *)aTableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Gets the beer
+    NSDictionary *beer = [dicBeers objectForKey: [beersKeys objectAtIndex:indexPath.row]];
     
-    NSDictionary *beer = [dicBeers objectForKey: [keys objectAtIndex:indexPath.row]];
+    //Set beer's details
     self.beersDetailsController.text = [beer objectForKey:@"writeup"]; 
     
+    //Set the image URL for the string
     NSArray *images = [beer objectForKey:@"images"];
     self.beersDetailsController.imageURL = addStringToURL([NSString stringWithFormat:@"%@%@" , [PlistHelper readValue:@"Base URL"], [images objectAtIndex:0]]);
     
+    //Set all the beer's info
     self.beersDetailsController.size = [NSString stringWithFormat:@"%@",[beer objectForKey:@"ml"]];
     self.beersDetailsController.abv = [NSString stringWithFormat:@"%@",[beer objectForKey:@"abv"]];
     self.beersDetailsController.price = [NSString stringWithFormat:@"%@",[beer objectForKey:@"retailprice"]];
     self.beersDetailsController.beerName = [NSString stringWithFormat:@"%@",[beer objectForKey:@"name"]];
     
-    TDPAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    //Call the Beer details view
+    TDPAppDelegate *delegate = (TDPAppDelegate *)[[UIApplication sharedApplication] delegate];
     [delegate.navBeersController pushViewController:self.beersDetailsController animated:YES];
     [self.beersDetailsController resetInfo];
     
-     [tableView deselectRowAtIndexPath:indexPath animated:YES];  
+     [aTableView deselectRowAtIndexPath:indexPath animated:YES];  
     
 }
 
@@ -505,6 +455,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    
+    self.tableView = nil;
+    self.imageView = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

@@ -3,7 +3,7 @@
 //  TDP
 //
 //  Created by fernando colman on 11/22/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 __TopTier labs__. All rights reserved.
 //
 
 #import "BeersTypesViewController.h"
@@ -14,10 +14,20 @@
 
 @implementation BeersTypesViewController
 
-@synthesize tableView,imageView,dicBeers,keys,beersViewController;
+@synthesize tableView, imageView;
+@synthesize dicTypesOfBeer, typeOfBeersKeys, beersViewController;
 
-NSMutableArray *listOfBeers;
+
 NSManagedObjectContext * managedObjectContext;
+
+//Aux methods
+#pragma mark - View lifecycle
+NSInteger sort3(id a, id b, void* p) {
+    return  [b compare:a options:NSNumericSearch];
+}
+
+
+//View Controller Methods
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,29 +38,25 @@ NSManagedObjectContext * managedObjectContext;
     return self;
 }
 
--(void) setCoreDataContext: (NSManagedObjectContext *) context{
-    managedObjectContext = context;
-}
 
 
 - (void)dealloc
 {
-    [listOfBeers release];
+
+    [beersViewController release];
+    [dicTypesOfBeer release];
+    [typeOfBeersKeys release];
+    [beersViewController release];
     [super dealloc];
+
 }
 
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
 
-#pragma mark - View lifecycle
-NSInteger sort3(id a, id b, void* p) {
-    return  [b compare:a options:NSNumericSearch];
-}
 
 - (void)viewDidLoad
 {
@@ -59,48 +65,6 @@ NSInteger sort3(id a, id b, void* p) {
     
     self.title = @"Beers";
     
-    BeersViewController *auxBeerDetails = [[BeersViewController alloc] initWithNibName:@"BeersView" bundle:nil];
-    self.beersViewController = auxBeerDetails;
-    
-    listOfBeers = [[NSMutableArray alloc] init];
-    NSString *beersJson =  [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:[PlistHelper readValue:@"Beers URL"]]];
-    if ([beersJson length] == 0) {
-        [beersJson release];
-        return;
-    }
-    
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
-    NSDictionary *dicBeersTypes = [[parser objectWithString:beersJson error:nil] copy]; 
-    
-    
-    NSArray *immutableKeys = [dicBeersTypes allKeys];
-    
-    
-    NSMutableArray *beersMutableKeys = [[NSMutableArray alloc] initWithArray:immutableKeys];
-    NSArray *beersKeysBuffer = [beersMutableKeys sortedArrayUsingFunction:&sort3 context:nil];
-    
-  
-        NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-        NSMutableArray *aux = [[NSMutableArray alloc] init];
-        
-        for (NSString *key in beersKeysBuffer) {
-            
-            NSDictionary *beersAux = [dicBeersTypes objectForKey:key];
-            if([[[dicBeersTypes objectForKey:key] objectForKey:@"beers"]  isKindOfClass:[NSDictionary class]]){
-                NSLog(@"%@",[[dicBeersTypes objectForKey:key] objectForKey:@"name"]);
-                [dict setValue:[dicBeersTypes objectForKey:key] forKey:key];
-            }
-            
-        }
-    
-    
-    self.dicBeers = [[NSDictionary alloc] initWithDictionary:dict];
-    self.keys = [self.dicBeers allKeys];
-    
-    
-    [beersMutableKeys release];
-    [parser release];
-    
     // Change the properties of the imageView and tableView (these could be set
 	// in interface builder instead).
 	//
@@ -108,23 +72,81 @@ NSInteger sort3(id a, id b, void* p) {
 	tableView.rowHeight = 70;
 	tableView.backgroundColor = [UIColor clearColor];
 	imageView.image = [UIImage imageNamed:@"gradientBackground.png"];
-	
-	
+    
+    
+    //Initialize the beers view controller
+    BeersViewController *auxBeersViewController = [[BeersViewController alloc] initWithNibName:@"BeersView" bundle:nil];
+    self.beersViewController = auxBeersViewController;
+    [auxBeersViewController release];
+    
+    
+    //Get Json from URL
+    NSString *beersJson =  [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:[PlistHelper readValue:@"Beers URL"]]];
+    if ([beersJson length] > 0) {
+        //Alloc the parser
+        SBJsonParser *parser = [[SBJsonParser alloc] init];
+        
+        //Parse the Json and get a NSDictionary object
+        NSDictionary *dicBeersTypes = [[parser objectWithString:beersJson error:nil] copy]; 
+        NSArray *immutableKeys = [dicBeersTypes allKeys];
+        
+        //Make a mutable array in order to sort the keys (order the beer types)
+        NSMutableArray *beerTypesMutableKeys = [[NSMutableArray alloc] initWithArray:immutableKeys];
+        NSArray *sortedKeys = [beerTypesMutableKeys sortedArrayUsingFunction:&sort3 context:nil];
+        
+        //Initialize a dictionary to add the valid types of beer. A valid type is the one which doesnt have an empty beers list
+        NSMutableDictionary *dicTypes = [[NSMutableDictionary alloc] init];
+        
+        
+        for (NSString *typeKey in sortedKeys) {
+            //Check if the beers key is a dictionary (contains beers list)
+            if ( [[[dicBeersTypes objectForKey:typeKey] objectForKey:@"beers"]  isKindOfClass:[NSDictionary class]]) {
+                //If the beers list is not empty, add it to a new dictionary.
+                [dicTypes setValue:[dicBeersTypes objectForKey:typeKey] forKey:typeKey];
+            } 
+            
+        }
+        
+        NSDictionary *auxTypesOfBeer = [[NSDictionary alloc] initWithDictionary:dicTypes];
+        self.dicTypesOfBeer = auxTypesOfBeer;
+        self.typeOfBeersKeys = [self.dicTypesOfBeer allKeys];
+        
+        [dicBeersTypes release];
+        [beerTypesMutableKeys release];
+        [parser release];
+        [auxTypesOfBeer release];
+        [dicTypes release];
 
+    }
+    
+        
+    [beersJson release];
+   
+    
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+
+    self.tableView = nil;
+    self.imageView = nil;
 }
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+
+-(void) setCoreDataContext: (NSManagedObjectContext *) context{
+    managedObjectContext = context;
+}
+
+//Table view management methods
 
 //
 // numberOfSectionsInTableView:
@@ -143,7 +165,7 @@ NSInteger sort3(id a, id b, void* p) {
 //
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return [dicBeers count];
+	return [dicTypesOfBeer count];
 }
 
 //
@@ -155,13 +177,12 @@ NSInteger sort3(id a, id b, void* p) {
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	const NSInteger TOP_LABEL_TAG = 1001;
-	const NSInteger BOTTOM_LABEL_TAG = 1002;
 	UILabel *topLabel;
-	UILabel *bottomLabel;
-    NSDictionary *beerType = [dicBeers objectForKey: [keys objectAtIndex:indexPath.row]];
+
+    NSDictionary *beerType = [dicTypesOfBeer objectForKey: [typeOfBeersKeys objectAtIndex:indexPath.row]];
     
 
-        static NSString *CellIdentifier = @"Cell";
+        static NSString *CellIdentifier = @"BeersTypeCell";
         UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (cell == nil)
         {
@@ -266,33 +287,46 @@ NSInteger sort3(id a, id b, void* p) {
     
 }
 
-- (void)tableView:(UITableView *)tableView
+// Event that is executed when the user selects a row in the table
+- (void)tableView:(UITableView *)aTableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSDictionary *beerType = [dicBeers objectForKey: [keys objectAtIndex:indexPath.row]];
+    NSDictionary *beerType = [dicTypesOfBeer objectForKey: [typeOfBeersKeys objectAtIndex:indexPath.row]];
     
-    //self.beersDetailsController.text = [beer objectForKey:@"writeup"]; 
+    //Double check if beers list is not empty
     if([[beerType objectForKey:@"beers"] isKindOfClass:[NSDictionary class]]){
+        
+        // Set the view controller dictionary
         self.beersViewController.dicBeers = [beerType objectForKey:@"beers"];
         
         NSArray *immutableKeys = [self.beersViewController.dicBeers  allKeys];
-        NSMutableArray *beersMutableKeys = [[NSMutableArray alloc] initWithArray:immutableKeys];
-        NSArray *beersKeysBuffer = [beersMutableKeys sortedArrayUsingFunction:&sort3 context:nil];
+        NSMutableArray *beerTypesMutableKeys = [[NSMutableArray alloc] initWithArray:immutableKeys];
         
-        self.beersViewController.keys = beersKeysBuffer;
+        NSArray *sortedKeys = [beerTypesMutableKeys sortedArrayUsingFunction:&sort3 context:nil];
         
+        
+        //Set the view controller's sorted key array
+        self.beersViewController.beersKeys = sortedKeys;
+        
+        //Set the beer type name. Used for the title
         self.beersViewController.beerTypeName = [beerType objectForKey:@"name"];
         
-        [beersMutableKeys release];
+        [beerTypesMutableKeys release];
         
+        //Reload the table view in the beersviewcontroller
         [self.beersViewController resetInfo];
-        TDPAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-        [delegate.navBeersController pushViewController:self.beersViewController animated:YES];
+        
         [self.beersViewController setCoreDataContext:managedObjectContext];
+        
+        //Push the view
+        TDPAppDelegate *delegate = (TDPAppDelegate*) [[UIApplication sharedApplication] delegate];
+        [delegate.navBeersController pushViewController:self.beersViewController animated:YES];
+        
         
     }
 
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];   
+    //Deselect the row before leaving the method
+    [aTableView deselectRowAtIndexPath:indexPath animated:NO];   
 
     
 }
