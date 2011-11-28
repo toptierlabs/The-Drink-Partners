@@ -38,7 +38,8 @@
     [myIndicator startAnimating];
     
 	[self addSubview:myIndicator];
-
+    
+    [myIndicator release];
     
     NSURLRequest* request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
 	connection = [[NSURLConnection alloc] initWithRequest:request delegate:self]; //notice how delegate set to self object

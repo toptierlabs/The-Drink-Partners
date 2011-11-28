@@ -35,7 +35,7 @@ AsyncImageView* asyncImage5;
     
     self.imageSliderController.currentPage = index;
     
-    TDPAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    TDPAppDelegate *delegate = (TDPAppDelegate*)[[UIApplication sharedApplication] delegate];
     [delegate.navEventsController pushViewController:self.imageSliderController animated:YES];
     
 }
