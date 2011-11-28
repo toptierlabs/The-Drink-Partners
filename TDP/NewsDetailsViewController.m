@@ -26,11 +26,7 @@ AsyncImageView* asyncImage;
 
 -(void) resetInfo{
     [textView setText:text];
-    
-    NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:imageURL]];  
-    
-    NSLog(@"imageURLNewsDet: %@", imageURL);
-    
+       
 //    UIImage * imageAux = [[UIImage alloc] initWithData:imageData]; 
 //    image.contentMode = UIViewContentModeScaleAspectFit;
 //    [image setImage:imageAux];

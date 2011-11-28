@@ -39,7 +39,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.beersDetailsController.price = beer.priceString;
     self.beersDetailsController.beerName = beer.name;
     
-    TDPAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    TDPAppDelegate *delegate = (TDPAppDelegate *)[[UIApplication sharedApplication] delegate];
     [delegate.navBuyNowController pushViewController:self.beersDetailsController animated:YES];
     [self.beersDetailsController resetInfo];
     
@@ -274,7 +274,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
     BeersDetailsViewController *auxBeerDetails = [[BeersDetailsViewController alloc] initWithNibName:@"BeersDetailsView" bundle:nil];
     self.beersDetailsController = auxBeerDetails;    
-    self.beersDetailsController.managedObjectContext = managedObjectContext;
+    self.beersDetailsController.managedObjectContext =  managedObjectContext;
+
     
 
 //    beers = [[NSMutableArray alloc] init];

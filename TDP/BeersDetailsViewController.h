@@ -10,6 +10,15 @@
 #import <CoreData/CoreData.h>
 
 @interface BeersDetailsViewController : UIViewController <NSFetchedResultsControllerDelegate>{
+    IBOutlet UITextView *textView;
+    IBOutlet UIImageView *image;
+    IBOutlet UILabel *lblSize;
+    IBOutlet UILabel *lblAbv;
+    IBOutlet UILabel *lblPrice;
+    IBOutlet UILabel *quantityText;
+    IBOutlet UIButton *buttonReduce;
+    IBOutlet UIButton *buttonAdd;
+    
     NSString *text;
     NSString *imageURL;
     NSString *size;
@@ -20,16 +29,17 @@
     NSFetchedResultsController *fetchedResultsController;
     NSManagedObjectContext *managedObjectContext;
     
-    IBOutlet UITextView *textView;
-    IBOutlet UIImageView *image;
-    IBOutlet UILabel *label1;
-    IBOutlet UILabel *label2;
-    IBOutlet UILabel *label3;
-    IBOutlet UILabel *quantityText;
-    IBOutlet UIButton *buttonReduce;
-    IBOutlet UIButton *buttonAdd;
-    
 }
+
+@property (nonatomic, retain) UITextView *textView;
+@property (nonatomic, retain) UIImageView *image;
+@property (nonatomic, retain) UILabel *lblSize;
+@property (nonatomic, retain) UILabel *lblAbv;
+@property (nonatomic, retain) UILabel *lblPrice;
+@property (nonatomic, retain) UILabel *quantityText;
+@property (nonatomic, retain) UIButton *buttonReduce;
+@property (nonatomic, retain) UIButton *buttonAdd;
+
 @property (nonatomic, retain) NSString *text;
 @property (nonatomic, retain) NSString *imageURL;
 @property (nonatomic, retain) NSString *size;
@@ -40,14 +50,7 @@
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
-@property (nonatomic, retain) UITextView *textView;
-@property (nonatomic, retain) UIImageView *image;
-@property (nonatomic, retain) UILabel *label1;
-@property (nonatomic, retain) UILabel *label2;
-@property (nonatomic, retain) UILabel *label3;
-@property (nonatomic, retain) UILabel *quantityText;
-@property (nonatomic, retain) UIButton *buttonReduce;
-@property (nonatomic, retain) UIButton *buttonAdd;
+
 
 -(void) resetInfo;
 -(IBAction) addClicked:(id) sender;

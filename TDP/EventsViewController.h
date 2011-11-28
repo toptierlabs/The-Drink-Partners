@@ -22,7 +22,4 @@
 @property (nonatomic,retain) EventDetailsViewController * eventDetailsController;
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
 
-
--(id)initWithFrame:(CGRect) theFrame;
-
 @end

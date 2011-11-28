@@ -12,6 +12,7 @@
 #import "PlistHelper.h"
 #import "EventDetailsViewController.h"
 @implementation EventsViewController
+
 @synthesize dicEvents;
 @synthesize keys;
 @synthesize eventDetailsController;
@@ -28,9 +29,7 @@ NSMutableArray *listOfEvents;
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     const NSInteger TOP_LABEL_TAG = 1001;
-	const NSInteger BOTTOM_LABEL_TAG = 1002;
 
-    
     static NSString *CellIdentifier = @"CellEvent";
     
     UILabel *mainLabel, *secondLabel;
@@ -159,7 +158,7 @@ NSMutableArray *listOfEvents;
 }
 
 
-- (void)tableView:(UITableView *)tableView
+- (void)tableView:(UITableView *)aTableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSDictionary *event = [dicEvents objectForKey: [keys objectAtIndex:indexPath.row]];
@@ -185,10 +184,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.eventDetailsController resetInfo];
     
     
-    TDPAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    TDPAppDelegate *delegate = (TDPAppDelegate *)[[UIApplication sharedApplication] delegate];
     [delegate.navEventsController pushViewController:self.eventDetailsController animated:YES];
     
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [aTableView deselectRowAtIndexPath:indexPath animated:YES];
     
   
 

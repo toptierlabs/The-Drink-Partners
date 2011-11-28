@@ -11,21 +11,25 @@
 
 @implementation BeersDetailsViewController
 
-@synthesize textView,image,label1,label2,label3,quantityText;
+@synthesize textView,image,lblSize,lblAbv,lblPrice,quantityText;
 @synthesize size,abv,price,text,imageURL,beerName;
 @synthesize managedObjectContext,fetchedResultsController;
 @synthesize buttonAdd, buttonReduce;
 
 AsyncImageView* asyncImage;
 
+
+// Used to scale and rotate thee image to be correctly shown in the image rect
 UIImage *scaleAndRotateImage2(UIImage *image,int kMaxResolution)  
 {  
     
     CGImageRef imgRef = image.CGImage;  
     
+    //Get width and height
     CGFloat width = CGImageGetWidth(imgRef);  
     CGFloat height = CGImageGetHeight(imgRef);  
     
+    //Adjust bounds based on resolution
     CGAffineTransform transform = CGAffineTransformIdentity;  
     CGRect bounds = CGRectMake(0, 0, width, height);  
     if (width > kMaxResolution || height > kMaxResolution) {  
@@ -40,6 +44,7 @@ UIImage *scaleAndRotateImage2(UIImage *image,int kMaxResolution)
         }  
     }  
     
+    //Scale the image based on orientation
     CGFloat scaleRatio = bounds.size.width / width;  
     CGSize imageSize = CGSizeMake(CGImageGetWidth(imgRef), CGImageGetHeight(imgRef));  
     CGFloat boundHeight;  
@@ -104,9 +109,9 @@ UIImage *scaleAndRotateImage2(UIImage *image,int kMaxResolution)
     }  
     
     UIGraphicsBeginImageContext(bounds.size);  
-    
     CGContextRef context = UIGraphicsGetCurrentContext();  
     
+    //Translate the image based on orientation
     if (orient == UIImageOrientationRight || orient == UIImageOrientationLeft) {  
         CGContextScaleCTM(context, -scaleRatio, scaleRatio);  
         CGContextTranslateCTM(context, -height, 0);  
@@ -127,27 +132,31 @@ UIImage *scaleAndRotateImage2(UIImage *image,int kMaxResolution)
 
 
 
-//Events
+//Buttons Events
 -(IBAction) addClicked:(id) sender{
     
     NSError *error = nil;
    
-    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
-    [f setNumberStyle:NSNumberFormatterDecimalStyle];
+    //Set formatter style
+    NSNumberFormatter * formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     
-    NSNumber * quantity = [f numberFromString: quantityText.text];
-    int q = quantity.intValue;
-    q++;
-    NSString *qText = [NSString stringWithFormat:@"%d",q];
+    //Get quantity and convert to int
+    NSNumber * quantity = [formatter numberFromString: quantityText.text];
+    int intQuantity = quantity.intValue;
+    intQuantity++;
+    
+    
+    NSString *qText = [[NSString alloc] initWithFormat: @"%d",intQuantity];
     [quantityText setText:qText];
-    quantity = [NSNumber numberWithInt:q]; 
+    quantity = [NSNumber numberWithInt:intQuantity]; 
     
+    //Update badge value
     [(UIViewController *)[self.tabBarController.viewControllers objectAtIndex:3] tabBarItem].badgeValue =qText;
+    [qText release];
     
     NSManagedObjectContext *context = [self managedObjectContext];
-//    NSManagedObject *beer = [NSEntityDescription
-//                             insertNewObjectForEntityForName:@"Beer" 
-//                             inManagedObjectContext:context];
+
     
     //seek for beer
     NSFetchRequest * request = [[NSFetchRequest alloc] init];
@@ -158,28 +167,21 @@ UIImage *scaleAndRotateImage2(UIImage *image,int kMaxResolution)
     
     if (error) {
         //Handle any errors
-        NSLog(@"Hay un erro al hacer fetch de beer para update");
+        NSLog(@"Fetch error");
     }
     
     if (!beer) {
         beer = [NSEntityDescription
                                  insertNewObjectForEntityForName:@"Beer" 
                                  inManagedObjectContext:context];
-         NSLog(@"haciendo insert");
         //Nothing there to update
         [beer setValue:beerName forKey:@"name"];
         [beer setValue:price forKey:@"priceString"];
         
-        
-        
-        NSNumber * priceValue = [f numberFromString: price];
-        
+        NSNumber * priceValue = [formatter numberFromString: price];
         [beer setValue:priceValue forKey:@"priceValue"];
-        
-        NSLog(@"quantityText.text = %@",quantityText.text);
-        
+
         [beer setValue:quantity forKey:@"quantity"];
-        
         [beer setValue:abv forKey:@"abv"];
         [beer setValue:size forKey:@"size"];
         [beer setValue:text forKey:@"text"];
@@ -191,7 +193,6 @@ UIImage *scaleAndRotateImage2(UIImage *image,int kMaxResolution)
         }
     }
     else{
-         NSLog(@"haciendo update");
         //Update the object
         [beer setValue:quantity forKey:@"quantity"];
         //Save it
@@ -200,52 +201,33 @@ UIImage *scaleAndRotateImage2(UIImage *image,int kMaxResolution)
         }
     }
 
-    
-    //LOG-SACAR!!
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription 
-                                   entityForName:@"Beer" inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    for (NSManagedObject *info in fetchedObjects) {
-        if (![info isDeleted]){
-            NSLog(@"Name: %@", [info valueForKey:@"name"]);
-            NSLog(@"Price: %@", [info valueForKey:@"priceString"]);
-            NSLog(@"Price: %@", [info valueForKey:@"priceValue"]);
-            NSLog(@"abv: %@", [info valueForKey:@"abv"]);
-            NSLog(@"size: %@", [info valueForKey:@"size"]);
-            NSLog(@"Quantity: %@", [info valueForKey:@"quantity"]);
-            NSLog(@"text: %@", [info valueForKey:@"text"]);
-            NSLog(@"ImageURL: %@", [info valueForKey:@"imageURL"]);
-        }
-    }    
-    
-    [f release];
     [request release];
-    [fetchRequest release];
+    [formatter release];
     
-
 }
 -(IBAction) reduceClicked:(id) sender{
     NSError *error = nil;
     
-    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
-    [f setNumberStyle:NSNumberFormatterDecimalStyle];
+    //Initialize formatter
+    NSNumberFormatter * formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     
-    NSNumber * quantity = [f numberFromString: quantityText.text];
-    int q = quantity.intValue;
-    q--;
+    //Get int value of quantity
+    NSNumber * quantity = [formatter numberFromString: quantityText.text];
+    int intQuantity = quantity.intValue;
+    intQuantity--;
         
-    if (q > 0) {
-        
-        NSString *qText = [NSString stringWithFormat:@"%d",q];
+    if (intQuantity > 0) {
+        //Get quantity
+        NSString *qText = [[NSString alloc] initWithFormat: @"%d",intQuantity];
         [quantityText setText:qText];
-        quantity = [NSNumber numberWithInt:q];
+        quantity = [NSNumber numberWithInt:intQuantity];
         
-         [(UIViewController *)[self.tabBarController.viewControllers objectAtIndex:3] tabBarItem].badgeValue =qText;
-
+        //Update badge value
+        [(UIViewController *)[self.tabBarController.viewControllers objectAtIndex:3] tabBarItem].badgeValue =qText;
+        [qText release];
+        
         NSManagedObjectContext *context = [self managedObjectContext];
-
         
         //seek for beer
         NSFetchRequest * request = [[NSFetchRequest alloc] init];
@@ -256,12 +238,11 @@ UIImage *scaleAndRotateImage2(UIImage *image,int kMaxResolution)
         
         if (error) {
             //Handle any errors
-            NSLog(@"Hay un erro al hacer fetch de beer para update");
+            NSLog(@"Fetch error");
         }
         
         if (beer) {
 
-            NSLog(@"haciendo update");
             //Update the object
             [beer setValue:quantity forKey:@"quantity"];
             //Save it
@@ -270,30 +251,14 @@ UIImage *scaleAndRotateImage2(UIImage *image,int kMaxResolution)
                 NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
             }
         }
-        
-        
-        
-        //LOG-SACAR!!
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription 
-                                       entityForName:@"Beer" inManagedObjectContext:context];
-        [fetchRequest setEntity:entity];
-        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-        for (NSManagedObject *info in fetchedObjects) {
-            if (![info isDeleted]){
-                NSLog(@"Name: %@", [info valueForKey:@"name"]);
-                NSLog(@"Price: %@", [info valueForKey:@"priceString"]);
-                NSLog(@"Price: %@", [info valueForKey:@"priceValue"]);
-                NSLog(@"Quantity: %@", [info valueForKey:@"quantity"]);
-            }        }    
+
         [request release];
-        [fetchRequest release];
     }
     else{
-        if (q == 0){
-            NSString *qText = [NSString stringWithFormat:@"%d",q];
+        if (intQuantity == 0){
+            NSString *qText = [[NSString alloc] initWithFormat: @"%d",intQuantity];
             [quantityText setText:qText];
-            quantity = [NSNumber numberWithInt:q];
+            [qText release];
             
             [(UIViewController *)[self.tabBarController.viewControllers objectAtIndex:3] tabBarItem].badgeValue = nil;
         }
@@ -304,12 +269,11 @@ UIImage *scaleAndRotateImage2(UIImage *image,int kMaxResolution)
         NSFetchRequest * request = [[NSFetchRequest alloc] init];
         [request setEntity:[NSEntityDescription entityForName:@"Beer" inManagedObjectContext:context]];
         [request setPredicate:[NSPredicate predicateWithFormat:@"name=%@",beerName]];
-        
         NSManagedObject *beer = [[context executeFetchRequest:request error:&error] lastObject];
         
         if (error) {
             //Handle any errors
-            NSLog(@"Hay un erro al hacer fetch de beer para delete");
+            NSLog(@"Fetch error");
         }
         
         if (beer) {
@@ -321,26 +285,12 @@ UIImage *scaleAndRotateImage2(UIImage *image,int kMaxResolution)
                  NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
             }
         }
-        
-        //LOG-SACAR!!
-        
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription 
-                                       entityForName:@"Beer" inManagedObjectContext:context];
-        [fetchRequest setEntity:entity];
-        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-        for (NSManagedObject *info in fetchedObjects) {
-            if (![info isDeleted]){
-                NSLog(@"Name: %@", [info valueForKey:@"name"]);
-                NSLog(@"Price: %@", [info valueForKey:@"priceString"]);
-                NSLog(@"Price: %@", [info valueForKey:@"priceValue"]);
-                NSLog(@"Quantity: %@", [info valueForKey:@"quantity"]);
-            }
-        }    
         [request release];
-        [fetchRequest release];
+        
         
     }
+    
+    [formatter release];
     
     
 
@@ -359,25 +309,20 @@ UIImage *scaleAndRotateImage2(UIImage *image,int kMaxResolution)
 -(void) resetInfo{
     [textView setText:text];
     
-
-
- //   NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:self.imageURL]];  
-//    self.image.image = [[UIImage alloc] initWithData:imageData]; 
-    NSString *sizeText = [NSString stringWithFormat:@"Size: %@ml",size];
-    NSString *abvText = [NSString stringWithFormat:@"Abv: %@%%",abv];
-    NSString *priceText = [NSString stringWithFormat:@"S$: %@",price];
     
-    [label1 setText:sizeText];
-    [label2 setText:abvText];
-    [label3 setText:priceText];
+    NSString *sizeText = [[NSString alloc] initWithFormat: @"Size: %@ml",size];
+    NSString *abvText = [[NSString alloc] initWithFormat: @"Abv: %@%%",abv];
+    NSString *priceText = [[NSString alloc] initWithFormat: @"S$: %@",price];
     
-       
-         
-//    NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:imageURL]];  
-//    UIImage * imageAux = [[UIImage alloc] initWithData:imageData]; 
-//    image.contentMode = UIViewContentModeScaleAspectFit;
-//    [image setImage:scaleAndRotateImage(imageAux,120)];
+    [lblSize setText:sizeText];
+    [lblAbv setText:abvText];
+    [lblPrice setText:priceText];
     
+    [sizeText release];
+    [abvText release];
+    [priceText release];
+ 
+    // Initialize async downloaded file that shows the beer image
     if(asyncImage){
         [asyncImage removeFromSuperview];
     }
@@ -391,6 +336,8 @@ UIImage *scaleAndRotateImage2(UIImage *image,int kMaxResolution)
 	NSURL* url = [[NSURL alloc] initWithString:imageURL];
 	[asyncImage loadImageFromURL:url];
 
+    [url release];
+    
 	[self.view addSubview:asyncImage];
     
     
@@ -411,6 +358,8 @@ UIImage *scaleAndRotateImage2(UIImage *image,int kMaxResolution)
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
      self.title = beerName;
+    
+    // Load images used in buttons to add and remove beers to the cart
     UIImage *imagePlus = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"greenplus" ofType:@"png"]];
     [buttonAdd setImage:imagePlus forState:UIControlStateNormal];
     
@@ -434,17 +383,21 @@ UIImage *scaleAndRotateImage2(UIImage *image,int kMaxResolution)
     
     if (error) {
         //Handle any errors
-        NSLog(@"Hay un erro al hacer fetch de beer para update");
+        NSLog(@"Fetching beers error");
     }
     
     if (beer) {
-        NSString *qText = [NSString stringWithFormat:@"%@",[beer valueForKey:@"quantity"]];
+        NSString *qText = [[NSString alloc] initWithFormat: @"%@",[beer valueForKey:@"quantity"]];
         [quantityText setText:qText];
+        [qText release];
     }
     else{
-        NSString *qText = [NSString stringWithFormat:@"%d",0];
+        NSString *qText = [[NSString alloc] initWithFormat: @"%d",0];
         [quantityText setText:qText];
+        [qText release];
     }
+    
+    [request release];
 
 }
 
@@ -453,7 +406,14 @@ UIImage *scaleAndRotateImage2(UIImage *image,int kMaxResolution)
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-
+    self.textView = nil;
+    self.image = nil;
+    self.lblSize = nil;
+    self.lblAbv = nil;
+    self.lblPrice = nil;
+    self.quantityText = nil;
+    self.buttonReduce = nil;
+    self.buttonAdd = nil;
     
 }
 
@@ -461,6 +421,28 @@ UIImage *scaleAndRotateImage2(UIImage *image,int kMaxResolution)
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)dealloc
+{
+    
+    [textView release];
+    [image release];
+    [lblSize release];
+    [lblAbv release];
+    [lblPrice release];
+    [quantityText release];
+    [buttonReduce release];
+    [buttonAdd release];
+    
+    [text release];
+    [imageURL release];
+    [size release];
+    [abv release];
+    [price release];
+    [beerName release];
+    
+    [super dealloc];
 }
 
 @end
