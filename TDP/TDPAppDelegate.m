@@ -68,8 +68,6 @@
     navBuyNowController.title = @"Buy Now";
     aboutViewController.title = @"About";
     
-    
-
     // Set navigation bar color
     navBeersController.navigationBar.tintColor = [UIColor blackColor];
     navEventsController.navigationBar.tintColor = [UIColor blackColor];
@@ -87,7 +85,37 @@
     // Add view controllers to the tab bar controller
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:navBeersController, navEventsController, navNewsController, navBuyNowController, aboutViewController, nil];
     
+    //Refresh buyNow budge
+    //Set up context
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSFetchRequest * allBeers = [[NSFetchRequest alloc] init];
+    [allBeers setEntity:[NSEntityDescription entityForName:@"Beer" inManagedObjectContext:context]];
+    [allBeers setIncludesPropertyValues:NO]; //only fetch the managedObjectID
     
+    NSError * error = nil;
+    //Get all beers
+    NSArray * beerList = [context executeFetchRequest:allBeers error:&error];
+    [allBeers release];
+    
+    NSNumberFormatter * formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    //Variable to sum the quantity of the beers
+    int quntityBeers = 0;
+    for (NSManagedObject * beer in beerList) {
+
+        //Get the quantity of the beers from the database
+        NSString *qText = [[NSString alloc] initWithFormat: @"%@",[beer valueForKey:@"quantity"]];
+        int q = [formatter numberFromString: qText].integerValue;
+        quntityBeers += q;
+        [qText release];
+        
+    }
+    if (quntityBeers) {
+        NSString *badgeString = [formatter stringFromNumber:[NSNumber numberWithInt:quntityBeers]];
+        //Update badge value
+        [(UIViewController *)[self.tabBarController.viewControllers objectAtIndex:3] tabBarItem].badgeValue =badgeString;
+    }
+    [formatter release];
     
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
